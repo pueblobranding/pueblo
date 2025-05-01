@@ -23,7 +23,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
           ))}
         </div>
       </div>
-      <div className="md:w-1/2 relative min-h-[300px] md:min-h-[400px]">
+      <div className="relative h-[500px] w-[300px] mb-4">
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={`Foto de ${name}`}
@@ -49,8 +49,8 @@ export default function NosotrosSection() {
         "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.",
         "En Pueblo me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.",
       ],
-      linkedinUrl: "www.linkedin.com/magdabenenzo",
-      imageUrl: "/placeholder.svg?height=500&width=400",
+      linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
+      imageUrl: "/mechi.png",
     },
     {
       name: "NAT",
@@ -59,8 +59,8 @@ export default function NosotrosSection() {
         "Sumergida en el universo corporativo, entendí la importancia de construir mensajes desde historias reales. En el camino, descubrí que mi vocación también estaba en la sanación y mi faceta holística comenzó a florecer, integrando herramientas como la Astrología, el Reiki y la Biodecodificación para acompañar a otros en su proceso de crecimiento.",
         "Hoy, en PUEBLO, fusiono estos dos mundos. Cada proyecto se convierte en una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que también transformen y contagien lo más genuino de su esencia.",
       ],
-      linkedinUrl: "www.linkedin.com/natpierro",
-      imageUrl: "/placeholder.svg?height=500&width=400",
+      linkedinUrl: "https://www.linkedin.com/in/natpierro/",
+      imageUrl: "/nat.png",
     },
   ]
 
