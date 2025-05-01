@@ -86,9 +86,9 @@ export default function QueHacemosSection() {
                                     //   fill
                                     width={400}
                                     height={400}
-                                    className="object-cover grayscale"
+                                    className="object-cover grayscale h-full"
                                 />
-                                <div className="absolute inset-0 bg-black bg-opacity/40"></div>
+                                <div className="absolute inset-0 bg-black/40"></div>
                             </div>
 
                             {/* Contenido */}
