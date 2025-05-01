@@ -14,9 +14,9 @@ interface TeamMemberProps {
 
 function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
   return (
-    <div className="flex flex-col md:flex-row w-full mb-8 overflow-hidden">
-      <div className="bg-[#3a5a47] p-6 md:p-8 md:w-1/2 relative">
-        <div className="bg-[#e85c44] text-white py-2 px-6 rounded-full inline-block mb-4 font-light tracking-wider">
+    <div className="flex flex-col md:flex-row-reverse w-full mb-8 overflow-hidden">
+      <div className="bg-[#3a5a47] p-6 md:p-8 md:w-2/3 relative">
+        <div className="bg-[#e85c44] text-white py-2 px-6 rounded-r-full inline-block mb-4 font-light tracking-wider pl-10 relative -left-10">
           HOLA! SOY {name}
         </div>
         <div className="text-white space-y-4">
