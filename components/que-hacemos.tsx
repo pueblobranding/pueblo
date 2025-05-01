@@ -66,9 +66,9 @@ export default function QueHacemosSection() {
                     {sections.map((section) => (
                         <div
                             key={section.id}
-                            className={`relative overflow-hidden rounded-lg transition-all duration-500 ease-in-out flex flex-col 
+                            className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
                 ${hoveredSection === section.id
-                                    ? "md:flex-[5] flex-[1]"
+                                    ? "md:flex-[1.2] flex-[1]"
                                     : hoveredSection === null
                                         ? "md:flex-[1] flex-[1]"
                                         : "md:flex-[0.5] flex-[1]"
@@ -98,7 +98,7 @@ export default function QueHacemosSection() {
 
                                 {/* Contenido expandido - visible solo en hover */}
                                 <div
-                                    className={`flex flex-col transition-opacity duration-300 
+                                    className={`flex flex-col transition-opacity duration-900 
                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 md:hidden"}
                   `}
                                 >
