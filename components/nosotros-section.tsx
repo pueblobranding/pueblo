@@ -15,13 +15,13 @@ interface TeamMemberProps {
 function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
   return (
     <div className="flex flex-col md:flex-row-reverse w-full mb-8 overflow-hidden">
-      <div className="bg-[#3a5a47] p-6 md:p-8 md:w-2/3 relative">
+      <div className="bg-[#3a5a47] p-6 md:p-8 md:w-3/4 relative">
         <div className="bg-[#e85c44] text-white py-2 px-6 rounded-r-full inline-block mb-4 font-light tracking-wider pl-10 relative -left-10">
           HOLA! SOY {name}
         </div>
         <div className="text-white space-y-4">
           {bio.map((paragraph, index) => (
-            <p key={index} className="font-light leading-relaxed">
+            <p key={index} className="font-light leading-relaxed text-lg">
               {paragraph}
             </p>
           ))}
