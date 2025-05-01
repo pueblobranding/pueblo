@@ -24,7 +24,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col items-center space-y-8 text-2xl font-light">
+        <nav className="flex flex-col items-center space-y-8 text-2xl text-white">
           <a href="/" className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
           </a>
