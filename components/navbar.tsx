@@ -1,5 +1,6 @@
 "use client"
 import { Menu, X } from "lucide-react"
+import Link from "next/link"
 
 interface NavbarProps {
   isMenuOpen: boolean
@@ -25,18 +26,18 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
         }`}
       >
         <nav className="flex flex-col items-center space-y-8 text-2xl text-white">
-          <a href="/" className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/" className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
-          </a>
-          <a href="/nosotros" className="hover:text-gray-300 transition-colors tracking-wider">
+          </Link>
+          <Link href="/nosotros" className="hover:text-gray-300 transition-colors tracking-wider">
             NOSOTROS
-          </a>
-          <a href="/que-hacemos" className="hover:text-gray-300 transition-colors tracking-wider">
+          </Link>
+          <Link href="/que-hacemos" className="hover:text-gray-300 transition-colors tracking-wider">
             QUE HACEMOS
-          </a>
-          <a href="/contacto" className="hover:text-gray-300 transition-colors tracking-wider">
+          </Link>
+          <Link href="/contacto" className="hover:text-gray-300 transition-colors tracking-wider">
             CONTACTO
-          </a>
+          </Link>
         </nav>
       </div>
     </>
