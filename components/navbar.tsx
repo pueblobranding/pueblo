@@ -25,7 +25,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
         }`}
       >
         <nav className="flex flex-col items-center space-y-8 text-2xl font-light">
-          <a href="/" className="hover:text-gray-300 transition-colors tracking-wider">
+          <a href="" className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
           </a>
           <a href="nosotros" className="hover:text-gray-300 transition-colors tracking-wider">

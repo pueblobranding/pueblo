@@ -27,7 +27,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
           ))}
         </div>
       </div>
-      <div className="relative h-[350px] w-[200px] mt-8">
+      <div className="relative h-[400px] w-[300px] mt-8">
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={`Foto de ${name}`}
