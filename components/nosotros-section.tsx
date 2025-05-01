@@ -1,5 +1,9 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
+import Navbar from "@/components/navbar"
+import { useState } from "react"
 
 interface TeamMemberProps {
   name: string
@@ -23,7 +27,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
           ))}
         </div>
       </div>
-      <div className="relative h-[500px] w-[300px] mb-4">
+      <div className="relative h-[350px] w-[200px] mt-8">
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={`Foto de ${name}`}
@@ -41,6 +45,12 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
 }
 
 export default function NosotrosSection() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   const teamMembers = [
     {
       name: "MACHI",
@@ -66,6 +76,7 @@ export default function NosotrosSection() {
 
   return (
     <section className="w-full bg-[#3a5a47] py-16">
+      <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2>
         <div className="flex flex-col gap-8">
