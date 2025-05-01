@@ -31,8 +31,8 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           <a href="/nosotros" className="hover:text-gray-300 transition-colors tracking-wider">
             NOSOTROS
           </a>
-          <a href="/servicios" className="hover:text-gray-300 transition-colors tracking-wider">
-            SERVICIOS
+          <a href="/que-hacemos" className="hover:text-gray-300 transition-colors tracking-wider">
+            QUE HACEMOS
           </a>
           <a href="/proyectos" className="hover:text-gray-300 transition-colors tracking-wider">
             PROYECTOS
