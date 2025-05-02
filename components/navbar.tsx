@@ -41,13 +41,13 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           <Link href="/" onClick={() => handleNavLinkClick("/")} className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
           </Link>
-          <Link href="/nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="#nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-gray-300 transition-colors tracking-wider">
             NOSOTROS
           </Link>
-          <Link href="/que-hacemos" onClick={() => handleNavLinkClick("/que-hacemos")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="#que-hacemos" onClick={() => handleNavLinkClick("#que-hacemos")} className="hover:text-gray-300 transition-colors tracking-wider">
             QUE HACEMOS
           </Link>
-          <Link href="/contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="#contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-gray-300 transition-colors tracking-wider">
             CONTACTO
           </Link>
         </nav>
