@@ -51,7 +51,7 @@ export default function ContactoSection() {
     }
 
     return (
-        <section className="min-h-screen bg-[#3a5a47] py-16 px-4">
+        <section className="min-h-screen bg-[#3a5a47] py-16 px-4 ">
             <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
@@ -61,7 +61,7 @@ export default function ContactoSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Información de contacto */}
-                    <div className="text-white">
+                    <div className="text-white order-2 md:order-1">
                         <h2 className="text-[#e85c44] text-3xl font-light mb-8 tracking-wider">CONVERSEMOS</h2>
 
                         <div className="space-y-6">
@@ -105,8 +105,8 @@ export default function ContactoSection() {
                     </div>
 
                     {/* Formulario de contacto */}
-                    <div className="bg-white p-8 rounded-lg shadow-lg">
-                        <h2 className="text-[#3a5a47] text-2xl font-light mb-6">Escríbenos</h2>
+                    <div className="bg-white p-8 rounded-lg shadow-lg order-1 md:order-2">
+                        <h2 className="text-[#3a5a47] text-2xl font-light mb-6">Escribinos</h2>
 
                         {formStatus.submitted && formStatus.success ? (
                             <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md">

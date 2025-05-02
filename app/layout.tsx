@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google"; // Importa solo Montserrat
 import "./globals.css";
 import Whatsapp from "@/components/Whatsapp";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  variable: "--font-montserrat", // Usa un nombre de variable descriptivo
+  subsets: ["latin"],  // Incluye el subconjunto latin si es necesario
+  display: 'swap',    // Optimiza la carga de la fuente
 });
 
 export const metadata: Metadata = {
@@ -26,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} antialiased`}  // Aplica la variable de la fuente
       >
-        <Whatsapp/>
+        <Whatsapp />
         {children}
       </body>
     </html>

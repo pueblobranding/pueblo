@@ -1,6 +1,7 @@
 "use client"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   isMenuOpen: boolean
@@ -8,6 +9,17 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
+
+  const router = useRouter();
+
+  const handleNavLinkClick = (href: string) => {
+    // Cierra el menú *antes* de navegar (para evitar el parpadeo si la carga de la página es rápida)
+    toggleMenu();
+    // Navega a la nueva página
+    router.push(href);
+  };
+
+
   return (
     <>
       {/* Hamburger Menu Button - Always visible */}
@@ -26,16 +38,16 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
         }`}
       >
         <nav className="flex flex-col items-center space-y-8 text-2xl text-white">
-          <Link href="/" className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/" onClick={() => handleNavLinkClick("/")} className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
           </Link>
-          <Link href="/nosotros" className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-gray-300 transition-colors tracking-wider">
             NOSOTROS
           </Link>
-          <Link href="/que-hacemos" className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/que-hacemos" onClick={() => handleNavLinkClick("/que-hacemos")} className="hover:text-gray-300 transition-colors tracking-wider">
             QUE HACEMOS
           </Link>
-          <Link href="/contacto" className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-gray-300 transition-colors tracking-wider">
             CONTACTO
           </Link>
         </nav>
