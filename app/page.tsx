@@ -7,8 +7,8 @@ export default function Page() {
   return (
     <>
       <PuebloBranding />
-      <NosotrosSection />
       <QueHacemosSection/>
+      <NosotrosSection />
       <ContactoSection/>
     </>
   )
