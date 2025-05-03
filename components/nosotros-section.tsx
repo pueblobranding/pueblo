@@ -76,7 +76,7 @@ export default function NosotrosSection() {
 
   return (
     <section id="nosotros" className="w-full bg-[#3a5a47] py-16">
-      <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2>
         <div className="flex flex-col gap-8">

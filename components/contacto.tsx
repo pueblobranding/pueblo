@@ -52,7 +52,7 @@ export default function ContactoSection() {
 
     return (
         <section id="contacto" className="min-h-screen bg-[#3a5a47] py-16 px-4 ">
-            <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
                 <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-light text-center mb-16 tracking-wider">
