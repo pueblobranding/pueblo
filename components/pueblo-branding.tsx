@@ -29,7 +29,6 @@ export default function PuebloBranding() {
             height={250}
             alt="logo pueblo"
           />
-
         </div>
 
         {/* PUEBLO text */}

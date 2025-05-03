@@ -22,9 +22,9 @@
   --verde-opalo-40: #A5B4A3; /* Ajustado para ser 40% del original */
   --verde-opalo-20: #C4CDC1; /* Ajustado para ser 20% del original */
 
-  --tigerlily: #E2583E; /* Color estimado para Tigerlily 17-1456. Ajusta si es necesario. */
+  --tigerlily: #E2583E;
   
-  --gris-oscuro: #424144; /* Color estimado para Tigerlily 17-1456. Ajusta si es necesario. */
+  --gris-oscuro: #424144;
 
   --pewter-blue-100: #8BA8B7; /* Valor corregido */
   --pewter-blue-80: #A2B9C4; /* Ajustado para ser 80% del original */
@@ -43,22 +43,22 @@
   --font-mono: var(--font-geist-mono);
 
   /* Colores personalizados */
-  --colors-verde-opalo-100: var(--verde-opalo-100);
-  --colors-verde-opalo-80: var(--verde-opalo-80);
-  --colors-verde-opalo-60: var(--verde-opalo-60);
-  --colors-verde-opalo-40: var(--verde-opalo-40);
-  --colors-verde-opalo-20: var(--verde-opalo-20);
+  --color-verde-opalo-100: var(--verde-opalo-100);
+  --color-verde-opalo-80: var(--verde-opalo-80);
+  --color-verde-opalo-60: var(--verde-opalo-60);
+  --color-verde-opalo-40: var(--verde-opalo-40);
+  --color-verde-opalo-20: var(--verde-opalo-20);
 
-  --colors-tigerlily: var(--tigerlily);
+  --color-tigerlily: var(--tigerlily);
 
-  --colors-pewter-blue-100: var(--pewter-blue-100);
-  --colors-pewter-blue-80: var(--pewter-blue-80);
-  --colors-pewter-blue-60: var(--pewter-blue-60);
-  --colors-pewter-blue-40: var(--pewter-blue-40);
-  --colors-pewter-blue-20: var(--pewter-blue-20);
+  --color-pewter-blue-100: var(--pewter-blue-100);
+  --color-pewter-blue-80: var(--pewter-blue-80);
+  --color-pewter-blue-60: var(--pewter-blue-60);
+  --color-pewter-blue-40: var(--pewter-blue-40);
+  --color-pewter-blue-20: var(--pewter-blue-20);
 
-  --colors-buttercup: var(--buttercup);
-  --colors-gold-fusion: var(--gold-fusion);
+  --color-buttercup: var(--buttercup);
+  --color-gold-fusion: var(--gold-fusion);
 }
 
 @media (prefers-color-scheme: dark) {
