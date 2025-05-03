@@ -33,10 +33,10 @@ export default function PuebloBranding() {
         </div>
 
         {/* PUEBLO text */}
-        <h1 className="text-7xl font-light tracking-[0.453em] -mr-[0.453em] mb-4">PUEBLO</h1>
+        <h1 className="text-5xl md:text-7xl font-light tracking-[0.453em] -mr-[0.453em] mb-4">PUEBLO</h1>
 
         {/* Tagline */}
-        <p className="text-sm tracking-wider">BRANDING Y COMUNICACIÓN ESTRATÉGICA</p>
+        <p className="text-md tracking-[0.185em] -mr-[0.185em]">BRANDING Y COMUNICACIÓN ESTRATÉGICA</p>
       </div>
     </div>
   )
