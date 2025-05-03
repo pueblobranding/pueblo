@@ -148,7 +148,7 @@ export default function ContactoSection() {
                                         name="telefono"
                                         value={formData.telefono}
                                         onChange={handleChange}
-                                        className="w-full px-3 py-2 border bg-white bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     />
                                 </div>
 
