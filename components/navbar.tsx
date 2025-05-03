@@ -38,7 +38,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
         }`}
       >
         <nav className="flex flex-col items-center space-y-8 text-2xl text-white">
-          <Link href="/" onClick={() => handleNavLinkClick("/")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="#inicio" onClick={() => handleNavLinkClick("/")} className="hover:text-gray-300 transition-colors tracking-wider">
             INICIO
           </Link>
           <Link href="#que-hacemos" onClick={() => handleNavLinkClick("#que-hacemos")} className="hover:text-gray-300 transition-colors tracking-wider">

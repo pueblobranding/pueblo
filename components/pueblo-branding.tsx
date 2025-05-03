@@ -12,7 +12,7 @@ export default function PuebloBranding() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#486955] text-white p-4 relative ">
+    <div id="inicio" className="flex flex-col items-center justify-center min-h-screen bg-[#486955] text-white p-4 relative ">
       {/* Navbar Component */}
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
