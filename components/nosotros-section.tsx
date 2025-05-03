@@ -1,9 +1,5 @@
-'use client'
-
 import Image from "next/image"
 import Link from "next/link"
-import Navbar from "@/components/navbar"
-import { useState } from "react"
 
 interface TeamMemberProps {
   name: string
@@ -45,11 +41,6 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
 }
 
 export default function NosotrosSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
 
   const teamMembers = [
     {

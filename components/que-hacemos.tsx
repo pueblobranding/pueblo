@@ -2,16 +2,10 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Navbar from "./navbar"
 
 export default function QueHacemosSection() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const [hoveredSection, setHoveredSection] = useState<string | null>(null)
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
 
     const sections = [
         {

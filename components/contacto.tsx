@@ -4,14 +4,8 @@ import type React from "react"
 
 import { useState } from "react"
 import { Send, MailIcon, PhoneIcon, Instagram, Linkedin } from "lucide-react"
-import Navbar from "@/components/navbar"
 
 export default function ContactoSection() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
 
     const [formData, setFormData] = useState({
         nombre: "",
