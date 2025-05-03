@@ -56,7 +56,7 @@ export default function QueHacemosSection() {
             {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal - siempre visible */}
-                <h1 style={{ fontFamily: 'MiFuente' }} className="text-[#e85c44] text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
+                <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
                     ENCONTRAMOS
                     <br />QUE HACE LATIR
                     <br />A TU MARCA
@@ -89,13 +89,13 @@ export default function QueHacemosSection() {
                                     height={400}
                                     className="object-cover grayscale h-full"
                                 />
-                                <div className="absolute inset-0 bg-black/40"></div>
+                                <div className="absolute inset-0 bg-black/0"></div>
                             </div>
 
                             {/* Contenido */}
                             <div className="relative z-10 flex flex-col h-full p-6 text-white">
                                 {/* Título siempre visible */}
-                                <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wider">{section.title}</h2>
+                                <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider text-tigerlily font-bold">{section.title}</h2>
 
                                 {/* Contenido expandido - visible solo en hover */}
                                 <div
@@ -103,7 +103,7 @@ export default function QueHacemosSection() {
                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 md:hidden"}
                   `}
                                 >
-                                    <p className="mb-4 font-light">{section.description}</p>
+                                    <p className="mb-4">{section.description}</p>
 
                                     <ul className="space-y-2 mt-auto">
                                         {section.services.map((service, index) => (
