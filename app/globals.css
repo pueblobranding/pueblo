@@ -1,10 +1,39 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'MiFuente'; /* El nombre que usarás en tu CSS */
+  src: url('/fonts/Dream-Avenue.woff2') format('woff2'); /* Ruta relativa a la carpeta `public` */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Evita el FOIT/FOUT */
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-montserrat: Montserrat, sans-serif; /* Agrega un fallback */
   --font-mont: Mont, monospace; /* Agrega un fallback */
+
+  /* Colores personalizados */
+  --verde-opalo-100: #486955;
+  --verde-opalo-80: #67826F; /* Ajustado para ser 80% del original */
+  --verde-opalo-60: #869B89; /* Ajustado para ser 60% del original */
+  --verde-opalo-40: #A5B4A3; /* Ajustado para ser 40% del original */
+  --verde-opalo-20: #C4CDC1; /* Ajustado para ser 20% del original */
+
+  --tigerlily: #E2583E; /* Color estimado para Tigerlily 17-1456. Ajusta si es necesario. */
+  
+  --gris-oscuro: #424144; /* Color estimado para Tigerlily 17-1456. Ajusta si es necesario. */
+
+  --pewter-blue-100: #8BA8B7; /* Valor corregido */
+  --pewter-blue-80: #A2B9C4; /* Ajustado para ser 80% del original */
+  --pewter-blue-60: #BACAD2; /* Ajustado para ser 60% del original */
+  --pewter-blue-40: #D1DBDF; /* Ajustado para ser 40% del original */
+  --pewter-blue-20: #E8ECEC; /* Ajustado para ser 20% del original */
+
+  --buttercup: #F9E244; /* Color estimado para BUTTERCUP 12-0752. Ajusta si es necesario. */
+  --gold-fusion: #FFB100; /* Color estimado para GOLD FUSION 115-1062. Ajusta si es necesario. */
 }
 
 @theme inline {
@@ -12,6 +41,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Colores personalizados */
+  --colors-verde-opalo-100: var(--verde-opalo-100);
+  --colors-verde-opalo-80: var(--verde-opalo-80);
+  --colors-verde-opalo-60: var(--verde-opalo-60);
+  --colors-verde-opalo-40: var(--verde-opalo-40);
+  --colors-verde-opalo-20: var(--verde-opalo-20);
+
+  --colors-tigerlily: var(--tigerlily);
+
+  --colors-pewter-blue-100: var(--pewter-blue-100);
+  --colors-pewter-blue-80: var(--pewter-blue-80);
+  --colors-pewter-blue-60: var(--pewter-blue-60);
+  --colors-pewter-blue-40: var(--pewter-blue-40);
+  --colors-pewter-blue-20: var(--pewter-blue-20);
+
+  --colors-buttercup: var(--buttercup);
+  --colors-gold-fusion: var(--gold-fusion);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +71,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: var(--font-montserrat); /* Aplica la fuente por defecto */
-}
-
-
-code {
-  font-family: var(--font-mont); /* Aplica la fuente monoespaciada al código */
+  font-family: var(--font-montserrat);
 }

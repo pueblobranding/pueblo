@@ -33,7 +33,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
 
       {/* Full-screen Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-[#2a4a37] z-40 flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-[#2a4a37ef] z-40 flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

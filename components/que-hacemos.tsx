@@ -52,12 +52,13 @@ export default function QueHacemosSection() {
     ]
 
     return (
-        <section id="que-hacemos" className="min-h-screen bg-[#3a5a47] py-16 px-4">
+        <section id="que-hacemos" className="min-h-screen bg-white py-16 px-4">
             {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal - siempre visible */}
-                <h1 className="text-[#e85c44] text-3xl md:text-4xl lg:text-5xl font-light text-center mb-16 tracking-wider">
-                    ENCONTRAMOS QUE HACE LATIR
+                <h1 style={{ fontFamily: 'MiFuente' }} className="text-[#e85c44] text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
+                    ENCONTRAMOS
+                    <br />QUE HACE LATIR
                     <br />A TU MARCA
                 </h1>
 
