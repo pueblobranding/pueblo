@@ -46,73 +46,145 @@ export default function QueHacemosSection() {
     ]
 
     return (
-        <section id="que-hacemos" className="min-h-screen bg-white py-16 px-4">
-            {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
-            <div className="container mx-auto max-w-6xl">
-                {/* Título principal - siempre visible */}
-                <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
-                    ENCONTRAMOS
-                    <br />QUE HACE LATIR
-                    <br />A TU MARCA
-                </h1>
+        <>
+            <section id="que-hacemos" className="hidden md:block min-h-screen bg-white py-16 px-4">
+                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+                <div className="container mx-auto max-w-6xl">
+                    {/* Título principal - siempre visible */}
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
+                        ENCONTRAMOS
+                        <br />QUE HACE LATIR
+                        <br />A TU MARCA
+                    </h1>
 
-                {/* Contenedor de secciones expandibles */}
-                <div className="flex flex-col md:flex-row h-[600px] md:h-[500px] gap-2 md:gap-4">
-                    {sections.map((section) => (
-                        <div
-                            key={section.id}
-                            className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
+                    {/* Contenedor de secciones expandibles */}
+                    <div className="flex flex-col md:flex-row h-[600px] md:h-[500px] gap-2 md:gap-4">
+                        {sections.map((section) => (
+                            <div
+                                key={section.id}
+                                className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
                 ${hoveredSection === section.id
-                                    ? "md:flex-[1.2] flex-[1]"
-                                    : hoveredSection === null
-                                        ? "md:flex-[1] flex-[1]"
-                                        : "md:flex-[0.5] flex-[1]"
-                                }
+                                        ? "md:flex-[1.2] flex-[1]"
+                                        : hoveredSection === null
+                                            ? "md:flex-[1] flex-[1]"
+                                            : "md:flex-[0.5] flex-[1]"
+                                    }
                 ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
               `}
-                            onMouseEnter={() => setHoveredSection(section.id)}
-                            onMouseLeave={() => setHoveredSection(null)}
-                        >
-                            {/* Fondo de imagen */}
-                            <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
-                                <Image
-                                    src={section.image && "/placeholder.svg"}
-                                    alt={section.title}
-                                    //   fill
-                                    width={400}
-                                    height={400}
-                                    className="object-cover grayscale h-full"
-                                />
-                                <div className="absolute inset-0 bg-black/0"></div>
-                            </div>
+                                onMouseEnter={() => setHoveredSection(section.id)}
+                                onMouseLeave={() => setHoveredSection(null)}
+                            >
+                                {/* Fondo de imagen */}
+                                <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
+                                    <Image
+                                        src={section.image || "/placeholder.svg"}
+                                        alt={section.title}
+                                        //   fill
+                                        width={400}
+                                        height={400}
+                                        className="object-cover grayscale h-full opacity-20"
+                                    />
+                                    <div className="absolute inset-0 bg-black/0"></div>
+                                </div>
 
-                            {/* Contenido */}
-                            <div className="relative z-10 flex flex-col h-full p-6 text-tigerlily">
-                                {/* Título siempre visible */}
-                                <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider font-bold">{section.title}</h2>
+                                {/* Contenido */}
+                                <div className="relative z-10 flex flex-col h-full p-6 text-tigerlily">
+                                    {/* Título siempre visible */}
+                                    <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider font-bold">{section.title}</h2>
 
-                                {/* Contenido expandido - visible solo en hover */}
-                                <div
-                                    className={`flex flex-col transition-opacity duration-900 
+                                    {/* Contenido expandido - visible solo en hover */}
+                                    <div
+                                        className={`flex flex-col transition-opacity duration-900 
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
-                                >
-                                    <p className="mb-4 font-bold text-xl">{section.description}</p>
+                                    >
+                                        <p className="mb-4 font-bold text-xl">{section.description}</p>
 
-                                    <ul className="space-y-2 mt-auto font-bold text-xl">
-                                        {section.services.map((service, index) => (
-                                            <li key={index} className="flex items-start">
-                                                <span className="mr-2 text-tigerlily">•</span>
-                                                <span>{service}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                        <ul className="space-y-2 mt-auto font-bold text-xl">
+                                            {section.services.map((service, index) => (
+                                                <li key={index} className="flex items-start">
+                                                    <span className="mr-2 text-tigerlily">•</span>
+                                                    <span>{service}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* MOBILE */}
+            <section id="que-hacemos" className="md:hidden block min-h-screen h-[200%] bg-white py-4 px-4">
+                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+                <div className="container mx-auto max-w-6xl">
+                    {/* Título principal - siempre visible */}
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl  text-center mb-4 tracking-wider">
+                        ENCONTRAMOS
+                        <br />QUE HACE LATIR
+                        <br />A TU MARCA
+                    </h1>
+
+                    {/* Contenedor de secciones expandibles */}
+                    <div className="flex flex-col h-[600px] gap-2 ">
+                        {sections.map((section) => (
+                            <div
+                                key={section.id}
+                                className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
+                ${hoveredSection === section.id
+                                        ? "flex-[4]"
+                                        : hoveredSection === null
+                                            ? "flex-[1]"
+                                            : "flex-[1]"
+                                    }
+                ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
+              `}
+                                onMouseEnter={() => setHoveredSection(section.id)}
+                                onMouseLeave={() => setHoveredSection(null)}
+                            >
+                                {/* Fondo de imagen */}
+                                <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
+                                    <Image
+                                        src={section.image || "/placeholder.svg"}
+                                        alt={section.title}
+                                        //   fill
+                                        width={400}
+                                        height={400}
+                                        className="object-cover grayscale h-full opacity-20"
+                                    />
+                                    <div className="absolute inset-0 bg-black/0"></div>
+                                </div>
+
+                                {/* Contenido */}
+                                <div className="relative z-10 flex flex-col h-full p-6 text-tigerlily">
+                                    {/* Título siempre visible */}
+                                    <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2>
+
+                                    {/* Contenido expandido - visible solo en hover */}
+                                    <div
+                                        className={`flex flex-col transition-opacity duration-900 
+                                                    ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
+                                                `}
+                                    >
+                                        <p className="mb-4 font-bold text-sm">{section.description}</p>
+
+                                        <ul className="space-y-2 mt-auto font-bold text-sm">
+                                            {section.services.map((service, index) => (
+                                                <li key={index} className="flex items-start">
+                                                    <span className="mr-2 text-tigerlily">•</span>
+                                                    <span>{service}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
     )
 }
