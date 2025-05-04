@@ -18,7 +18,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
         </div>
         <div className="text-white space-y-4">
           {bio.map((paragraph, index) => (
-            <p key={index} className="font-bold leading-relaxed text-xl">
+            <p key={index} className="font-bold leading-relaxed text-sm md:text-xl">
               {paragraph}
             </p>
           ))}

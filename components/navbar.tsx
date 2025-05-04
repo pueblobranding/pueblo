@@ -25,7 +25,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       {/* Hamburger Menu Button - Always visible */}
       <button
         onClick={toggleMenu}
-        className="fixed top-8 right-8 z-50 p-3 rounded-full bg-verde-opalo-80 hover:bg-verde-opalo-60 transition-colors cursor-pointer"
+        className="fixed top-4 md:top-8 right-4 md:right-8 z-50 p-2 md:p-3 rounded-full bg-verde-opalo-80 hover:bg-verde-opalo-60 transition-colors cursor-pointer"
         aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       >
         {isMenuOpen ? <X className="h-8 w-8 text-white" /> : <Menu className="h-8 w-8 text-white" />}

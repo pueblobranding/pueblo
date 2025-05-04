@@ -4,7 +4,7 @@ export default function ExperienciaSection() {
         <div className="max-w-3xl">
           <div className="relative mb-8">
             <div className="bg-[#f5f0e6] rounded-full py-4 px-12">
-              <h2 className="text-tigerlily font-dream-avenue text-6xl font-medium tracking-wider">EXPERIENCIA</h2>
+              <h2 className="text-tigerlily font-dream-avenue text-4xl md:text-6xl font-medium tracking-wider">EXPERIENCIA</h2>
             </div>
           </div>
   
