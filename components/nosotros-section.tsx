@@ -11,9 +11,9 @@ interface TeamMemberProps {
 
 function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
   return (
-    <div className="flex flex-col md:flex-row-reverse w-full mb-8 overflow-hidden">
-      <div className="p-6 md:p-8 md:w-3/4 relative">
-        <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl md:text-3xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider pl-10 relative -left-10 ">
+    <div className="flex flex-col md:flex-row-reverse w-full mb-8 overflow-hidden px-4">
+      <div className="p-4 md:p-8 md:w-3/4 relative">
+        <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl md:text-3xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider  relative -left-10 pl-10">
           HOLA! SOY {name}
         </div>
         <div className="text-white space-y-4">
@@ -24,7 +24,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
           ))}
         </div>
       </div>
-      <div className="relative h-[400px] w-[300px] ml-6 md:mt-8">
+      <div className="relative h-[400px] w-[310px] p-4 mx-auto md:mt-8">
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={`Foto de ${name}`}
@@ -71,7 +71,7 @@ export default function NosotrosSection() {
       <ExperienciaSection />
       <section id="nosotros" className="w-full bg-verde-opalo-100 py-16">
         {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           {/* <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2> */}
           <div className="flex flex-col gap-4">
             {teamMembers.map((member) => (
