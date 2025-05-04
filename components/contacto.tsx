@@ -56,7 +56,7 @@ export default function ContactoSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Información de contacto */}
                     <div className="text-white order-2 md:order-1 ml-8 " >
-                        <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">CONVERSEMOS</h2>
+                        <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">¿NOS TOMAMOS UN <br/> CAFÉ VIRTUAL?</h2>
 
                         <div className="space-y-6 text-verde-opalo-100">
 

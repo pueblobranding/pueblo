@@ -4,7 +4,7 @@ export default function SomosUnaAgencia() {
 
     return (
         <>
-            <section className="h-screen bg-white text-verde-opalo-100 px-4 py-24">
+            <section className="h-screen flex items-center bg-white text-verde-opalo-100 px-4 py-24">
                 <div className="container mx-auto max-w-6xl">
 
                     <div className="mb-8 flex flex-col items-center justify-center">
@@ -27,7 +27,7 @@ export default function SomosUnaAgencia() {
                 </div>
             </section>
 
-            <section className="h-screen bg-tigerlily text-white px-4 py-24">
+            <section className="h-screen flex items-center bg-tigerlily text-white px-4 py-24">
                 <article className="container mx-auto max-w-6xl">
 
                     <div className="mb-8 flex flex-col items-center justify-center">
