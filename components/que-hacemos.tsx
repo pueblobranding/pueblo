@@ -82,7 +82,7 @@ export default function QueHacemosSection() {
                                         //   fill
                                         width={400}
                                         height={400}
-                                        className="object-cover grayscale h-full opacity-20"
+                                        className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-10" : "opacity-80"}`}
                                     />
                                     <div className="absolute inset-0 bg-black/0"></div>
                                 </div>
@@ -152,7 +152,7 @@ export default function QueHacemosSection() {
                                         //   fill
                                         width={400}
                                         height={400}
-                                        className="object-cover grayscale h-full opacity-20"
+                                        className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
                                     />
                                     <div className="absolute inset-0 bg-black/0"></div>
                                 </div>
