@@ -18,7 +18,7 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
         </div>
         <div className="text-white space-y-4">
           {bio.map((paragraph, index) => (
-            <p key={index} className="font-bold leading-relaxed text-sm md:text-xl">
+            <p key={index} className="font-bold leading-relaxed text-sm xl:text-[1.1em] ">
               {paragraph}
             </p>
           ))}
@@ -73,7 +73,7 @@ export default function NosotrosSection() {
         {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
         <div className="container mx-auto">
           {/* <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2> */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:mx-40">
             {teamMembers.map((member) => (
               <TeamMember
                 key={member.name}
