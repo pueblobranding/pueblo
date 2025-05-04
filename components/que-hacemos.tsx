@@ -74,9 +74,9 @@ export default function QueHacemosSection() {
                             onMouseLeave={() => setHoveredSection(null)}
                         >
                             {/* Fondo de imagen */}
-                            <div className="absolute inset-0 z-0">
+                            <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
                                 <Image
-                                    src={section.image || "/placeholder.svg"}
+                                    src={section.image && "/placeholder.svg"}
                                     alt={section.title}
                                     //   fill
                                     width={400}
@@ -87,22 +87,22 @@ export default function QueHacemosSection() {
                             </div>
 
                             {/* Contenido */}
-                            <div className="relative z-10 flex flex-col h-full p-6 text-white">
+                            <div className="relative z-10 flex flex-col h-full p-6 text-tigerlily">
                                 {/* Título siempre visible */}
-                                <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider text-tigerlily font-bold">{section.title}</h2>
+                                <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider font-bold">{section.title}</h2>
 
                                 {/* Contenido expandido - visible solo en hover */}
                                 <div
                                     className={`flex flex-col transition-opacity duration-900 
-                    ${hoveredSection === section.id ? "opacity-100" : "opacity-0 md:hidden"}
-                  `}
+                                                    ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
+                                                `}
                                 >
-                                    <p className="mb-4">{section.description}</p>
+                                    <p className="mb-4 font-bold text-xl">{section.description}</p>
 
-                                    <ul className="space-y-2 mt-auto">
+                                    <ul className="space-y-2 mt-auto font-bold text-xl">
                                         {section.services.map((service, index) => (
                                             <li key={index} className="flex items-start">
-                                                <span className="mr-2 text-[#e85c44]">•</span>
+                                                <span className="mr-2 text-tigerlily">•</span>
                                                 <span>{service}</span>
                                             </li>
                                         ))}

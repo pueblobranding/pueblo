@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import ExperienciaSection from "./experiencia-section"
 
 interface TeamMemberProps {
   name: string
@@ -11,13 +12,13 @@ interface TeamMemberProps {
 function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
   return (
     <div className="flex flex-col md:flex-row-reverse w-full mb-8 overflow-hidden">
-      <div className="bg-[#3a5a47] p-6 md:p-8 md:w-3/4 relative">
+      <div className="p-6 md:p-8 md:w-3/4 relative">
         <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl md:text-3xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider pl-10 relative -left-10 ">
           HOLA! SOY {name}
         </div>
         <div className="text-white space-y-4">
           {bio.map((paragraph, index) => (
-            <p key={index} className="font-light leading-relaxed text-lg">
+            <p key={index} className="font-bold leading-relaxed text-xl">
               {paragraph}
             </p>
           ))}
@@ -66,22 +67,25 @@ export default function NosotrosSection() {
   ]
 
   return (
-    <section id="nosotros" className="w-full bg-[#3a5a47] py-16">
-      {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2>
-        <div className="flex flex-col gap-8">
-          {teamMembers.map((member) => (
-            <TeamMember
-              key={member.name}
-              name={member.name}
-              bio={member.bio}
-              linkedinUrl={member.linkedinUrl}
-              imageUrl={member.imageUrl}
-            />
-          ))}
+    <>
+      <ExperienciaSection />
+      <section id="nosotros" className="w-full bg-verde-opalo-100 py-16">
+        {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+        <div className="container mx-auto px-4">
+          {/* <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2> */}
+          <div className="flex flex-col gap-4">
+            {teamMembers.map((member) => (
+              <TeamMember
+                key={member.name}
+                name={member.name}
+                bio={member.bio}
+                linkedinUrl={member.linkedinUrl}
+                imageUrl={member.imageUrl}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
