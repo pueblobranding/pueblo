@@ -9,7 +9,7 @@ export default function SomosUnaAgencia() {
 
                     <div className="mb-8 flex flex-col items-center justify-center">
                         <Image
-                            src={"/logo.png"}
+                            src={"/logo-verde-bg-transparent.png"}
                             width={100}
                             height={100}
                             alt="logo pueblo"
@@ -40,11 +40,8 @@ export default function SomosUnaAgencia() {
                     </div>
 
                     <div className="text-center text-md md:text-2xl font-bold">
-                        <p>SOMOS UNA AGENCIA QUE COMBINA <br /> LO CREATIVO CON LO ESPIRITUAL.</p>
-                        <br />
-                        <p>EN PUEBLO HACEMOS COMUNICACIÓN CON CONSCIENCIA.<br /> TRANSFORMANDO MARCAS DESDE ADENTRO,<br />
-                            CONECTANDO CON SU ESENCIA Y DÁNDOLE VOZ CON PROPÓSITO.</p>
-
+                        <p>FUSIONAMOS LO PROFESIONAL Y LO ESENCIAL, <br />
+                        PARA CONTAR HISTORIAS QUE TOCAN EL CORAZON.</p>
                     </div>
                 </article>
             </section>

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import ExperienciaSection from "./experiencia-section"
+import SomosComunidad from "./somos-comunidad"
 
 interface TeamMemberProps {
   name: string
@@ -68,7 +68,7 @@ export default function NosotrosSection() {
 
   return (
     <>
-      <ExperienciaSection />
+      <SomosComunidad />
       <section id="nosotros" className="w-full bg-verde-opalo-100 py-16">
         {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
         <div className="container mx-auto">
