@@ -63,14 +63,14 @@ export default function QueHacemosSection() {
                             <div
                                 key={section.id}
                                 className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
-                ${hoveredSection === section.id
+                                        ${hoveredSection === section.id
                                         ? "md:flex-[1] flex-[1]"
                                         : hoveredSection === null
                                             ? "md:flex-[1] flex-[1]"
                                             : "md:flex-[0.5] flex-[1]"
-                                    }
-                ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
-              `}
+                                        }
+                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
+                                        `}
                                 onMouseEnter={() => setHoveredSection(section.id)}
                                 onMouseLeave={() => setHoveredSection(null)}
                             >
@@ -79,7 +79,6 @@ export default function QueHacemosSection() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
-                                        //   fill
                                         width={400}
                                         height={400}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-10" : "opacity-80"}`}
@@ -92,7 +91,7 @@ export default function QueHacemosSection() {
                                     {/* Título siempre visible */}
 
 
-                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl md:text-3xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider  relative -left-10 pl-10">
+                                    <div className="bg-tigerlily font-dream-avenue md:text-2xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider relative -left-8 pl-10 pt-3">
                                         {section.title}
                                     </div>
 
