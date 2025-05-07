@@ -96,7 +96,6 @@ export default function QueHacemosSection() {
                                         {section.title}
                                     </div>
 
-
                                     {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-2xl md:text-3xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
 
                                     {/* Contenido expandido - visible solo en hover */}
@@ -165,9 +164,12 @@ export default function QueHacemosSection() {
                                 </div>
 
                                 {/* Contenido */}
-                                <div className="relative z-10 flex flex-col h-full p-6 text-tigerlily">
+                                <div className="relative z-10 flex flex-col h-full p-4 text-tigerlily">
                                     {/* Título siempre visible */}
-                                    <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2>
+                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider relative -top-2 -left-10 pl-10">
+                                        {section.title}
+                                    </div>
+                                    {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
 
                                     {/* Contenido expandido - visible solo en hover */}
                                     <div
