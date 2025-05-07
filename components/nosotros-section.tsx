@@ -16,9 +16,9 @@ function TeamMember({ name, bio, linkedinUrl, imageUrl }: TeamMemberProps) {
         <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl md:text-3xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider  relative -left-10 pl-10">
           HOLA! SOY {name}
         </div>
-        <div className="text-white space-y-4">
+        <div className="text-[#424144] space-y-4">
           {bio.map((paragraph, index) => (
-            <p key={index} className="font-bold leading-relaxed text-sm xl:text-[1.1em] ">
+            <p key={index} className="font-bold leading-relaxed text-sm xl:text-[1.1em]">
               {paragraph}
             </p>
           ))}
@@ -69,10 +69,8 @@ export default function NosotrosSection() {
   return (
     <>
       <SomosComunidad />
-      <section id="nosotros" className="w-full bg-verde-opalo-100 py-16">
-        {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+      <section id="nosotros" className="w-full bg-white py-16">
         <div className="container mx-auto">
-          {/* <h2 className="text-4xl md:text-5xl text-white font-light tracking-wider mb-12 text-center">NOSOTROS</h2> */}
           <div className="flex flex-col gap-4 md:mx-40">
             {teamMembers.map((member) => (
               <TeamMember
