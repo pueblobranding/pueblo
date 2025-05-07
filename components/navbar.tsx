@@ -1,5 +1,6 @@
 "use client"
 import { Menu, X } from "lucide-react"
+import Image from "next/image";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
 
@@ -22,6 +23,13 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
 
   return (
     <>
+    <Image
+    src={"/logo-navbar.png"}
+    alt="asdasd"
+    height={200}
+    width={200}
+    className="fixed -top-2 md:-top-6 left-6 z-50 w-1/4 md:w-1/7"
+    />
       {/* Hamburger Menu Button - Always visible */}
       <button
         onClick={toggleMenu}
