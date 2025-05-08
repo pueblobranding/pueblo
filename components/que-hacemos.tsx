@@ -11,7 +11,7 @@ export default function QueHacemosSection() {
         {
             id: "branding",
             title: "BRANDING",
-            image: "/branding.png",
+            image: "/que-hacemos/1.webp",
             description:
                 "Realizamos consultoría uno a uno para determinar una identidad de marca única y diferencial que permita plasmar tus ideas en acciones concretas para tu público objetivo.",
             services: ["Desarrollo de identidad", "Naming", "Packaging", "Manual de marca"],
@@ -19,7 +19,7 @@ export default function QueHacemosSection() {
         {
             id: "comunicacion",
             title: "COMUNICACIÓN ESTRATÉGICA",
-            image: "/comunicacion.png",
+            image: "/que-hacemos/2.webp",
             description: "Elaboramos una estrategia alineada a los objetivos comerciales.",
             services: [
                 "Diseño y producción",
@@ -32,7 +32,7 @@ export default function QueHacemosSection() {
         {
             id: "difusion",
             title: "DIFUSIÓN Y PRENSA",
-            image: "/difusion.png",
+            image: "/que-hacemos/3.webp",
             description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
             services: [
                 "Comunicación con medios, canal comercial y consumidor final integrados",
@@ -79,9 +79,9 @@ export default function QueHacemosSection() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
-                                        width={400}
-                                        height={400}
-                                        className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-10" : "opacity-80"}`}
+                                        width={800}
+                                        height={600}
+                                        className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-40" : "opacity-80"}`}
                                     />
                                     <div className="absolute inset-0 bg-black/0"></div>
                                 </div>
