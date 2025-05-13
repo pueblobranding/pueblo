@@ -1,19 +1,32 @@
+'use client'
+
+import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
 import Instagram from "@/components/instagram"
+import Navbar from "@/components/navbar"
 import NosotrosSection from "@/components/nosotros-section"
-import PuebloBranding from "@/components/pueblo-branding"
+// import PuebloBranding from "@/components/pueblo-branding"
 import QueHacemosSection from "@/components/que-hacemos"
-import SomosUnaAgencia from "@/components/somos-una-agencia"
+import { useState } from "react"
+import EncontramosQueHace from '../components/carousel/encontramos-que-hace';
 
 
 export default function Page() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <>
-      <PuebloBranding />
-      <SomosUnaAgencia/>
-      <QueHacemosSection/>
+      <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <Carousel />
+      <EncontramosQueHace/>
+      {/* <PuebloBranding /> */}
+      <QueHacemosSection />
       <NosotrosSection />
-      <ContactoSection/>
+      <ContactoSection />
       <Instagram />
     </>
   )
