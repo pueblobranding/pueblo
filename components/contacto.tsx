@@ -45,11 +45,11 @@ export default function ContactoSection() {
     }
 
     return (
-        <section id="contacto" className="min-h-screen bg-white py-16 px-4 ">
+        <section id="contacto" className="min-h-screen bg-white flex items-center px-4 ">
             {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
-                <h1 style={{ fontFamily: 'dream-avenue'}} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider">
+                <h1 style={{ fontFamily: 'dream-avenue'}} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
                     CONTÁCTANOS
                 </h1>
 
