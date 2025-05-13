@@ -35,7 +35,7 @@ export default function Carousel() {
 
   return (
     <main>
-      <SimpleCarousel components={componentes} autoRotateInterval={3000} />
+      <SimpleCarousel components={componentes} autoRotateInterval={4000} />
     </main>
   )
 }
