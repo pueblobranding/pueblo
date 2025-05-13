@@ -47,7 +47,7 @@ export default function QueHacemosSection() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden md:block min-h-screen bg-white py-16 px-4">
+            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
                 {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
                     {/* Título principal - siempre visible */}
@@ -118,7 +118,7 @@ export default function QueHacemosSection() {
             </section>
 
             {/* MOBILE */}
-            <section id="que-hacemos" className="md:hidden block min-h-screen h-[200%] bg-white py-4 px-4">
+            <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
                 {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
                     {/* Título principal - siempre visible */}
