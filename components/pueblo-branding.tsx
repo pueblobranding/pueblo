@@ -1,26 +1,26 @@
 "use client"
 
 import { useState } from "react"
-import Navbar from "@/components/navbar"
+// import Navbar from "@/components/navbar"
 import Image from "next/image"
 
 export default function PuebloBranding() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen)
+  // }
 
   return (
-    <div id="inicio" className="flex flex-col items-center justify-center min-h-screen bg-[#486955] text-white p-4 relative ">
+    <div id="inicio" className="flex flex-col items-center justify-center min-h-screen bg-verde-opalo-100 text-white p-4 relative ">
       {/* Navbar Component */}
       {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
 
       {/* Main Content */}
-      <div
+      {/* <div
         className={`flex flex-col items-center justify-center transition-opacity duration-500 ${isMenuOpen ? "opacity-0" : "opacity-100"
           }`}
-      >
+      > */}
         {/* Custom logo */}
         <div className="mb-8">
           <Image
@@ -37,6 +37,6 @@ export default function PuebloBranding() {
         {/* Tagline */}
         <p className="text-[0.666em] md:text-[1em] tracking-[0.185em] -mr-[0.185em]">BRANDING Y COMUNICACIÓN ESTRATÉGICA</p>
       </div>
-    </div>
+    // </div>
   )
 }
