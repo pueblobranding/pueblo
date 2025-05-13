@@ -8,8 +8,6 @@ import NosotrosSection from "@/components/nosotros-section"
 // import PuebloBranding from "@/components/pueblo-branding"
 import QueHacemosSection from "@/components/que-hacemos"
 import { useState } from "react"
-import EncontramosQueHace from '../components/carousel/encontramos-que-hace';
-
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,7 +20,6 @@ export default function Page() {
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <Carousel />
-      <EncontramosQueHace/>
       {/* <PuebloBranding /> */}
       <QueHacemosSection />
       <NosotrosSection />
