@@ -50,7 +50,7 @@ export default function ContactoSection() {
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
                 <h1 style={{ fontFamily: 'dream-avenue'}} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
-                    CONTÁCTANOS
+                    CONTACTANOS
                 </h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
