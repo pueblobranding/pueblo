@@ -10,8 +10,8 @@ export default function FusionamosLoProfesional() {
                     <div className="mb-8 flex flex-col items-center justify-center">
                         <Image
                             src={"/pueblologo-blanco-rojo.svg"}
-                            width={250}
-                            height={250}
+                            width={100}
+                            height={100}
                             alt="logo pueblo"
                         />
                     </div>
@@ -19,6 +19,7 @@ export default function FusionamosLoProfesional() {
                     <div className="text-center text-md md:text-2xl font-bold">
                         <p>FUSIONAMOS LO PROFESIONAL Y LO ESENCIAL, <br />
                             PARA CONTAR HISTORIAS QUE TOCAN EL CORAZON.</p>
+                            <br></br>
                     </div>
                 </article>
             </section>
