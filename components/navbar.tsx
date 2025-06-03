@@ -1,8 +1,8 @@
 "use client"
 import { Menu, X } from "lucide-react"
 import Image from "next/image";
-import Link from "next/link"
-import { useRouter, usePathname } from "next/navigation"; // Importa useRouter y usePathname
+import Link from "next/link" // Asegúrate de que Link está importado
+import { useRouter, usePathname } from "next/navigation";
 import { MouseEvent } from "react";
 
 interface NavbarProps {
@@ -13,7 +13,7 @@ interface NavbarProps {
 export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
 
   const router = useRouter();
-  const pathname = usePathname(); // Obtiene la ruta actual
+  const pathname = usePathname();
 
   // Función para manejar los clicks en los enlaces de navegación dentro del menú
   const handleMenuLinkClick = (href: string) => {
@@ -26,14 +26,12 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
 
       // Si ya estamos en la página principal ('/')
       if (pathname === '/') {
-        // Encuentra el elemento por su ID
+        // Intenta encontrar el elemento por su ID y hacer scroll suave
         const element = document.getElementById(id);
         if (element) {
-          // Si el elemento existe, haz scroll suave a él
           element.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // Si el elemento no se encuentra (error en ID, etc.), fallback: usa router.push
-          // Aunque con "use client", document está disponible, es buena práctica.
+          // Si el elemento no se encuentra, navega normalmente como fallback
            router.push(href);
         }
       } else {
@@ -48,8 +46,10 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
   };
 
   // Función para manejar el click del logo (scroll suave al tope de la PÁGINA ACTUAL)
+  // Esta función ahora se usará en el onClick del <Link href="/">
   const handleLogoClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    // Previene el comportamiento por defecto del <a> (navegación)
+    // Previene el comportamiento por defecto del <Link> (que sería navegar a href="/").
+    // Esto es crucial para que solo se ejecute nuestro scroll.
     e.preventDefault();
 
     // Realiza el scroll suave a la parte superior de la ventana actual
@@ -70,9 +70,10 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       <div className="fixed top-0 w-full h-16 md:h-20 bg-verde-opalo-100 z-30"></div>
 
       {/* Logo Clickable - Posicionado sobre la banda verde */}
-      <a
-        href="/" // Mantén href="/" para que 'abrir en nueva pestaña' funcione y vaya a la home
-        onClick={handleLogoClick} // Este click manejado por JS prevalece para el click normal y hace scroll suave
+      {/* >>> USAMOS <Link> EN LUGAR DE <a> PARA EL LOGO <<< */}
+      <Link
+        href="/" // Usamos href="/" para cumplir con la convención de Next.js
+        onClick={handleLogoClick} // Mantenemos el onClick para manejar el scroll suave en la página actual
         className="fixed -top-2 md:-top-6 left-6 z-50 w-1/4 md:w-1/7 cursor-pointer"
         aria-label="Volver al inicio de la página"
       >
@@ -83,7 +84,8 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           width={200}
           className="w-full h-auto"
         />
-      </a>
+      </Link>
+
 
       {/* Hamburger Menu Button - Always visible - Posicionado sobre la banda verde */}
       <button
@@ -98,7 +100,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       <div
         className={`
           fixed top-0 bottom-0 right-0 w-1/2
-          bg-[#2a4a37] z-40
+          bg-[#2a4a37ef] z-40
           flex flex-col items-center justify-center
           transition-transform duration-500 ease-in-out
           ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
