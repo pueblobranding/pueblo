@@ -10,7 +10,7 @@ export default function EnPuebloHacemos
 
                     <div className="mb-8 flex flex-col items-center justify-center">
                         <Image
-                            src={"/logo-verde-bg-transparent.png"}
+                            src={"/pueblologo-verde.svg"}
                             width={100}
                             height={100}
                             alt="logo pueblo"

@@ -24,7 +24,7 @@ export default function PuebloBranding() {
         {/* Custom logo */}
         <div className="mb-8">
           <Image
-            src={"/pueblo-logo-transparente.svg"}
+            src={"/pueblologo-blanco.svg"}
             width={250}
             height={250}
             alt="logo pueblo"
