@@ -13,7 +13,7 @@ interface NavbarProps {
 export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
 
   const router = useRouter();
-
+  
   // Función para manejar los clicks en los enlaces de navegación dentro del menú
   const handleNavLinkClick = (href: string) => {
     // Cierra el menú antes de navegar/scroll
@@ -97,10 +97,10 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           <Link href="#que-hacemos" onClick={() => handleNavLinkClick("#que-hacemos")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             QUE HACEMOS
           </Link>
-          <Link href="/nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
-            NOSOTROS
+          <Link href="/nosotras" onClick={() => handleNavLinkClick("/nosotras")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+            NOSOTRAS
           </Link>
-          <Link href="/contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="#contacto" onClick={() => handleNavLinkClick("#contacto")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             CONTACTO
           </Link>
         </nav>
