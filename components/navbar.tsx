@@ -91,16 +91,16 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
         {/* El <nav> es el contenido que se centrará dentro del div anterior */}
         <nav className="flex flex-col items-center space-y-8 text-md md:text-2xl text-white">
           {/* Los Links se centran HORIZONTALMENTE dentro del <nav> gracias a items-center */}
-          <Link href="/" onClick={() => handleNavLinkClick("/")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/" onClick={() => handleNavLinkClick("/")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             INICIO
           </Link>
-          <Link href="#que-hacemos" onClick={() => handleNavLinkClick("#que-hacemos")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="#que-hacemos" onClick={() => handleNavLinkClick("#que-hacemos")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             QUE HACEMOS
           </Link>
-          <Link href="/nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/nosotros" onClick={() => handleNavLinkClick("/nosotros")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             NOSOTROS
           </Link>
-          <Link href="/contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-gray-300 transition-colors tracking-wider">
+          <Link href="/contacto" onClick={() => handleNavLinkClick("/contacto")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
             CONTACTO
           </Link>
         </nav>
