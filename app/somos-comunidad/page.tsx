@@ -1,7 +1,7 @@
 'use client'
 
 import Navbar from '@/components/navbar'
-import NosotrosSection from '@/components/nosotros-section'
+import SomosComunidad from '@/components/somos-comunidad'
 import React, { useState } from 'react'
 
 function NosotrasPage() {
@@ -14,7 +14,7 @@ function NosotrasPage() {
     return (
         <>
             <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-            <NosotrosSection />
+            <SomosComunidad />
         </>
     )
 }

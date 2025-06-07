@@ -56,10 +56,9 @@ export default function NosotrosSection() {
     {
       name: "NAT",
       bio: [
-        "Trabajo en Comunicación Estratégica hace 20 años, deseando cada vez más generar conexiones auténticas que respondan a los deseos personales y no al revés. ",
-        "En el camino, descubrí que mi vocación también estaba en la sanación y mi faceta holística fue integrando herramientas como la Astrología,  el Reiki y la Biodecodificación para acompañar a otros en su proceso de crecimiento.",
-        "Hoy, en PUEBLO, fusiono estos dos mundos. Cada proyecto es una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que cuenten historias reales que transformen y contagien lo más genuino de su esencia.",
-       
+        "Trabajé durante casi 20 años en Comunicación Estratégica, combinando mi pasión por el marketing con el deseo de generar conexiones auténticas.",
+        "Sumergida en el universo corporativo, entendí la importancia de construir mensajes desde historias reales. En el camino, descubrí que mi vocación también estaba en la sanación y mi faceta holística comenzó a florecer, integrando herramientas como la Astrología, el Reiki y la Biodecodificación para acompañar a otros en su proceso de crecimiento.",
+        "Hoy, en PUEBLO, fusiono estos dos mundos. Cada proyecto se convierte en una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que también transformen y contagien lo más genuino de su esencia.",
       ],
       linkedinUrl: "https://www.linkedin.com/in/natpierro/",
       imageUrl: "/nat.png",

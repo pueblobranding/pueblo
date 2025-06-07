@@ -36,7 +36,7 @@ export default function NosotrasSection3() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
+            <section id="nosotras" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
                 <div className="container mx-auto max-w-5xl">
 
                     {/* Contenedor de secciones expandibles */}
