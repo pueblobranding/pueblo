@@ -32,7 +32,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           element.scrollIntoView({ behavior: 'smooth' });
         } else {
           // Si el elemento no se encuentra, navega normalmente como fallback
-           router.push(href);
+          router.push(href);
         }
       } else {
         // Si NO estamos en la página principal, navega a la página principal con el ancla.
@@ -69,21 +69,24 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       {/* Banda verde fija de fondo de la navbar */}
       <div className="fixed top-0 w-full h-16 md:h-20 bg-verde-opalo-100 z-30"></div>
 
-      {/* Logo Clickable - Posicionado sobre la banda verde */}
-      {/* >>> USAMOS <Link> EN LUGAR DE <a> PARA EL LOGO <<< */}
       <Link
         href="/" // Usamos href="/" para cumplir con la convención de Next.js
         onClick={handleLogoClick} // Mantenemos el onClick para manejar el scroll suave en la página actual
-        className="fixed -top-2 md:-top-6 left-6 z-50 w-1/4 md:w-1/7 cursor-pointer"
+        className="fixed pt-6 md:pt-12 left-6 z-50 w-28 md:w-32 cursor-pointer"
         aria-label="Volver al inicio de la página"
       >
-        <Image
-          src={"/logo-navbar.png"}
-          alt="Logo de la navbar"
-          height={200}
-          width={200}
-          className="w-full h-auto"
-        />
+        <div className="flex flex-col items-center justify-center bg-verde-opalo-100 rounded-b-full"
+        >
+          <Image
+            src={"/pueblologo-blanco.svg"}
+            alt="Logo de la navbar"
+            height={10}
+            width={10}
+            className="w-full h-6 md:h-10"
+          />
+          <h5 className="text-xs md:text-sm text-white tracking-[0.453em] -mr-[0.453em] mt-2 mb-12"
+          >PUEBLO</h5>
+        </div>
       </Link>
 
 
