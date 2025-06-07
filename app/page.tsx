@@ -9,6 +9,7 @@ import NosotrasSection3 from "@/components/nosotras-3"
 import NosotrosSection from "@/components/nosotros-section"
 // import PuebloBranding from "@/components/pueblo-branding"
 import QueHacemosSection from "@/components/que-hacemos"
+import SomosComunidad from "@/components/somos-comunidad"
 import { useState } from "react"
 
 export default function Page() {
@@ -22,9 +23,10 @@ export default function Page() {
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       {/* <PuebloBranding /> */}
-      <Carousel />
       <Main />
+      <Carousel />
       <QueHacemosSection />
+      <SomosComunidad/>
       <NosotrasSection3 />
       <NosotrosSection />
       <ContactoSection />
