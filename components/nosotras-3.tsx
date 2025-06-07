@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function NosotrasSection3() {
 
@@ -39,7 +40,7 @@ export default function NosotrasSection3() {
                 <div className="container mx-auto max-w-5xl">
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col md:flex-row h-[600px] md:h-[34rem] gap-2 md:gap-4">
+                    <div className="flex flex-col md:flex-row h-[600px] md:h-[35rem] gap-2 md:gap-4">
                         {teamMembers.map((section) => (
                             <div
                                 key={section.id}
@@ -88,6 +89,12 @@ export default function NosotrasSection3() {
                                             ))}
                                         </div>
 
+                                    <div className="absolute bottom-4 right-0 bg-white/80 px-4 py-1 text-xs rounded-l-full">
+                                        <Link href={section.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#e85c44] hover:underline">
+                                            {section.linkedinUrl.replace("https://", "")}
+                                        </Link>
+                                    </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -116,9 +123,9 @@ export default function NosotrasSection3() {
                                     }
                                     ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
                                 `}
-                                    onMouseEnter={() => setHoveredSection(section.id)}
-                                    onMouseLeave={() => setHoveredSection(null)}
-                                >
+                                onMouseEnter={() => setHoveredSection(section.id)}
+                                onMouseLeave={() => setHoveredSection(null)}
+                            >
                                 {/* Fondo de imagen */}
                                 <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
                                     <Image
