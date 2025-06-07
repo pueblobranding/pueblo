@@ -4,7 +4,7 @@ export default function FusionamosLoProfesional() {
 
     return (
         <>
-            <section className="h-screen flex items-center bg-tigerlily text-white px-4 py-24">
+            <section className="h-full flex items-center bg-tigerlily text-white px-4 py-24">
                 <article className="container mx-auto max-w-6xl">
 
                     <div className="mb-8 flex flex-col items-center justify-center">

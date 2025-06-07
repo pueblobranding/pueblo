@@ -3,6 +3,7 @@
 import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
 import Instagram from "@/components/instagram"
+import Main from "@/components/main"
 import Navbar from "@/components/navbar"
 import NosotrosSection from "@/components/nosotros-section"
 // import PuebloBranding from "@/components/pueblo-branding"
@@ -19,9 +20,10 @@ export default function Page() {
   return (
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      <Carousel />
       {/* <PuebloBranding /> */}
+      <Carousel/>
       <QueHacemosSection />
+      <Main />
       <NosotrosSection />
       <ContactoSection />
       <Instagram />

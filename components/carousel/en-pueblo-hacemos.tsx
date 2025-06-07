@@ -5,7 +5,7 @@ export default function EnPuebloHacemos
 
     return (
         <>
-            <section className="h-screen flex items-center bg-white text-verde-opalo-100 px-4 py-24">
+            <section className="h-full flex items-center bg-white text-verde-opalo-100 px-4 py-24">
                 <div className="container mx-auto max-w-6xl">
 
                     <div className="mb-8 flex flex-col items-center justify-center">

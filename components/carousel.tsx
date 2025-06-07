@@ -9,8 +9,8 @@ export default function Carousel() {
   const componentes = [<PuebloBranding key="one" />, <EnPuebloHacemos key="two" />, <FusionamosLoProfesional key="three" />, <EncontramosQueHace key="four"/>]
 
   return (
-    <main>
+    <div className="p-40">
       <SimpleCarousel components={componentes} autoRotateInterval={4000} />
-    </main>
+    </div>
   )
 }
