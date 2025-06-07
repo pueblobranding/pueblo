@@ -5,6 +5,7 @@ import ContactoSection from "@/components/contacto"
 import Instagram from "@/components/instagram"
 import Main from "@/components/main"
 import Navbar from "@/components/navbar"
+import NosotrasSection3 from "@/components/nosotras-3"
 import NosotrosSection from "@/components/nosotros-section"
 // import PuebloBranding from "@/components/pueblo-branding"
 import QueHacemosSection from "@/components/que-hacemos"
@@ -21,9 +22,10 @@ export default function Page() {
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       {/* <PuebloBranding /> */}
-      <Carousel/>
+      <Carousel />
       <QueHacemosSection />
-      <Main />
+      {/* <Main /> */}
+      <NosotrasSection3 />
       <NosotrosSection />
       <ContactoSection />
       <Instagram />

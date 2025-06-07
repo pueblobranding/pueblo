@@ -3,63 +3,44 @@
 import { useState } from "react"
 import Image from "next/image"
 
-export default function QueHacemosSection() {
+export default function NosotrasSection3() {
 
     const [hoveredSection, setHoveredSection] = useState<string | null>(null)
 
-    const sections = [
+    const teamMembers = [
         {
-            id: "branding",
-            title: "BRANDING",
-            image: "/que-hacemos/1.webp",
-            description:
-                "Realizamos consultoría uno a uno para determinar una identidad de marca única y diferencial que permita plasmar tus ideas en acciones concretas para tu público objetivo.",
-            services: ["Desarrollo de identidad", "Naming", "Packaging", "Manual de marca"],
+            id: "MACHI",
+            title: "MACHI",
+            bio: [
+                "Nací en Mar del Plata, donde el mar me enseñó a respirar profundamente y a conectarme con la naturaleza. Pero mi alma inquieta me llevó a buscar nuevos horizontes en Buenos Aires.",
+                "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.",
+                "En Pueblo me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.",
+            ],
+            linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
+            image: "/mechi.png",
         },
         {
-            id: "comunicacion",
-            title: "COMUNICACIÓN ESTRATÉGICA",
-            image: "/que-hacemos/2.webp",
-            description: "Elaboramos una estrategia alineada a los objetivos comerciales.",
-            services: [
-                "Diseño y producción",
-                "Marketing digital",
-                "Redes sociales",
-                "Estrategia y contenidos audiovisuales para redes",
-                "Campañas de Google Ads",
+            id: "NAT",
+            title: "NAT",
+            bio: [
+                "Trabajo en Comunicación Estratégica hace 20 años, deseando cada vez más generar conexiones auténticas que respondan a los deseos personales y no al revés. ",
+                "En el camino, descubrí que mi vocación también estaba en la sanación y mi faceta holística fue integrando herramientas como la Astrología,  el Reiki y la Biodecodificación para acompañar a otros en su proceso de crecimiento.",
+                "Hoy, en PUEBLO, fusiono estos dos mundos. Cada proyecto es una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que cuenten historias reales que transformen y contagien lo más genuino de su esencia.",
+
             ],
-        },
-        {
-            id: "difusion",
-            title: "DIFUSIÓN Y PRENSA",
-            image: "/que-hacemos/3.webp",
-            description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
-            services: [
-                "Comunicación con medios, canal comercial y consumidor final integrados",
-                "Organización de eventos y activaciones en punto de venta",
-                "Diseño de invitaciones",
-                "Gestión de invitados",
-                "Envío de invitaciones follow up",
-                "Contacto para invitados y periodistas",
-            ],
+            linkedinUrl: "https://www.linkedin.com/in/natpierro/",
+            image: "/nat.png",
         },
     ]
 
     return (
         <>
             <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
-                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
-                <div className="container mx-auto max-w-6xl">
-                    {/* Título principal - siempre visible */}
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
-                        ENCONTRAMOS
-                        <br />QUE HACE LATIR
-                        <br />A TU MARCA
-                    </h1>
+                <div className="container mx-auto max-w-5xl">
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col md:flex-row h-[600px] md:h-[400px] gap-2 md:gap-4">
-                        {sections.map((section) => (
+                    <div className="flex flex-col md:flex-row h-[600px] md:h-[34rem] gap-2 md:gap-4">
+                        {teamMembers.map((section) => (
                             <div
                                 key={section.id}
                                 className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
@@ -68,8 +49,8 @@ export default function QueHacemosSection() {
                                         : hoveredSection === null
                                             ? "md:flex-[1] flex-[1]"
                                             : "md:flex-[0.5] flex-[1]"
-                                        }
-                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-60" : "opacity-100"}
+                                    }
+                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
                                         `}
                                 onMouseEnter={() => setHoveredSection(section.id)}
                                 onMouseLeave={() => setHoveredSection(null)}
@@ -90,25 +71,23 @@ export default function QueHacemosSection() {
                                 <div className="relative z-10 flex flex-col h-full pt-6 pl-2 text-tigerlily ">
                                     {/* Título siempre visible */}
                                     <div className="bg-tigerlily  font-bold text-white rounded-r-full inline-block mb-4 relative -left-8 pl-10 pt-3 pb-2">
-                                        {section.title}
+                                        HOLA! SOY {section.title}
                                     </div>
 
                                     {/* Contenido expandido - visible solo en hover */}
                                     <div
-                                        className={`flex flex-col transition-opacity duration-900 w-[24rem] ml-8 text-[#424144]
+                                        className={`flex flex-col transition-opacity duration-900 w-[24rem] ml-8
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                     >
-                                        <p className="mb-4 font-bold text-[1rem]">{section.description}</p>
-
-                                        <ul className="space-y-2 mt-auto font-bold text-[1rem]]">
-                                            {section.services.map((service, index) => (
-                                                <li key={index} className="flex items-start">
-                                                    <span className="mr-2 text-tigerlily">•</span>
-                                                    <span>{service}</span>
-                                                </li>
+                                        <div className="text-[#424144] space-y-4">
+                                            {section.bio.map((paragraph, index) => (
+                                                <p key={index} className="font-bold leading-relaxed w-128 text-sm xl:text-[1.1rem]">
+                                                    {paragraph}
+                                                </p>
                                             ))}
-                                        </ul>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -117,34 +96,29 @@ export default function QueHacemosSection() {
                 </div>
             </section>
 
-            {/* MOBILE */}
-            <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
-                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+
+
+            {/* M O B I L E */}
+            <section id="que-hacemos" className="md:hidden flex items-center h-[200%] bg-white py-4 px-4">
                 <div className="container mx-auto max-w-6xl">
-                    {/* Título principal - siempre visible */}
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl  text-center mb-4 tracking-wider">
-                        ENCONTRAMOS
-                        <br />QUE HACE LATIR
-                        <br />A TU MARCA
-                    </h1>
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col h-[600px] gap-2 ">
-                        {sections.map((section) => (
+                    <div className="flex flex-col h-[40rem] gap-2 ">
+                        {teamMembers.map((section) => (
                             <div
                                 key={section.id}
                                 className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
-                ${hoveredSection === section.id
+                                    ${hoveredSection === section.id
                                         ? "flex-[4]"
                                         : hoveredSection === null
                                             ? "flex-[1]"
                                             : "flex-[1]"
                                     }
-                ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
-              `}
-                                onMouseEnter={() => setHoveredSection(section.id)}
-                                onMouseLeave={() => setHoveredSection(null)}
-                            >
+                                    ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
+                                `}
+                                    onMouseEnter={() => setHoveredSection(section.id)}
+                                    onMouseLeave={() => setHoveredSection(null)}
+                                >
                                 {/* Fondo de imagen */}
                                 <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
                                     <Image
@@ -162,9 +136,8 @@ export default function QueHacemosSection() {
                                 <div className="relative z-10 flex flex-col h-full p-4 text-tigerlily">
                                     {/* Título siempre visible */}
                                     <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider relative -top-2 -left-10 pl-10">
-                                        {section.title}
+                                        HOLA! SOY {section.title}
                                     </div>
-                                    {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
 
                                     {/* Contenido expandido - visible solo en hover */}
                                     <div
@@ -172,16 +145,16 @@ export default function QueHacemosSection() {
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                     >
-                                        <p className="mb-4 font-bold text-sm">{section.description}</p>
 
-                                        <ul className="space-y-2 mt-auto font-bold text-sm">
-                                            {section.services.map((service, index) => (
-                                                <li key={index} className="flex items-start">
-                                                    <span className="mr-2 text-tigerlily">•</span>
-                                                    <span>{service}</span>
-                                                </li>
+                                        <div className="text-[#424144] space-y-4">
+                                            {section.bio.map((paragraph, index) => (
+                                                <p key={index} className="font-bold leading-relaxed text-[0.8em]">
+                                                    {paragraph}
+                                                </p>
                                             ))}
-                                        </ul>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
