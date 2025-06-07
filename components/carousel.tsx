@@ -9,7 +9,7 @@ export default function Carousel() {
   const componentes = [<PuebloBranding key="one" />, <EnPuebloHacemos key="two" />, <FusionamosLoProfesional key="three" />, <EncontramosQueHace key="four"/>]
 
   return (
-    <div className="p-40">
+    <div className="px-10 py-32">
       <SimpleCarousel components={componentes} autoRotateInterval={4000} />
     </div>
   )
