@@ -100,7 +100,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       <div
         className={`
           fixed top-0 bottom-0 right-0 w-1/2
-          bg-[#2a4a37ef] z-40
+          bg-[#2a4a37] z-40
           flex flex-col items-center justify-center
           transition-transform duration-500 ease-in-out
           ${isMenuOpen ? "translate-x-0" : "translate-x-full"}

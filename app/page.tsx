@@ -23,12 +23,12 @@ export default function Page() {
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       {/* <PuebloBranding /> */}
       <Carousel />
+      <Main />
       <QueHacemosSection />
-      {/* <Main /> */}
       <NosotrasSection3 />
       <NosotrosSection />
       <ContactoSection />
-      <Instagram />
+      {/* <Instagram /> */}
     </>
   )
 }
