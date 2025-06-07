@@ -7,7 +7,7 @@ export default function Main() {
 
   return (
     <>
-      <div id="inicio" className="flex flex-col items-center justify-center min-h-screen bg-verde-opalo-100 text-white p-4 relative ">
+      <div id="inicio" className="flex flex-col items-center justify-center h-128 bg-verde-opalo-100 text-white p-4 relative pt-20">
 
         <div className="mb-8">
           <Image

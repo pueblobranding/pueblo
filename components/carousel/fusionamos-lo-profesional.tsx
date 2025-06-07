@@ -9,7 +9,7 @@ export default function FusionamosLoProfesional() {
 
                     <div className="mb-8 flex flex-col items-center justify-center">
                         <Image
-                            src={"/pueblologo-blanco-rojo.svg"}
+                            src={"/pueblologo-blanco.svg"}
                             width={100}
                             height={100}
                             alt="logo pueblo"
