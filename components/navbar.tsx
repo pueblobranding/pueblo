@@ -104,29 +104,28 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           flex flex-col items-center justify-center
           transition-transform duration-500 ease-in-out
           ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
-          overflow-y-auto
         `}
       >
-        <nav className="flex flex-col items-center space-y-8 text-md md:text-2xl text-white">
+        <nav className="flex flex-col items-center space-y-8 text-sm md:text-2xl text-white font-semibold tracking-normal md:tracking-widest">
           {/* Usamos handleMenuLinkClick para todos los enlaces del menú */}
           {/* href sigue siendo necesario para Link y para funcionalidades como 'abrir en nueva pestaña' */}
-          <Link href="/" onClick={() => handleMenuLinkClick("/")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="/" onClick={() => handleMenuLinkClick("/")} className="hover:text-verde-opalo-60 transition-colors">
             INICIO
           </Link>
 
-          <Link href="/#que-hacemos" onClick={() => handleMenuLinkClick("/#que-hacemos")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="/#que-hacemos" onClick={() => handleMenuLinkClick("/#que-hacemos")} className="hover:text-verde-opalo-60 transition-colors">
             QUE HACEMOS
           </Link>
 
-          <Link href="/somos-comunidad" onClick={() => handleMenuLinkClick("/somos-comunidad")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="/somos-comunidad" onClick={() => handleMenuLinkClick("/somos-comunidad")} className="hover:text-verde-opalo-60 transition-colors">
             SOMOS COMUNIDAD
           </Link>
 
-          <Link href="/#nosotras" onClick={() => handleMenuLinkClick("/#nosotras")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="/#nosotras" onClick={() => handleMenuLinkClick("/#nosotras")} className="hover:text-verde-opalo-60 transition-colors">
             NOSOTRAS
           </Link>
 
-          <Link href="/#contacto" onClick={() => handleMenuLinkClick("/#contacto")} className="hover:text-verde-opalo-60 transition-colors tracking-wider">
+          <Link href="/#contacto" onClick={() => handleMenuLinkClick("/#contacto")} className="hover:text-verde-opalo-60 transition-colors">
             CONTACTO
           </Link>
         </nav>
