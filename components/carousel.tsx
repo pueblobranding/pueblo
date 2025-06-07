@@ -1,6 +1,6 @@
 import SimpleCarousel from "@/components/carousel/simple-carousel"
 import FusionamosLoProfesional from "./carousel/fusionamos-lo-profesional"
-import PuebloBranding from "./pueblo-branding"
+import PuebloBranding from "./carousel/pueblo-branding"
 import EnPuebloHacemos from "./carousel/en-pueblo-hacemos"
 import EncontramosQueHace from "./carousel/encontramos-que-hace"
 
