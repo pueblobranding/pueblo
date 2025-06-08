@@ -30,7 +30,7 @@ export default function NosotrasSection3() {
 
             ],
             linkedinUrl: "https://www.linkedin.com/in/natpierro/",
-            image: "/nat.png",
+            image: "/nat3.png",
         },
     ]
 
@@ -65,7 +65,6 @@ export default function NosotrasSection3() {
                                         height={600}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
                                     />
-                                    {/* <div className="absolute inset-0 bg-black/0"></div> */}
                                 </div>
 
                                 {/* Contenido */}

@@ -6,9 +6,9 @@ export default function SomosComunidad() {
 
           <h2 className="font-dream-avenue text-4xl md:text-6xl font-medium tracking-wider">SOMOS COMUNIDAD</h2>
 
-          <p className="font-bold ">
+          {/* <p className="font-bold ">
             A través del coaching estratégico y de la escucha activa con el cliente, planificamos en conjunto los pasos a dar en el camino.
-          </p>
+          </p> */}
 
           <p className="">
             Creemos en el poder colaborativo por eso conformamos una comunidad con los mejores profesionales y especialistas del mercado para abordar todas las áreas específicas que tu empresa necesita.

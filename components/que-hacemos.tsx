@@ -47,14 +47,17 @@ export default function QueHacemosSection() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
+            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py- px-4">
                 {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
                     {/* Título principal - siempre visible */}
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
+                    {/* <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
                         ENCONTRAMOS
                         <br />QUE HACE LATIR
                         <br />A TU MARCA
+                    </h1> */}
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
+                        QUE HACEMOS
                     </h1>
 
                     {/* Contenedor de secciones expandibles */}
@@ -68,7 +71,7 @@ export default function QueHacemosSection() {
                                         : hoveredSection === null
                                             ? "md:flex-[1] flex-[1]"
                                             : "md:flex-[0.5] flex-[1]"
-                                        }
+                                    }
                                             ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-60" : "opacity-100"}
                                         `}
                                 onMouseEnter={() => setHoveredSection(section.id)}
