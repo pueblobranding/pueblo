@@ -147,7 +147,7 @@ export default function ContactoSection() {
     }
 
     return (
-        <section id="contacto" className="min-h-screen bg-white flex items-center px-4 ">
+        <section id="contacto" className="min-h-screen bg-white flex items-center px-4 mb-20">
             {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
@@ -173,7 +173,7 @@ export default function ContactoSection() {
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-LG font-light mb-2">ARGENTINA</h3> */}
                                 <Phone />
-                                <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors">
+                                <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors tracking-wider">
                                     +549 11 3322 6434 (ARG)
                                 </a>
                             </div>
@@ -181,7 +181,7 @@ export default function ContactoSection() {
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-LG font-light mb-2">URUGUAY</h3> */}
                                 <Phone />
-                                <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors">
+                                <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors tracking-wider">
                                     +598 094 500 560 (URU)
                                 </a>
                             </div>

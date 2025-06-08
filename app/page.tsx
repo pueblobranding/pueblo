@@ -2,6 +2,7 @@
 
 import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
+import Footer from "@/components/footer"
 import Main from "@/components/main"
 import Navbar from "@/components/navbar"
 import NosotrasSection3 from "@/components/nosotras-3"
@@ -28,6 +29,7 @@ export default function Page() {
       {/* <NosotrosSection /> */}
       <ContactoSection />
       {/* <Instagram /> */}
+      <Footer/>
     </>
   )
 }
