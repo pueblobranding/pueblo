@@ -72,19 +72,19 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
       <Link
         href="/" // Usamos href="/" para cumplir con la convención de Next.js
         onClick={handleLogoClick} // Mantenemos el onClick para manejar el scroll suave en la página actual
-        className="fixed pt-6 md:pt-12 left-6 z-50 w-28 md:w-32 cursor-pointer"
+        className="fixed pt-6 md:pt-12 left-2 md:left-8 z-50 w-24 md:w-32 cursor-pointer"
         aria-label="Volver al inicio de la página"
       >
-        <div className="flex flex-col items-center justify-center bg-verde-opalo-100 rounded-b-full"
+        <div className="flex flex-col items-center justify-center bg-verde-opalo-100 rounded-b-full h-22 md:h-24"
         >
           <Image
             src={"/pueblologo-blanco.svg"}
             alt="Logo de la navbar"
             height={10}
             width={10}
-            className="w-full h-6 md:h-10"
+            className="fixed top-8 w-12 h-6 md:h-8"
           />
-          <h5 className="text-xs md:text-sm text-white tracking-[0.453em] -mr-[0.453em] mt-2 mb-12"
+          <h5 className="fixed text-xs md:text-[0.9rem] text-white tracking-[0.453em] -mr-[0.453em] top-15 md:top-19"
           >PUEBLO</h5>
         </div>
       </Link>
