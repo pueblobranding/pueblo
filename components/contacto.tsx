@@ -187,12 +187,12 @@ export default function ContactoSection() {
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-light mb-2">Redes Sociales</h3>
-                                <div className="flex space-x-4">
-                                    <a href="https://www.instagram.com/pueblobranding" className="hover:text-tigerlily transition-colors">
+                                {/* <h3 className="text-xl font-light mb-2">Redes Sociales</h3> */}
+                                <div className="flex space-x-4 pt-4">
+                                    <a href="https://www.instagram.com/pueblobranding" className="hover:text-tigerlily transition-colors pl-22">
                                         <Instagram />
                                     </a>
-                                    <a href="#" className="hover:text-tigerlily transition-colors">
+                                    <a href="#" className="hover:text-tigerlily transition-colors pl-4">
                                         <Linkedin />
                                     </a>
                                 </div>
