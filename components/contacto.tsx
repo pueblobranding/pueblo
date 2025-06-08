@@ -1,15 +1,20 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Send, Mail, Phone, Instagram, Linkedin } from "lucide-react"
+
+// Tipos específicos para reCAPTCHA
+interface ReCaptcha {
+    execute: (siteKey: string, options: { action: string }) => Promise<string>;
+}
 
 // Declarar el tipo para reCAPTCHA en window
 declare global {
-  interface Window {
-    grecaptcha: any;
-    onRecaptchaLoad: any;
-  }
+    interface Window {
+        grecaptcha: ReCaptcha;
+        onRecaptchaLoad: () => void;
+    }
 }
 
 export default function ContactoSection() {
@@ -32,29 +37,27 @@ export default function ContactoSection() {
         message: "",
     })
 
-    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
-
     // Site Key desde variables de entorno
     const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""
 
-    useEffect(() => {
-        // Cargar reCAPTCHA v3 automático
-        const loadRecaptcha = () => {
-            if (window.grecaptcha) {
-                return
-            }
-
-            const script = document.createElement('script')
-            script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
-            script.async = true
-            script.defer = true
-            document.head.appendChild(script)
+    // Usar useCallback para la función loadRecaptcha
+    const loadRecaptcha = useCallback(() => {
+        if (window.grecaptcha) {
+            return
         }
 
+        const script = document.createElement('script')
+        script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
+        script.async = true
+        script.defer = true
+        document.head.appendChild(script)
+    }, [RECAPTCHA_SITE_KEY])
+
+    useEffect(() => {
         if (RECAPTCHA_SITE_KEY) {
             loadRecaptcha()
         }
-    }, [])
+    }, [RECAPTCHA_SITE_KEY, loadRecaptcha])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
@@ -71,11 +74,11 @@ export default function ContactoSection() {
         if (window.grecaptcha && RECAPTCHA_SITE_KEY) {
             try {
                 const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
-                setRecaptchaToken(token)
                 
                 // Enviar formulario con token
                 await submitForm(token)
-            } catch (error) {
+            } catch (recaptchaError) {
+                console.error('Error de reCAPTCHA:', recaptchaError)
                 setFormStatus({
                     submitted: true,
                     success: false,
@@ -123,7 +126,8 @@ export default function ContactoSection() {
             } else {
                 throw new Error('Error en servidor')
             }
-        } catch (error) {
+        } catch (apiError) {
+            console.error('Error de API:', apiError)
             // Para demo, simular éxito
             setFormStatus({
                 submitted: true,
