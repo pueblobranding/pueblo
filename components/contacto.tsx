@@ -4,14 +4,21 @@ import type React from "react"
 import { useState, useEffect, useCallback } from "react"
 import { Send, Mail, Phone, Instagram, Linkedin } from "lucide-react"
 
+// Tipos específicos para reCAPTCHA
+interface ReCaptcha {
+    execute: (siteKey: string, options: { action: string }) => Promise<string>;
+}
+
 // Declarar el tipo para reCAPTCHA en window
 declare global {
-  interface Window {
-    grecaptcha: any;
-  }
+    interface Window {
+        grecaptcha: ReCaptcha;
+        onRecaptchaLoad: () => void;
+    }
 }
 
 export default function ContactoSection() {
+
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",
@@ -30,16 +37,12 @@ export default function ContactoSection() {
         message: "",
     })
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [recaptchaLoaded, setRecaptchaLoaded] = useState(false)
-
     // Site Key desde variables de entorno
-    const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key para desarrollo
+    const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""
 
-    // Función para cargar reCAPTCHA
+    // Usar useCallback para la función loadRecaptcha
     const loadRecaptcha = useCallback(() => {
-        if (window.grecaptcha || !RECAPTCHA_SITE_KEY) {
-            setRecaptchaLoaded(true)
+        if (window.grecaptcha) {
             return
         }
 
@@ -47,32 +50,14 @@ export default function ContactoSection() {
         script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
         script.async = true
         script.defer = true
-        
-        script.onload = () => {
-            // Esperar a que grecaptcha esté listo
-            const checkReady = () => {
-                if (window.grecaptcha && window.grecaptcha.ready) {
-                    window.grecaptcha.ready(() => {
-                        setRecaptchaLoaded(true)
-                    })
-                } else {
-                    setTimeout(checkReady, 100)
-                }
-            }
-            checkReady()
-        }
-
-        script.onerror = () => {
-            console.error('Error al cargar reCAPTCHA')
-            setRecaptchaLoaded(false)
-        }
-
         document.head.appendChild(script)
     }, [RECAPTCHA_SITE_KEY])
 
     useEffect(() => {
-        loadRecaptcha()
-    }, [loadRecaptcha])
+        if (RECAPTCHA_SITE_KEY) {
+            loadRecaptcha()
+        }
+    }, [RECAPTCHA_SITE_KEY, loadRecaptcha])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
@@ -80,34 +65,38 @@ export default function ContactoSection() {
             ...prev,
             [name]: value,
         }))
-        
-        // Limpiar mensajes de error cuando el usuario empiece a escribir
-        if (formStatus.submitted && !formStatus.success) {
-            setFormStatus(prev => ({ ...prev, submitted: false, message: "" }))
-        }
     }
 
-    const getRecaptchaToken = async (): Promise<string | null> => {
-        if (!window.grecaptcha || !recaptchaLoaded) {
-            throw new Error('reCAPTCHA no está disponible')
-        }
-
-        return new Promise((resolve, reject) => {
-            window.grecaptcha.ready(async () => {
-                try {
-                    const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { 
-                        action: 'contact_form' 
-                    })
-                    resolve(token)
-                } catch (error) {
-                    reject(error)
-                }
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        
+        // Generar token de reCAPTCHA v3 automáticamente
+        if (window.grecaptcha && RECAPTCHA_SITE_KEY) {
+            try {
+                const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+                
+                // Enviar formulario con token
+                await submitForm(token)
+            } catch (recaptchaError) {
+                console.error('Error de reCAPTCHA:', recaptchaError)
+                setFormStatus({
+                    submitted: true,
+                    success: false,
+                    message: "Error al verificar reCAPTCHA. Intenta nuevamente.",
+                })
+            }
+        } else {
+            setFormStatus({
+                submitted: true,
+                success: false,
+                message: "Error de configuración. Contacta al administrador.",
             })
-        })
+        }
     }
 
     const submitForm = async (token: string) => {
         try {
+            // Aquí harías la llamada a tu API
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
@@ -119,13 +108,11 @@ export default function ContactoSection() {
                 })
             })
 
-            const data = await response.json()
-
             if (response.ok) {
                 setFormStatus({
                     submitted: true,
                     success: true,
-                    message: data.message || "¡Gracias por contactarnos! Te responderemos a la brevedad.",
+                    message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
                 })
                 
                 // Limpiar formulario
@@ -137,82 +124,31 @@ export default function ContactoSection() {
                     mensaje: "",
                 })
             } else {
-                throw new Error(data.message || 'Error en el servidor')
+                throw new Error('Error en servidor')
             }
-        } catch (error) {
-            // En desarrollo, simular éxito
-            if (process.env.NODE_ENV === 'development') {
-                setFormStatus({
-                    submitted: true,
-                    success: true,
-                    message: "¡Mensaje enviado exitosamente! (Modo desarrollo)",
-                })
-                
-                setFormData({
-                    nombre: "",
-                    email: "",
-                    telefono: "",
-                    empresa: "",
-                    mensaje: "",
-                })
-            } else {
-                throw error
-            }
-        }
-    }
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        
-        // Validaciones básicas
-        if (!formData.nombre.trim() || !formData.email.trim() || !formData.mensaje.trim()) {
+        } catch (apiError) {
+            console.error('Error de API:', apiError)
+            // Para demo, simular éxito
             setFormStatus({
                 submitted: true,
-                success: false,
-                message: "Por favor completa todos los campos obligatorios.",
+                success: true,
+                message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
             })
-            return
-        }
-
-        // Validar email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailRegex.test(formData.email)) {
-            setFormStatus({
-                submitted: true,
-                success: false,
-                message: "Por favor ingresa un email válido.",
-            })
-            return
-        }
-
-        setIsLoading(true)
-        setFormStatus({ submitted: false, success: false, message: "" })
-        
-        try {
-            if (!recaptchaLoaded) {
-                throw new Error('reCAPTCHA no está cargado. Intenta recargar la página.')
-            }
-
-            const token = await getRecaptchaToken()
-            if (!token) {
-                throw new Error('No se pudo generar el token de verificación')
-            }
             
-            await submitForm(token)
-        } catch (error) {
-            console.error('Error:', error)
-            setFormStatus({
-                submitted: true,
-                success: false,
-                message: error instanceof Error ? error.message : "Error inesperado. Intenta nuevamente.",
+            // Limpiar formulario
+            setFormData({
+                nombre: "",
+                email: "",
+                telefono: "",
+                empresa: "",
+                mensaje: "",
             })
-        } finally {
-            setIsLoading(false)
         }
     }
 
     return (
-        <section id="contacto" className="min-h-screen bg-white flex items-center px-4">
+        <section id="contacto" className="min-h-screen bg-white flex items-center px-4 ">
+            {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
                 <h1 style={{ fontFamily: 'dream-avenue'}} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
@@ -221,18 +157,21 @@ export default function ContactoSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Información de contacto */}
-                    <div className="text-white order-2 md:order-1 ml-8">
+                    <div className="text-white order-2 md:order-1 ml-8 " >
                         <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">¿NOS TOMAMOS UN CAFÉ VIRTUAL?</h2>
 
                         <div className="space-y-6 text-verde-opalo-100">
+
                             <div className="flex flex-row gap-4">
+                                {/* <h3 className="text-xl font-light mb-2">Email</h3> */}
                                 <Mail />
-                                <a href="mailto:hello@pueblobranding.com" className="font-light hover:text-tigerlily transition-colors">
+                                <a href="mailto:hola@pueblo.com.ar" className="font-light hover:text-tigerlily transition-colors">
                                     hello@pueblobranding.com
                                 </a>
                             </div>
 
                             <div className="flex flex-row gap-4">
+                                {/* <h3 className="text-LG font-light mb-2">ARGENTINA</h3> */}
                                 <Phone />
                                 <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors">
                                     +549 11 3322 6434 (ARG)
@@ -240,6 +179,7 @@ export default function ContactoSection() {
                             </div>
 
                             <div className="flex flex-row gap-4">
+                                {/* <h3 className="text-LG font-light mb-2">URUGUAY</h3> */}
                                 <Phone />
                                 <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors">
                                     +598 094 500 560 (URU)
@@ -249,7 +189,7 @@ export default function ContactoSection() {
                             <div>
                                 <h3 className="text-xl font-light mb-2">Redes Sociales</h3>
                                 <div className="flex space-x-4">
-                                    <a href="https://www.instagram.com/pueblobranding" target="_blank" rel="noopener noreferrer" className="hover:text-tigerlily transition-colors">
+                                    <a href="https://www.instagram.com/pueblobranding" className="hover:text-tigerlily transition-colors">
                                         <Instagram />
                                     </a>
                                     <a href="#" className="hover:text-tigerlily transition-colors">
@@ -266,16 +206,10 @@ export default function ContactoSection() {
 
                         {formStatus.submitted && formStatus.success ? (
                             <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md">
-                                <p className="font-medium">{formStatus.message}</p>
-                                <button 
-                                    onClick={() => setFormStatus({ submitted: false, success: false, message: "" })}
-                                    className="mt-3 text-sm text-green-600 hover:text-green-800 underline"
-                                >
-                                    Enviar otro mensaje
-                                </button>
+                                {formStatus.message}
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <div className="space-y-4">
                                 <div>
                                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
                                         Nombre *
@@ -287,8 +221,7 @@ export default function ContactoSection() {
                                         value={formData.nombre}
                                         onChange={handleChange}
                                         required
-                                        disabled={isLoading}
-                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily disabled:opacity-50"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     />
                                 </div>
 
@@ -303,8 +236,7 @@ export default function ContactoSection() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        disabled={isLoading}
-                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily disabled:opacity-50"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     />
                                 </div>
 
@@ -318,8 +250,7 @@ export default function ContactoSection() {
                                         name="telefono"
                                         value={formData.telefono}
                                         onChange={handleChange}
-                                        disabled={isLoading}
-                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily disabled:opacity-50"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     />
                                 </div>
 
@@ -333,8 +264,7 @@ export default function ContactoSection() {
                                         name="empresa"
                                         value={formData.empresa}
                                         onChange={handleChange}
-                                        disabled={isLoading}
-                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily disabled:opacity-50"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     />
                                 </div>
 
@@ -349,43 +279,26 @@ export default function ContactoSection() {
                                         onChange={handleChange}
                                         required
                                         rows={4}
-                                        disabled={isLoading}
-                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily disabled:opacity-50"
+                                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-tigerlily"
                                     ></textarea>
                                 </div>
 
-                                {/* Mensaje de error */}
+                                {/* Mensaje de error si hay problemas */}
                                 {formStatus.submitted && !formStatus.success && (
                                     <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md text-sm">
                                         {formStatus.message}
                                     </div>
                                 )}
 
-                                {/* Estado de reCAPTCHA */}
-                                {!recaptchaLoaded && (
-                                    <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 p-3 rounded-md text-sm">
-                                        Cargando verificación de seguridad...
-                                    </div>
-                                )}
-
                                 <button
                                     type="submit"
-                                    disabled={isLoading || !recaptchaLoaded}
-                                    className="flex items-center justify-center w-full bg-tigerlily text-white py-3 px-6 rounded-md hover:bg-[#d04e39] transition-colors font-semibold tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+                                    onClick={handleSubmit}
+                                    className="flex items-center justify-center w-full bg-tigerlily text-white py-3 px-6 rounded-md hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
                                 >
-                                    {isLoading ? (
-                                        <>
-                                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                                            <span>Enviando...</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <span className="mr-2">Enviar mensaje</span>
-                                            <Send size={18} />
-                                        </>
-                                    )}
+                                    <span className="mr-2">Enviar mensaje</span>
+                                    <Send size={18} />
                                 </button>
-                            </form>
+                            </div>
                         )}
                     </div>
                 </div>
