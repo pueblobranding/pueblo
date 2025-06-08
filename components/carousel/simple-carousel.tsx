@@ -34,7 +34,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
 
   return (
     <div
-      className="h-128 w-full relative overflow-hidden"
+      className="h-96 w-full relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
