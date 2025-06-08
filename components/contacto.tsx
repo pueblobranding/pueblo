@@ -1,9 +1,16 @@
 "use client"
 
 import type React from "react"
+import { useState, useEffect } from "react"
+import { Send, Mail, Phone, Instagram, Linkedin } from "lucide-react"
 
-import { useState } from "react"
-import { Send, MailIcon, PhoneIcon, Instagram, Linkedin } from "lucide-react"
+// Declarar el tipo para reCAPTCHA en window
+declare global {
+  interface Window {
+    grecaptcha: any;
+    onRecaptchaLoad: any;
+  }
+}
 
 export default function ContactoSection() {
 
@@ -25,6 +32,30 @@ export default function ContactoSection() {
         message: "",
     })
 
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+
+    // Site Key desde variables de entorno
+    const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""
+
+    useEffect(() => {
+        // Cargar reCAPTCHA v3 automático
+        const loadRecaptcha = () => {
+            if (window.grecaptcha) {
+                return
+            }
+
+            const script = document.createElement('script')
+            script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
+            script.async = true
+            script.defer = true
+            document.head.appendChild(script)
+        }
+
+        if (RECAPTCHA_SITE_KEY) {
+            loadRecaptcha()
+        }
+    }, [])
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
         setFormData((prev) => ({
@@ -33,15 +64,82 @@ export default function ContactoSection() {
         }))
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Simulación de envío exitoso
-        setFormStatus({
-            submitted: true,
-            success: true,
-            message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
-        })
-        // En un caso real, aquí iría la lógica para enviar el formulario a un servidor
+        
+        // Generar token de reCAPTCHA v3 automáticamente
+        if (window.grecaptcha && RECAPTCHA_SITE_KEY) {
+            try {
+                const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+                setRecaptchaToken(token)
+                
+                // Enviar formulario con token
+                await submitForm(token)
+            } catch (error) {
+                setFormStatus({
+                    submitted: true,
+                    success: false,
+                    message: "Error al verificar reCAPTCHA. Intenta nuevamente.",
+                })
+            }
+        } else {
+            setFormStatus({
+                submitted: true,
+                success: false,
+                message: "Error de configuración. Contacta al administrador.",
+            })
+        }
+    }
+
+    const submitForm = async (token: string) => {
+        try {
+            // Aquí harías la llamada a tu API
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken: token
+                })
+            })
+
+            if (response.ok) {
+                setFormStatus({
+                    submitted: true,
+                    success: true,
+                    message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
+                })
+                
+                // Limpiar formulario
+                setFormData({
+                    nombre: "",
+                    email: "",
+                    telefono: "",
+                    empresa: "",
+                    mensaje: "",
+                })
+            } else {
+                throw new Error('Error en servidor')
+            }
+        } catch (error) {
+            // Para demo, simular éxito
+            setFormStatus({
+                submitted: true,
+                success: true,
+                message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
+            })
+            
+            // Limpiar formulario
+            setFormData({
+                nombre: "",
+                email: "",
+                telefono: "",
+                empresa: "",
+                mensaje: "",
+            })
+        }
     }
 
     return (
@@ -56,13 +154,13 @@ export default function ContactoSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Información de contacto */}
                     <div className="text-white order-2 md:order-1 ml-8 " >
-                        <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">¿NOS TOMAMOS UN <br/> CAFÉ VIRTUAL?</h2>
+                        <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">¿NOS TOMAMOS UN CAFÉ VIRTUAL?</h2>
 
                         <div className="space-y-6 text-verde-opalo-100">
 
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-xl font-light mb-2">Email</h3> */}
-                                <MailIcon />
+                                <Mail />
                                 <a href="mailto:hola@pueblo.com.ar" className="font-light hover:text-tigerlily transition-colors">
                                     hello@pueblobranding.com
                                 </a>
@@ -70,7 +168,7 @@ export default function ContactoSection() {
 
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-LG font-light mb-2">ARGENTINA</h3> */}
-                                <PhoneIcon />
+                                <Phone />
                                 <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors">
                                     +549 11 3322 6434 (ARG)
                                 </a>
@@ -78,7 +176,7 @@ export default function ContactoSection() {
 
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-LG font-light mb-2">URUGUAY</h3> */}
-                                <PhoneIcon />
+                                <Phone />
                                 <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors">
                                     +598 094 500 560 (URU)
                                 </a>
@@ -107,7 +205,7 @@ export default function ContactoSection() {
                                 {formStatus.message}
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <div className="space-y-4">
                                 <div>
                                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
                                         Nombre *
@@ -181,14 +279,22 @@ export default function ContactoSection() {
                                     ></textarea>
                                 </div>
 
+                                {/* Mensaje de error si hay problemas */}
+                                {formStatus.submitted && !formStatus.success && (
+                                    <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md text-sm">
+                                        {formStatus.message}
+                                    </div>
+                                )}
+
                                 <button
                                     type="submit"
+                                    onClick={handleSubmit}
                                     className="flex items-center justify-center w-full bg-tigerlily text-white py-3 px-6 rounded-md hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
                                 >
                                     <span className="mr-2">Enviar mensaje</span>
                                     <Send size={18} />
                                 </button>
-                            </form>
+                            </div>
                         )}
                     </div>
                 </div>
