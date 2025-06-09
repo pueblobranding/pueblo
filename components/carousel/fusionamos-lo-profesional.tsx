@@ -16,10 +16,10 @@ export default function FusionamosLoProfesional() {
                         />
                     </div>
 
-                    <div className="text-center text-md md:text-2xl font-bold">
+                    <div className="text-center text-md md:text-2xl font-bold text-balance">
                         <p>FUSIONAMOS LO PROFESIONAL Y LO ESENCIAL, <br />
                             PARA CONTAR HISTORIAS QUE TOCAN EL CORAZON.</p>
-                            <br></br>
+                        <br />
                     </div>
                 </article>
             </section>

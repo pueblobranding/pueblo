@@ -124,12 +124,7 @@ export default function QueHacemosSection() {
             <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
                 {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
-                    {/* Título principal - siempre visible */}
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl  text-center mb-4 tracking-wider">
-                        ENCONTRAMOS
-                        <br />QUE HACE LATIR
-                        <br />A TU MARCA
-                    </h1>
+                
 
                     {/* Contenedor de secciones expandibles */}
                     <div className="flex flex-col h-[600px] gap-2 ">

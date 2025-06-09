@@ -34,7 +34,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
 
   return (
     <div
-      className="h-96 w-full relative overflow-hidden"
+      className="h-96 w-full relative overflow-hidden rounded-xl"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -55,7 +55,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
       {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white p-2 rounded-full hover:bg-black/50"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50"
         aria-label="Anterior"
       >
         <svg
@@ -75,7 +75,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white p-2 rounded-full hover:bg-black/50"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50"
         aria-label="Siguiente"
       >
         <svg

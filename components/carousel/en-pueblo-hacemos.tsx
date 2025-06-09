@@ -17,7 +17,7 @@ export default function EnPuebloHacemos
                         />
                     </div>
 
-                    <div className="text-center text-md md:text-2xl font-bold">
+                    <div className="text-center text-md md:text-2xl font-bold text-balance">
                         <p>EN PUEBLO HACEMOS COMUNICACIÓN CON CONSCIENCIA.
                             <br /> TRANSFORMANDO MARCAS DESDE ADENTRO,
                             <br /> CONECTANDO CON SU ESENCIA Y DÁNDOLE VOZ CON PROPÓSITO.</p>

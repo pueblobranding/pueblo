@@ -83,13 +83,8 @@ html {
 }
 
 .grecaptcha-badge {
-  position: absolute !important;
-  bottom: 0px;
-  left:0px;
-  opacity:30% ;
-  /* visibility: hidden; */
+  visibility: hidden;
   /* opacity: 0; /* Opcional: añade una transición suave si quieres mostrarlo después, pero para ocultarlo simplemente, visibility: hidden; es suficiente */
-  /* O la forma más simple y común es: */
   /* display: none !important; */
 }
 
