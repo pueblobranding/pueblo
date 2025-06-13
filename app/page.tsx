@@ -3,11 +3,11 @@
 import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
 import Footer from "@/components/footer"
-import Main from "@/components/main"
+// import Main from "@/components/main"
 import Navbar from "@/components/navbar"
 import NosotrasSection3 from "@/components/nosotras-3"
 import QueHacemosSection from "@/components/que-hacemos"
-import SomosComunidad from "@/components/somos-comunidad"
+// import SomosComunidad from "@/components/somos-comunidad"
 import { useState } from "react"
 
 export default function Page() {
