@@ -87,21 +87,3 @@ html {
   /* opacity: 0; /* Opcional: añade una transición suave si quieres mostrarlo después, pero para ocultarlo simplemente, visibility: hidden; es suficiente */
   /* display: none !important; */
 }
-
-
-#inicio::after {
-  content: '';
-  position: absolute;
-  /* bottom negativo para que empiece justo al final del contenedor y se extienda hacia abajo */
-  bottom: -80px; /* Ajusta esta distancia/altura del degradado si quieres que sea más corto/largo */
-  left: 0;
-  width: 100%;
-  height: 80px; /* Altura del área de degradado */
-
-  /* Aquí es donde necesitas el CSS personalizado para el gradiente a transparente */
-  /* Reemplaza #TU_VERDE_OPALO_100_HEX_O_RGB y los valores RGB por el valor real de tu color */
-  background: linear-gradient(to bottom, #A3B18A 0%, rgba(163, 177, 138, 0) 100%); /* Ejemplo con #A3B18A */
-
-  pointer-events: none; /* Asegura que no interfiera con clics en elementos debajo */
-  z-index: 1; /* Opcional: ajusta si necesitas controlar el orden de apilamiento */
-}

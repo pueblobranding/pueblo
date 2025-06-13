@@ -21,10 +21,10 @@ export default function Page() {
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       {/* <PuebloBranding /> */}
-      <Main />
+      {/* <Main /> */}
       <Carousel />
       <QueHacemosSection />
-      <SomosComunidad/>
+      {/* <SomosComunidad/> */}
       <NosotrasSection3 />
       {/* <NosotrosSection /> */}
       <ContactoSection />
