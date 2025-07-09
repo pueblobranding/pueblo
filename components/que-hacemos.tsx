@@ -57,7 +57,7 @@ export default function QueHacemosSection() {
                         <br />A TU MARCA
                     </h1> */}
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
-                        QUE HACEMOS
+                        EN QUÉ PODEMOS AYUDARTE
                     </h1>
 
                     {/* Contenedor de secciones expandibles */}
@@ -124,7 +124,7 @@ export default function QueHacemosSection() {
             <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
                 {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
-                
+
 
                     {/* Contenedor de secciones expandibles */}
                     <div className="flex flex-col h-[600px] gap-2 ">
