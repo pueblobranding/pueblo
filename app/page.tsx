@@ -6,7 +6,7 @@ import Footer from "@/components/footer"
 // import Main from "@/components/main"
 import Navbar from "@/components/navbar"
 import NosotrasSection3 from "@/components/nosotras-3"
-import QueHacemosSection from "@/components/que-hacemos"
+import QueHacemosSection from "@/components/en-que-podemos-ayudarte"
 // import SomosComunidad from "@/components/somos-comunidad"
 import { useState } from "react"
 

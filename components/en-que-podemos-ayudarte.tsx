@@ -48,17 +48,36 @@ export default function QueHacemosSection() {
     return (
         <>
             <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py- px-4">
-                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
                 <div className="container mx-auto max-w-6xl">
-                    {/* Título principal - siempre visible */}
-                    {/* <h1 style={{ fontFamily: 'dream-avenue' }} className="text-tigerlily text-3xl md:text-4xl lg:text-6xl text-center mb-16 tracking-wider">
-                        ENCONTRAMOS
-                        <br />QUE HACE LATIR
-                        <br />A TU MARCA
-                    </h1> */}
+
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
                         EN QUÉ PODEMOS AYUDARTE
                     </h1>
+
+                    <div className="grid grid-cols-2 w-full px-34 pb-20 ">
+                        <div className="bg-red-500">
+                            <Image
+                                src="/cambiame.png"
+                                alt="foto ilustrativa"
+                                className="w-full"
+                                width={900}
+                                height={400}
+                            />
+                        </div>
+
+                        <div className="flex flex-col ml-10 gap-10">
+                            <p className="text-xl text-verde-opalo-100">
+                                En PUEBLO hacemos comunicación con consciencia. Transformando marcas desde adentro, conectando con su esencia y dándole voz con propósito.
+                            </p>
+
+                            <a
+                                href="#contacto"
+                                className="w-fit bg-tigerlily text-white font-semibold p-3 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
+                            >
+                                ¿NOS TOMAMOS UN CAFÉ VIRTUAL?
+                            </a>
+                        </div>
+                    </div>
 
                     {/* Contenedor de secciones expandibles */}
                     <div className="flex flex-col md:flex-row h-[600px] md:h-[400px] gap-2 md:gap-4">
@@ -122,8 +141,37 @@ export default function QueHacemosSection() {
 
             {/* MOBILE */}
             <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
-                {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
+
                 <div className="container mx-auto max-w-6xl">
+
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl text-center mb-6 tracking-wider mt-20">
+                        EN QUÉ PODEMOS AYUDARTE
+                    </h1>
+
+                    <div className="grid grid-rows-2 w-full pb-10 ">
+                        <div className="">
+                            <Image
+                                src="/cambiame.png"
+                                alt="foto ilustrativa"
+                                className="w-full"
+                                width={900}
+                                height={400}
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-10">
+                            <p className="text-xl text-verde-opalo-100">
+                                En PUEBLO hacemos comunicación con consciencia. Transformando marcas desde adentro, conectando con su esencia y dándole voz con propósito.
+                            </p>
+
+                            <a
+                                href="#contacto"
+                                className="w-fit bg-tigerlily text-white font-semibold p-3 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
+                            >
+                                ¿NOS TOMAMOS UN CAFÉ VIRTUAL?
+                            </a>
+                        </div>
+                    </div>
 
 
                     {/* Contenedor de secciones expandibles */}
