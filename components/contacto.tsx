@@ -69,12 +69,12 @@ export default function ContactoSection() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        
+
         // Generar token de reCAPTCHA v3 automáticamente
         if (window.grecaptcha && RECAPTCHA_SITE_KEY) {
             try {
                 const token = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
-                
+
                 // Enviar formulario con token
                 await submitForm(token)
             } catch (recaptchaError) {
@@ -114,7 +114,7 @@ export default function ContactoSection() {
                     success: true,
                     message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
                 })
-                
+
                 // Limpiar formulario
                 setFormData({
                     nombre: "",
@@ -134,7 +134,7 @@ export default function ContactoSection() {
                 success: true,
                 message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
             })
-            
+
             // Limpiar formulario
             setFormData({
                 nombre: "",
@@ -147,20 +147,33 @@ export default function ContactoSection() {
     }
 
     return (
-        <section id="contacto" className="min-h-screen bg-white flex items-center px-4 mb-20">
+        <section
+            id="contacto"
+            className="relative min-h-screen flex items-center justify-center px-4 pb-20 text-white"
+            style={{
+                backgroundImage: `
+            linear-gradient(#486955aa, #486955cc), 
+            url('/contacto-background.webp')
+          `,
+                backgroundSize: 'cover', // Aplica a TODOS los fondos definidos
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+
+            }}
+        >
             {/* <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
             <div className="container mx-auto max-w-6xl">
                 {/* Título principal */}
-                <h1 style={{ fontFamily: 'dream-avenue'}} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
-                    CONTACTANOS
+                <h1 style={{ fontFamily: 'dream-avenue' }} className="text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
+                    A UN CLICK DE DISTANCIA
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid-reverse md:grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Información de contacto */}
-                    <div className="text-white order-2 md:order-1 ml-8 " >
-                        <h2 className="text-tigerlily text-3xl font-light mb-8 tracking-wider">¿NOS TOMAMOS UN CAFÉ VIRTUAL?</h2>
+                    <div className="text-white order-2 md:order-1 ml-8 pb-10" >
+                        <h2 className="text-3xl mb-8 tracking-wider">¿NOS TOMAMOS <br /> UN CAFÉ VIRTUAL?</h2>
 
-                        <div className="space-y-6 text-verde-opalo-100">
+                        <div className="space-y-6">
 
                             <div className="flex flex-row gap-4">
                                 {/* <h3 className="text-xl font-light mb-2">Email</h3> */}
@@ -209,7 +222,7 @@ export default function ContactoSection() {
                                 {formStatus.message}
                             </div>
                         ) : (
-                            <div className="space-y-4">
+                            <div className="space-y-4 -mb-14">
                                 <div>
                                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
                                         Nombre *
@@ -293,10 +306,10 @@ export default function ContactoSection() {
                                 <button
                                     type="submit"
                                     onClick={handleSubmit}
-                                    className="flex items-center justify-center w-full bg-tigerlily text-white py-3 px-6 rounded-md hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
+                                    className="flex items-center justify-center m-auto bg-tigerlily text-white py-3 px-6 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
                                 >
-                                    <span className="mr-2">Enviar mensaje</span>
-                                    <Send size={18} />
+                                    <span className="mr-2">QUIERO QUE CONVERSEMOS</span>
+                                    {/* <Send size={18} /> */}
                                 </button>
                             </div>
                         )}
