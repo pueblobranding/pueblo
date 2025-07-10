@@ -15,7 +15,7 @@ function Whatsapp() {
             alt="whatsapp logo"
             width={90}
             height={90}
-            className="opacity-70 hover:opacity-100 transition-opacity duration-300"
+            className="opacity-70 hover:opacity-100 transition-opacity duration-200"
           />
 
         </a>
