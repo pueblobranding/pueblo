@@ -1,14 +1,12 @@
 'use client'
 
+import { useState } from "react"
 import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
 import Footer from "@/components/footer"
-// import Main from "@/components/main"
 import Navbar from "@/components/navbar"
-import NosotrasSection3 from "@/components/nosotras-3"
 import QueHacemosSection from "@/components/en-que-podemos-ayudarte"
-// import SomosComunidad from "@/components/somos-comunidad"
-import { useState } from "react"
+import SomosComunidad from "@/components/somos-comunidad"
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,13 +18,9 @@ export default function Page() {
   return (
     <>
       <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      {/* <PuebloBranding /> */}
-      {/* <Main /> */}
       <Carousel />
       <QueHacemosSection />
-      {/* <SomosComunidad/> */}
-      <NosotrasSection3 />
-      {/* <NosotrosSection /> */}
+      <SomosComunidad/>
       <ContactoSection />
       {/* <Instagram /> */}
       <Footer/>

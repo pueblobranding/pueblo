@@ -120,7 +120,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
             QUE HACEMOS
           </Link>
 
-          <Link href="/somos-comunidad" onClick={() => handleMenuLinkClick("/somos-comunidad")} className="hover:text-verde-opalo-60 transition-colors">
+          <Link href="/#somos-comunidad" onClick={() => handleMenuLinkClick("/#somos-comunidad")} className="hover:text-verde-opalo-60 transition-colors">
             SOMOS COMUNIDAD
           </Link>
 

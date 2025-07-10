@@ -80,62 +80,72 @@ export default function QueHacemosSection() {
                     </div>
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col md:flex-row h-[600px] md:h-[400px] gap-2 md:gap-4">
+                    <div className="grid grid-cols-3 gap-2">
                         {sections.map((section) => (
-                            <div
-                                key={section.id}
-                                className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
-                                        ${hoveredSection === section.id
-                                        ? "md:flex-[1] flex-[1]"
-                                        : hoveredSection === null
-                                            ? "md:flex-[1] flex-[1]"
-                                            : "md:flex-[0.5] flex-[1]"
-                                    }
-                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-60" : "opacity-100"}
-                                        `}
-                                onMouseEnter={() => setHoveredSection(section.id)}
-                                onMouseLeave={() => setHoveredSection(null)}
-                            >
-                                {/* Fondo de imagen */}
-                                <div className="absolute inset-0 z-0 bg-pewter-blue-20 ">
-                                    <Image
-                                        src={section.image || "/placeholder.svg"}
-                                        alt={section.title}
-                                        width={800}
-                                        height={600}
-                                        className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
-                                    />
-                                    {/* <div className="absolute inset-0 bg-black/0"></div> */}
-                                </div>
+                            <div key={section.id}>
 
-                                {/* Contenido */}
-                                <div className="relative z-10 flex flex-col h-full pt-6 pl-2 text-tigerlily ">
-                                    {/* Título siempre visible */}
-                                    <div className="bg-tigerlily  font-bold text-white rounded-r-full inline-block mb-4 relative -left-8 pl-10 pt-3 pb-2">
-                                        {section.title}
+                                {/* Título siempre visible */}
+                                <div
+                                    style={{ fontFamily: 'dream-avenue' }}
+                                    className="bg-verde-opalo-100 text-3xl font-bold text-white h-48 w-full rounded-t-full tracking-wider
+               flex flex-col justify-center items-center pt-8 text-center" 
+                                >
+                                    {section.title}
+                                </div>
+                                <div
+
+                                    className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col
+                                            ${hoveredSection === section.id
+                                            ? "flex-[4]"
+                                            : hoveredSection === null
+                                                ? "flex-[1]"
+                                                : "flex-[1]"
+                                        }
+                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
+                                            `}
+                                    onMouseEnter={() => setHoveredSection(section.id)}
+                                    onMouseLeave={() => setHoveredSection(null)}
+                                >
+                                    {/* Fondo de imagen */}
+                                    <div className="absolute inset-0 z-0 bg-pewter-blue-20">
+                                        <Image
+                                            src={section.image || "/placeholder.svg"}
+                                            alt={section.title}
+                                            //   fill
+                                            width={400}
+                                            height={400}
+                                            className={`object-cover grayscale w-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
+                                        />
+                                        <div className="absolute inset-0 bg-black/0"></div>
                                     </div>
 
-                                    {/* Contenido expandido - visible solo en hover */}
-                                    <div
-                                        className={`flex flex-col transition-opacity duration-900 w-[24rem] ml-8 text-[#424144]
+
+                                    {/* Contenido */}
+                                    <div className="relative z-10 flex flex-col h-70 p-4 text-verde-opalo-100">
+                                        {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
+
+                                        {/* Contenido expandido - visible solo en hover */}
+                                        <div
+                                            className={`flex flex-col transition-opacity duration-900 
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
-                                    >
-                                        <p className="mb-4 font-bold text-[1rem]">{section.description}</p>
+                                        >
+                                            <p className="mb-4 font-bold text-sm">{section.description}</p>
 
-                                        <ul className="space-y-2 mt-auto font-bold text-[1rem]]">
-                                            {section.services.map((service, index) => (
-                                                <li key={index} className="flex items-start">
-                                                    <span className="mr-2 text-tigerlily">•</span>
-                                                    <span>{service}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                            <ul className="space-y-2 mt-auto font-bold text-sm">
+                                                {section.services.map((service, index) => (
+                                                    <li key={index} className="flex items-start">
+                                                        <span className="mr-2 text-tigerlily">•</span>
+                                                        <span>{service}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </div >
                 </div>
             </section>
 
