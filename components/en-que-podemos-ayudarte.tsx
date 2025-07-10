@@ -94,7 +94,7 @@ export default function QueHacemosSection() {
                                 </div>
                                 <div
 
-                                    className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col
+                                    className={`relative overflow-hidden  transition-all duration-800 ease-in-out flex flex-col
                                             ${hoveredSection === section.id
                                             ? "flex-[4]"
                                             : hoveredSection === null

@@ -35,7 +35,7 @@ export default function NosotrasSection4() {
     ]
 
     return (
-        <section id="nosotras" className="flex justify-center min-h-screen bg-pewter-blue-100 px-4">
+        <section id="nosotras" className="flex justify-center min-h-fit bg-pewter-blue-100 px-4">
             <div className="container mx-auto max-w-5xl">
                 <div className="flex flex-col md:flex-row gap-8 md:items-start">
                     {teamMembers.map((section) => (

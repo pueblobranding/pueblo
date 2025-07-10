@@ -2,11 +2,14 @@ import NosotrasSection4 from "./nosotras-4";
 
 export default function SomosComunidad() {
   return (
-    <div 
-    id="somos-comunidad"
-    className="bg-pewter-blue-100 flex flex-col items-center justify-center text-white">
+    <div
+      id="somos-comunidad"
+      className="bg-pewter-blue-100 max-h-fit flex flex-col items-center justify-center text-white py-10 gap-10 lg:py-20 lg:gap-20"
+   
+    >
 
-      <h2 className="font-dream-avenue my-8 text-4xl md:text-6xl font-medium tracking-widest text-center">SOMOS COMUNIDAD</h2>
+      <h2 className="font-dream-avenue text-4xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center">
+        SOMOS COMUNIDAD</h2>
 
       <NosotrasSection4 />
 
