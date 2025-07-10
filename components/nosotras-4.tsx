@@ -35,7 +35,7 @@ export default function NosotrasSection4() {
     ]
 
     return (
-        <section id="nosotras" className="flex justify-center min-h-screen bg-pewter-blue-100 py-16 px-4">
+        <section id="nosotras" className="flex justify-center min-h-screen bg-pewter-blue-100 px-4">
             <div className="container mx-auto max-w-5xl">
                 <div className="flex flex-col md:flex-row gap-8 md:items-start">
                     {teamMembers.map((section) => (
@@ -75,14 +75,17 @@ export default function NosotrasSection4() {
                                                 </p>
                                             ))}
                                         </div>
-                                        <div className="mt-6">
-                                            <Link href={section.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#e85c44] hover:underline text-xs">
-                                                {section.linkedinUrl.replace("https://", "")}
-                                            </Link>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <Link
+                                href={section.linkedinUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-tigerlily text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10"
+                            >
+                                in
+                            </Link>
                         </div>
                     ))}
                 </div>
