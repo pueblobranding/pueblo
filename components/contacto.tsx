@@ -200,22 +200,24 @@ export default function ContactoSection() {
                 <div className="grid-reverse md:grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="text-white order-2 md:order-1 ml-8 pb-10" >
                         <h2 className="text-3xl mb-8 tracking-wider">¿NOS TOMAMOS <br /> UN CAFÉ VIRTUAL?</h2>
-                        <div className="space-y-6">
+                        <div className="space-y-6 text-lg">
                             <div className="flex flex-row gap-4">
                                 <Mail />
-                                <a href="mailto:hola@pueblo.com.ar" className="font-light hover:text-tigerlily transition-colors">
+                                <a href="mailto:hola@pueblo.com.ar" className="hover:text-tigerlily transition-colors">
                                     hello@pueblobranding.com
                                 </a>
                             </div>
                             <div className="flex flex-row gap-4">
                                 <Phone />
-                                <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors tracking-wider">
+                                <a href="https://api.whatsapp.com/send?phone=+5491133226434&text=%20" target="_blank" rel="noopener noreferrer" className="hover:text-tigerlily transition-colors">
+                                    {/* <a href="tel:+5491133226434" className="font-light hover:text-tigerlily transition-colors tracking-wider"> */}
                                     +549 11 3322 6434 (ARG)
                                 </a>
                             </div>
                             <div className="flex flex-row gap-4">
                                 <Phone />
-                                <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors tracking-wider">
+                                <a href="https://api.whatsapp.com/send?phone=+598094500560&text=%20" target="_blank" rel="noopener noreferrer" className="hover:text-tigerlily transition-colors">
+                                    {/* <a href="tel:+598094500560" className="font-light hover:text-tigerlily transition-colors tracking-wider"> */}
                                     +598 094 500 560 (URU)
                                 </a>
                             </div>
