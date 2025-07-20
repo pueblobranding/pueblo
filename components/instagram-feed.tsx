@@ -117,6 +117,7 @@ export default function InstagramFeed({
                   src={post.media_type === "VIDEO" ? post.thumbnail_url || post.media_url : post.media_url}
                   alt={post.caption?.substring(0, 100) || "Instagram post"}
                   fill
+                  unoptimized={true}
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
