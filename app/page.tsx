@@ -7,6 +7,7 @@ import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import QueHacemosSection from "@/components/en-que-podemos-ayudarte"
 import SomosComunidad from "@/components/somos-comunidad"
+import Instagram from "@/components/instagram"
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,7 +23,7 @@ export default function Page() {
       <QueHacemosSection />
       <SomosComunidad/>
       <ContactoSection />
-      {/* <Instagram /> */}
+      <Instagram />
       <Footer/>
     </>
   )
