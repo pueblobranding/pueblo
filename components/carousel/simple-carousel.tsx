@@ -55,7 +55,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
       {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50 cursor-pointer"
         aria-label="Anterior"
       >
         <svg
@@ -75,7 +75,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 text-white p-2 rounded-full hover:bg-black/50 cursor-pointer"
         aria-label="Siguiente"
       >
         <svg
@@ -100,7 +100,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-all ${
-              currentIndex === index ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70"
+              currentIndex === index ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70 cursor-pointer"
             }`}
             aria-label={`Ir a diapositiva ${index + 1}`}
           />

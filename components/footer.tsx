@@ -74,25 +74,29 @@ export default function Footer() {
                             </div>
                             <div className="flex items-center">
                                 <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
-                                <span>+549 11 3322 6434 (ARG)</span>
+                                <a href="https://api.whatsapp.com/send?phone=+5491133226434&text=%20" target="_blank" rel="noopener noreferrer" className="hover:text-tigerlily transition-colors">
+                                    <span>+549 11 3322 6434 (ARG)</span>
+                                </a>
                             </div>
                             <div className="flex items-center">
                                 <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
-                                <span>+598 094 500 560 (URU)</span>
+                                <a href="https://api.whatsapp.com/send?phone=+598094500560&text=%20" target="_blank" rel="noopener noreferrer" className="hover:text-tigerlily transition-colors">
+                                    <span>+598 094 500 560 (URU)</span>
+                                </a>
                             </div>
                         </div>
 
                         {/* Redes sociales */}
                         <div className="flex space-x-4 mt-6">
                             <a
-                                href="#"
+                                href="https://www.instagram.com/pueblobranding"
                                 className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-tigerlily transition-colors"
                                 aria-label="Instagram"
                             >
                                 <Instagram className="w-4 h-4" />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/pueblo-branding"
                                 className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-tigerlily transition-colors"
                                 aria-label="LinkedIn"
                             >
@@ -108,11 +112,11 @@ export default function Footer() {
                         <p>&copy; {new Date().getFullYear()} PUEBLO. Todos los derechos reservados.</p>
                         <br />
                         <p className="max-w-80 mr-4">
-                            Este sitio está protegido por reCAPTCHA de Google, 
-                            
-                            y se aplican la 
-                            <a className="hover:text-tigerlily transition-colors" href="https://policies.google.com/privacy" target="_blank"> Política de Privacidad</a> y los 
-                            
+                            Este sitio está protegido por reCAPTCHA de Google,
+
+                            y se aplican la
+                            <a className="hover:text-tigerlily transition-colors" href="https://policies.google.com/privacy" target="_blank"> Política de Privacidad</a> y los
+
                             <a className="hover:text-tigerlily transition-colors" href="https://policies.google.com/terms" target="_blank"> Términos de Servicio</a> de Google.
                         </p>
                     </div>
