@@ -66,7 +66,7 @@ export default function ContactoSection() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
-        
+
         setFormData((prev) => ({
             ...prev,
             [name]: value,
@@ -221,11 +221,15 @@ export default function ContactoSection() {
                             </div>
                             <div>
                                 <div className="flex space-x-4 pt-4">
-                                    <a href="https://www.instagram.com/pueblobranding" className="hover:text-tigerlily transition-colors pl-22">
-                                        <Instagram />
+                                    <a href="https://www.instagram.com/pueblobranding" className="transition-colors">
+                                        <div className="rounded-full bg-verde-opalo-80 transition-colors transition-colors hover:bg-verde-opalo-60 p-3 inline-flex">
+                                            <Instagram />
+                                        </div>
                                     </a>
-                                    <a href="#" className="hover:text-tigerlily transition-colors pl-4">
-                                        <Linkedin />
+                                    <a href="https://www.linkedin.com/company/pueblo-branding" className="text-white transition-colors">
+                                        <div className="rounded-full bg-verde-opalo-80 hover:bg-verde-opalo-60 transition-colors p-3 inline-flex">
+                                            <Linkedin />
+                                        </div>
                                     </a>
                                 </div>
                             </div>
