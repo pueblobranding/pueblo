@@ -33,21 +33,34 @@ export default function QueHacemosSection() {
             id: "difusion",
             title: "DIFUSIÓN Y PRENSA",
             image: "/que-hacemos/3.webp",
-            description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
+            description: "Recopilación, planificación, gestión, medición.",
             services: [
-                "Comunicación con medios, canal comercial y consumidor final integrados",
-                "Organización de eventos y activaciones en punto de venta",
-                "Diseño de invitaciones",
-                "Gestión de invitados",
-                "Envío de invitaciones follow up",
-                "Contacto para invitados y periodistas",
+                "Recopilamos: Información de la empresa, identificamos mensajes clave y públicos",
+                "Diseñamos: Un plan estratégico de comunicación acorde a los objetivos del negocio, identificamos acciones, herramientas y canales clave",
+                "Desarrollamos: Contenidos de interés para periodistas y medios",
+                "Gestionamos proactivamente cada vínculo y acción",
+                "Medimos: Resultados con informes mensuales",
             ],
         },
+        // {
+        //     id: "difusion",
+        //     title: "DIFUSIÓN Y PRENSA",
+        //     image: "/que-hacemos/3.webp",
+        //     description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
+        //     services: [
+        //         "Comunicación con medios, canal comercial y consumidor final integrados",
+        //         "Organización de eventos y activaciones en punto de venta",
+        //         "Diseño de invitaciones",
+        //         "Gestión de invitados",
+        //         "Envío de invitaciones follow up",
+        //         "Contacto para invitados y periodistas",
+        //     ],
+        // },
     ]
 
     return (
         <>
-            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white py- px-4">
+            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white px-4">
                 <div className="container mx-auto max-w-6xl">
 
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
@@ -88,7 +101,7 @@ export default function QueHacemosSection() {
                                 <div
                                     style={{ fontFamily: 'dream-avenue' }}
                                     className="bg-verde-opalo-100 text-3xl font-bold text-white h-48 w-full rounded-t-full tracking-wider
-               flex flex-col justify-center items-center pt-8 text-center" 
+                                                flex flex-col justify-center items-center pt-8 text-center" 
                                 >
                                     {section.title}
                                 </div>
@@ -122,7 +135,6 @@ export default function QueHacemosSection() {
 
                                     {/* Contenido */}
                                     <div className="relative z-10 flex flex-col h-70 p-4 text-verde-opalo-100">
-                                        {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
 
                                         {/* Contenido expandido - visible solo en hover */}
                                         <div

@@ -8,7 +8,7 @@ export default function SomosComunidad() {
    
     >
 
-      <h2 className="font-dream-avenue text-4xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center">
+      <h2 className="font-dream-avenue text-4xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center mx-2">
         SOMOS COMUNIDAD</h2>
 
       <NosotrasSection4 />
