@@ -224,12 +224,12 @@ export default function ContactoSection() {
                             <div>
                                 <div className="flex space-x-4 pt-4">
                                     <a href="https://www.instagram.com/pueblobranding" className="transition-colors">
-                                        <div className="rounded-full bg-verde-opalo-80 transition-colors transition-colors hover:bg-verde-opalo-60 p-3 inline-flex">
+                                        <div className="rounded-full bg-verde-opalo-80 transition-colors hover:bg-tigerlily p-3 inline-flex">
                                             <Instagram />
                                         </div>
                                     </a>
                                     <a href="https://www.linkedin.com/company/pueblo-branding" className="text-white transition-colors">
-                                        <div className="rounded-full bg-verde-opalo-80 hover:bg-verde-opalo-60 transition-colors p-3 inline-flex">
+                                        <div className="rounded-full bg-verde-opalo-80 hover:bg-tigerlily transition-colors p-3 inline-flex">
                                             <Linkedin />
                                         </div>
                                     </a>
