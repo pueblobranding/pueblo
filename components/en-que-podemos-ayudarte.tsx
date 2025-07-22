@@ -42,20 +42,20 @@ export default function QueHacemosSection() {
                 "Medimos: Resultados con informes mensuales",
             ],
         },
-        // {
-        //     id: "difusion",
-        //     title: "DIFUSIÓN Y PRENSA",
-        //     image: "/que-hacemos/3.webp",
-        //     description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
-        //     services: [
-        //         "Comunicación con medios, canal comercial y consumidor final integrados",
-        //         "Organización de eventos y activaciones en punto de venta",
-        //         "Diseño de invitaciones",
-        //         "Gestión de invitados",
-        //         "Envío de invitaciones follow up",
-        //         "Contacto para invitados y periodistas",
-        //     ],
-        // },
+        {
+            id: "difusion2",
+            title: "COACHING",
+            image: "/que-hacemos/3.webp",
+            description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
+            services: [
+                "Comunicación con medios, canal comercial y consumidor final integrados",
+                "Organización de eventos y activaciones en punto de venta",
+                "Diseño de invitaciones",
+                "Gestión de invitados",
+                "Envío de invitaciones follow up",
+                "Contacto para invitados y periodistas",
+            ],
+        },
     ]
 
     return (
@@ -85,7 +85,7 @@ export default function QueHacemosSection() {
 
                             <a
                                 href="#contacto"
-                                className="w-fit bg-tigerlily text-white font-semibold p-3 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
+                                className="w-fit bg-tigerlily text-white p-3 rounded-full hover:bg-[#d04e39] transition-colors tracking-wider cursor-pointer"
                             >
                                 ¿NOS TOMAMOS UN CAFÉ VIRTUAL?
                             </a>
@@ -93,7 +93,7 @@ export default function QueHacemosSection() {
                     </div>
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                         {sections.map((section) => (
                             <div key={section.id}>
 
@@ -188,7 +188,7 @@ export default function QueHacemosSection() {
 
                             <a
                                 href="#contacto"
-                                className="w-fit bg-tigerlily text-white font-semibold p-3 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
+                                className="w-fit bg-tigerlily text-white p-3 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
                             >
                                 ¿NOS TOMAMOS UN CAFÉ VIRTUAL?
                             </a>
