@@ -70,7 +70,7 @@ export default function QueHacemosSection() {
                     <div className="grid grid-cols-2 w-full px-34 pb-20 ">
                         <div className="bg-red-500">
                             <Image
-                                src="/cambiame.png"
+                                src="/chicas-sonriendo.jpg"
                                 alt="foto ilustrativa"
                                 className="w-full"
                                 width={900}
