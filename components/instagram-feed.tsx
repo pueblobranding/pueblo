@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Heart, MessageCircle, ExternalLink, Loader2, PlayCircle } from "lucide-react" // Agregado PlayCircle
+import { Heart, MessageCircle, Loader2, PlayCircle } from "lucide-react" // Agregado PlayCircle
 import { fetchInstagramPosts } from "@/app/actions/instagram-actions"
 
 interface InstagramPost {
