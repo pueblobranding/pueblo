@@ -10,7 +10,7 @@ export default function Instagram() {
                 </p>
 
                 {/* Componente de Instagram Feed */}
-                <InstagramFeed username="pueblobranding" limit={8} columns={4} showCaption={true} />
+                <InstagramFeed username="pueblobranding" limit={9} columns={3} showCaption={true} />
 
                 <div className="text-center mt-8">
                     <a
