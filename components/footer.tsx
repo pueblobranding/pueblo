@@ -5,11 +5,11 @@ import Image from "next/image"
 export default function Footer() {
     return (
         <footer className="bg-verde-opalo-100 text-white">
-            <div className="container mx-auto px-4 py-12 max-w-5xl">
+            <div className="container mx-auto px-4 py-6 md:py-12 max-w-7xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo y descripción */}
                     <div className="lg:col-span-2">
-                        <div className="flex flex-col justify-center md:justify-start md:flex-row items-center mb-4 ">
+                        <div className="hidden md:flex flex-col justify-center md:justify-start md:flex-row items-center mb-4 ">
                             <div className="w-12 h-12 bg-verde-opalo-100 rounded-full flex items-center justify-center mr-3">
                                 <Image
                                     src={"/pueblologo-blanco.svg"}
@@ -21,7 +21,7 @@ export default function Footer() {
 
                             <div>
                                 <h3 className="hidden md:block text-2xl font-500 tracking-[0.453em] -mr-[0.453em]">PUEBLO</h3>
-                                <p className="hidden md:block text-sm opacity-90">BRANDING Y COMUNICACIÓN ESTRATÉGICA</p>
+                                <p className="hidden lg:block text-sm opacity-90">BRANDING Y COMUNICACIÓN ESTRATÉGICA</p>
                             </div>
                         </div>
                         {/* <p className="text-sm opacity-90 leading-relaxed max-w-md">
