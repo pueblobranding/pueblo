@@ -24,7 +24,7 @@
 
   --tigerlily: #E2583E;
   
-  --gris-oscuro: #424144;
+  --gris: #424144;
 
   --pewter-blue-100: #8BA8B7; /* Valor corregido */
   --pewter-blue-80: #A2B9C4; /* Ajustado para ser 80% del original */
@@ -51,7 +51,7 @@
 
   --color-tigerlily: var(--tigerlily);
 
-  --gris-oscuro: var(--gris-oscuro);
+  --gris: var(--gris);
 
   --color-pewter-blue-100: var(--pewter-blue-100);
   --color-pewter-blue-80: var(--pewter-blue-80);
