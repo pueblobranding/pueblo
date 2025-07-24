@@ -334,7 +334,7 @@ export default function ContactoSection() {
                                             type="submit"
                                             className="flex items-center justify-center m-auto bg-tigerlily text-white py-3 px-6 rounded-full hover:bg-[#d04e39] transition-colors font-semibold tracking-wider cursor-pointer"
                                         >
-                                            <span className="mr-2">QUIERO QUE CONVERSEMOS</span>
+                                            <span className="mr-2">¿QUERÉS QUE CONVERSEMOS?</span>
                                         </button>
                                     </div>
                                 </div>
