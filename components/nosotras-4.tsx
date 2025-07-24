@@ -18,7 +18,7 @@ export default function NosotrasSection4() {
                 "En Pueblo me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.",
             ],
             linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
-            image: "/mechi.png",
+            image: "/machi-pueblo-2.jpg",
         },
         {
             id: "NAT",
@@ -30,7 +30,7 @@ export default function NosotrasSection4() {
 
             ],
             linkedinUrl: "https://www.linkedin.com/in/natpierro/",
-            image: "/nat3.png",
+            image: "/nat-pueblo-2.jpg",
         },
     ]
 
@@ -51,11 +51,11 @@ export default function NosotrasSection4() {
                                     alt={section.title}
                                     layout="fill"
                                     objectFit="cover"
-                                    className=""
+                                    className="saturate-"
                                 />
                                 <div
                                     style={{ fontFamily: 'dream-avenue' }}
-                                    className="absolute top-4 left-0 text-tigerlily text-2xl font-bold py-2 px-6 rounded-r-full inline-block tracking-wider"
+                                    className="absolute top-4 left-0 text-white bg-tigerlily text-2xl font-bold py-2 pl-4 pr-14 rounded-r-full inline-block tracking-wider"
                                 >
                                     ¡HOLA! <br/>
                                     SOY <br/>
@@ -70,7 +70,7 @@ export default function NosotrasSection4() {
                                     <div className="p-6">
                                         <div className="text-[#424144] space-y-4">
                                             {section.bio.map((paragraph, index) => (
-                                                <p key={index} className="font-bold leading-relaxed text-sm xl:text-[1.1rem]">
+                                                <p key={index} className="font-semibold leading-relaxed text-sm xl:text-[1rem]">
                                                     {paragraph}
                                                 </p>
                                             ))}

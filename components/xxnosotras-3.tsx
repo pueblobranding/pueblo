@@ -18,7 +18,7 @@ export default function NosotrasSection3() {
                 "En Pueblo me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.",
             ],
             linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
-            image: "/mechi.png",
+            image: "/machi-pueblo-2.jpg",
         },
         {
             id: "NAT",
@@ -30,14 +30,14 @@ export default function NosotrasSection3() {
 
             ],
             linkedinUrl: "https://www.linkedin.com/in/natpierro/",
-            image: "/nat3.png",
+            image: "/nat-pueblo-2.jpg",
         },
     ]
 
     return (
         <>
             <section id="nosotras" className="hidden md:flex items-center min-h-screen bg-white py-16 px-4">
-                <div className="container mx-auto max-w-5xl">
+                <div className="container mx-auto max-w-4xl">
 
                     {/* Contenedor de secciones expandibles */}
                     <div className="flex flex-col md:flex-row h-[600px] md:h-[35rem] gap-2 md:gap-4">
@@ -61,7 +61,7 @@ export default function NosotrasSection3() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
-                                        width={800}
+                                        width={600}
                                         height={600}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
                                     />
