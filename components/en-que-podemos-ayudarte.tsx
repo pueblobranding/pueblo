@@ -44,7 +44,7 @@ export default function QueHacemosSection() {
         {
             id: "coaching",
             title: "COACHING",
-            image: "/que-hacemos/3.webp",
+            image: "/que-hacemos/2.webp",
             description: "Brindamos coaching 1 a 1 o para equipos para ayudar a los líderes y equipos a desarrollar estrategias efectivas para alcanzar sus metas, mejorando el rendimiento y la toma de decisiones.",
             services: [            ],
         },
@@ -52,7 +52,7 @@ export default function QueHacemosSection() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden md:flex items-center min-h-screen bg-white px-4">
+            <section id="que-hacemos" className="hidden lg:flex items-center min-h-screen bg-white px-4">
                 <div className="container mx-auto max-w-6xl">
 
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
@@ -62,7 +62,7 @@ export default function QueHacemosSection() {
                     <div className="grid grid-cols-2 w-full px-34 pb-20 ">
                         <div className="bg-red-500">
                             <Image
-                                src="/chicas-sonriendo.jpg"
+                                src="/chicas-sonriendo-2.jpg"
                                 alt="foto ilustrativa"
                                 className="w-full"
                                 width={900}
@@ -84,6 +84,10 @@ export default function QueHacemosSection() {
                         </div>
                     </div>
 
+
+
+                    {/* Contenedor de secciones expandibles */}
+                    {/* Contenedor de secciones expandibles */}
                     {/* Contenedor de secciones expandibles */}
                     <div className="grid grid-cols-4 gap-2">
                         {sections.map((section) => (
@@ -93,7 +97,7 @@ export default function QueHacemosSection() {
                                 <div
                                     style={{ fontFamily: 'dream-avenue' }}
                                     className="bg-verde-opalo-100 text-3xl font-bold text-white h-48 w-full rounded-t-full tracking-wider
-                                                flex flex-col justify-center items-center pt-8 text-center" 
+                                                flex flex-col justify-center items-center pt-12 text-center" 
                                 >
                                     {section.title}
                                 </div>
@@ -116,9 +120,9 @@ export default function QueHacemosSection() {
                                         <Image
                                             src={section.image || "/placeholder.svg"}
                                             alt={section.title}
-                                            //   fill
-                                            width={400}
-                                            height={400}
+                                              fill
+                                            // width={400}
+                                            // height={400}
                                             className={`object-cover grayscale w-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
                                         />
                                         <div className="absolute inset-0 bg-black/0"></div>
@@ -126,7 +130,7 @@ export default function QueHacemosSection() {
 
 
                                     {/* Contenido */}
-                                    <div className="relative z-10 flex flex-col h-70 p-4 text-verde-opalo-100">
+                                    <div className="relative z-10 flex flex-col h-64 p-4 text-verde-opalo-100 text-xs font-semibold">
 
                                         {/* Contenido expandido - visible solo en hover */}
                                         <div
@@ -134,9 +138,9 @@ export default function QueHacemosSection() {
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                         >
-                                            <p className="mb-4 font-bold text-sm">{section.description}</p>
+                                            <p className="mb-2">{section.description}</p>
 
-                                            <ul className="space-y-2 mt-auto font-bold text-sm">
+                                            <ul className="space-y-2 mt-auto">
                                                 {section.services.map((service, index) => (
                                                     <li key={index} className="flex items-start">
                                                         <span className="mr-2 text-tigerlily">•</span>
@@ -153,8 +157,13 @@ export default function QueHacemosSection() {
                 </div>
             </section>
 
+
+
+
             {/* MOBILE */}
-            <section id="que-hacemos" className="md:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
+            {/* MOBILE */}
+            {/* MOBILE */}
+            <section id="que-hacemos" className="lg:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
 
                 <div className="container mx-auto max-w-6xl">
 
@@ -165,11 +174,12 @@ export default function QueHacemosSection() {
                     <div className="grid grid-rows-2 w-full pb-10 ">
                         <div className="">
                             <Image
-                                src="/cambiame.png"
+                                src="/chicas-sonriendo-2.jpg"
                                 alt="foto ilustrativa"
                                 className="w-full"
-                                width={900}
+                                width={400}
                                 height={400}
+                                // fill
                             />
                         </div>
 
@@ -189,7 +199,7 @@ export default function QueHacemosSection() {
 
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col h-[600px] gap-2 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 h-[600px] gap-2 ">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
@@ -210,7 +220,6 @@ export default function QueHacemosSection() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
-                                        //   fill
                                         width={400}
                                         height={400}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
@@ -221,18 +230,17 @@ export default function QueHacemosSection() {
                                 {/* Contenido */}
                                 <div className="relative z-10 flex flex-col h-full p-4 text-tigerlily">
                                     {/* Título siempre visible */}
-                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider relative -top-2 -left-10 pl-10">
+                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-[1rem] font-bold text-white py-2 px-6 rounded-r-full inline-block mb-2 tracking-wider relative -top-2 -left-10 pl-10">
                                         {section.title}
                                     </div>
-                                    {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
-
+                                
                                     {/* Contenido expandido - visible solo en hover */}
                                     <div
                                         className={`flex flex-col transition-opacity duration-900 
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                     >
-                                        <p className="mb-4 font-bold text-sm text-[#424144]">{section.description}</p>
+                                        <p className="mb-2 font-bold text-sm text-[#424144]">{section.description}</p>
 
                                         <ul className="space-y-2 mt-auto font-bold text-sm">
                                             {section.services.map((service, index) => (
