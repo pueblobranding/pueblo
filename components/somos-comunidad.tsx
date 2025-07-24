@@ -4,14 +4,13 @@ export default function SomosComunidad() {
   return (
     <div
       id="somos-comunidad"
-      className="bg-pewter-blue-100 max-h-fit flex flex-col items-center justify-center text-white py-10 gap-10 lg:py-20 lg:gap-20"
-
+      className="bg-pewter-blue-100 max-h-fit flex flex-col items-center justify-center text-white py-10 gap-6 lg:py-20 lg:gap-20"
     >
 
-      <h2 className="font-dream-avenue text-4xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center mx-2">
+      <h2 className="font-dream-avenue text-5xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center mx-2">
         SOMOS COMUNIDAD</h2>
 
-      <p className="text-sm md:text-xl text-balance">
+      <p className="text-md md:text-3xl text-balance text-center font-semibold">
         Creemos en el poder colaborativo por eso conformamos una comunidad con los mejores profesionales y especialistas del mercado para abordar todas las áreas específicas que tu empresa necesita.
       </p>
 
