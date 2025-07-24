@@ -41,7 +41,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href="#que-hacemos" className="hover:text-tigerlily transition-colors">
-                                    Que hacemos
+                                    Qué hacemos
                                 </Link>
                             </li>
                             <li>
