@@ -35,11 +35,10 @@ export default function QueHacemosSection() {
             image: "/que-hacemos/3.webp",
             description: "Recopilación, planificación, gestión, medición.",
             services: [
-                "Recopilamos: Información de la empresa, identificamos mensajes clave y públicos",
-                "Diseñamos: Un plan estratégico de comunicación acorde a los objetivos del negocio, identificamos acciones, herramientas y canales clave",
-                "Desarrollamos: Contenidos de interés para periodistas y medios",
-                "Gestionamos proactivamente cada vínculo y acción",
-                "Medimos: Resultados con informes mensuales",
+                "Recopilamos información de la empresa e identificamos mensajes y públicos clave",
+                "Diseñamos planes estratégicos de comunicación identificando acciones, herramientas y canales clave",
+                "Desarrollamos contenidos de interés para periodistas y medios",
+                "Medimos resultados con informes mensuales",
             ],
         },
         {
