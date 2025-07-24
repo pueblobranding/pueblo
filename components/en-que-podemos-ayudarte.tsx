@@ -197,9 +197,8 @@ export default function QueHacemosSection() {
                         </div>
                     </div>
 
-
-                    {/* Contenedor de secciones expandibles */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 h-[600px] gap-2 ">
+ {/* Contenedor de secciones expandibles */}
+ <div className="flex flex-col h-[600px] gap-2 ">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
@@ -220,6 +219,7 @@ export default function QueHacemosSection() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
+                                        //   fill
                                         width={400}
                                         height={400}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
@@ -230,23 +230,24 @@ export default function QueHacemosSection() {
                                 {/* Contenido */}
                                 <div className="relative z-10 flex flex-col h-full p-4 text-tigerlily">
                                     {/* Título siempre visible */}
-                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-[1rem] font-bold text-white py-2 px-6 rounded-r-full inline-block mb-2 tracking-wider relative -top-2 -left-10 pl-10">
+                                    <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-xl font-bold text-white py-2 px-6 rounded-r-full inline-block mb-4 tracking-wider relative -top-2 -left-10 pl-10">
                                         {section.title}
                                     </div>
-                                
+                                    {/* <h2 style={{ fontFamily: 'dream-avenue' }} className="text-xl mb-4 tracking-wider font-bold">{section.title}</h2> */}
+
                                     {/* Contenido expandido - visible solo en hover */}
                                     <div
                                         className={`flex flex-col transition-opacity duration-900 
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                     >
-                                        <p className="mb-2 font-bold text-sm text-[#424144]">{section.description}</p>
+                                        <p className="mb-4 font-bold text-sm">{section.description}</p>
 
                                         <ul className="space-y-2 mt-auto font-bold text-sm">
                                             {section.services.map((service, index) => (
                                                 <li key={index} className="flex items-start">
-                                                    <span className="mr-2 text-[#424144]">•</span>
-                                                    <span className="text-[#424144]">{service}</span>
+                                                    <span className="mr-2 text-tigerlily">•</span>
+                                                    <span>{service}</span>
                                                 </li>
                                             ))}
                                         </ul>
