@@ -131,6 +131,10 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
           <Link href="/#contacto" onClick={() => handleMenuLinkClick("/#contacto")} className="hover:text-verde-opalo-60 transition-colors">
             CONTACTO
           </Link>
+
+          <Link href="/#instagram" onClick={() => handleMenuLinkClick("/#instagram")} className="hover:text-verde-opalo-60 transition-colors">
+            INSTAGRAM
+          </Link>
         </nav>
       </div>
     </>
