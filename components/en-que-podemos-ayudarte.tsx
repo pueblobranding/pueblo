@@ -43,18 +43,11 @@ export default function QueHacemosSection() {
             ],
         },
         {
-            id: "difusion2",
+            id: "coaching",
             title: "COACHING",
             image: "/que-hacemos/3.webp",
-            description: "ESTRATEGIA INTEGRAL Pre, durante y post lanzamiento.",
-            services: [
-                "Comunicación con medios, canal comercial y consumidor final integrados",
-                "Organización de eventos y activaciones en punto de venta",
-                "Diseño de invitaciones",
-                "Gestión de invitados",
-                "Envío de invitaciones follow up",
-                "Contacto para invitados y periodistas",
-            ],
+            description: "Brindamos coaching 1 a 1 o para equipos para ayudar a los líderes y equipos a desarrollar estrategias efectivas para alcanzar sus metas, mejorando el rendimiento y la toma de decisiones.",
+            services: [            ],
         },
     ]
 
@@ -240,13 +233,13 @@ export default function QueHacemosSection() {
                                                     ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
                                                 `}
                                     >
-                                        <p className="mb-4 font-bold text-sm">{section.description}</p>
+                                        <p className="mb-4 font-bold text-sm text-[#424144]">{section.description}</p>
 
                                         <ul className="space-y-2 mt-auto font-bold text-sm">
                                             {section.services.map((service, index) => (
                                                 <li key={index} className="flex items-start">
-                                                    <span className="mr-2 text-tigerlily">•</span>
-                                                    <span>{service}</span>
+                                                    <span className="mr-2 text-[#424144]">•</span>
+                                                    <span className="text-[#424144]">{service}</span>
                                                 </li>
                                             ))}
                                         </ul>
