@@ -14,7 +14,7 @@ export default function Carousel() {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="pt-16 md:pt-20">
       <SimpleCarousel components={componentes} autoRotateInterval={4000} />
     </div>
   )
