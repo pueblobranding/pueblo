@@ -10,11 +10,11 @@ export default function Instagram() {
                 </p>
 
                 {/* Componente de Instagram Feed */}
-                <InstagramFeed username="pablolospe" limit={8} columns={4} showCaption={true} />
+                <InstagramFeed username="pueblobranding" limit={8} columns={4} showCaption={true} />
 
                 <div className="text-center mt-8">
                     <a
-                        href="https://www.instagram.com/pablolospe/"
+                        href="https://www.instagram.com/pueblobranding/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition-colors"
