@@ -192,7 +192,7 @@ export default function ContactoSection() {
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-5xl">
                 <h1 style={{ fontFamily: 'dream-avenue' }} className="text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
                     A UN CLICK DE DISTANCIA
                 </h1>
@@ -224,12 +224,12 @@ export default function ContactoSection() {
                             <div>
                                 <div className="flex space-x-4 pt-4">
                                     <a href="https://www.instagram.com/pueblobranding" className="transition-colors">
-                                        <div className="rounded-full bg-verde-opalo-80 transition-colors hover:bg-tigerlily p-3 inline-flex">
+                                        <div className="rounded-full bg-verde-opalo-80 p-3 inline-flex hover:bg-tigerlily transition-colors">
                                             <Instagram />
                                         </div>
                                     </a>
                                     <a href="https://www.linkedin.com/company/pueblo-branding" className="text-white transition-colors">
-                                        <div className="rounded-full bg-verde-opalo-80 hover:bg-tigerlily transition-colors p-3 inline-flex">
+                                        <div className="rounded-full bg-verde-opalo-80 p-3 inline-flex hover:bg-tigerlily transition-colors">
                                             <Linkedin />
                                         </div>
                                     </a>

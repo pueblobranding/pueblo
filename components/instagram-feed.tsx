@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Heart, MessageCircle, ExternalLink, Loader2 } from "lucide-react"
+import { Heart, MessageCircle, ExternalLink, Loader2, PlayCircle } from "lucide-react" // Agregado PlayCircle
 import { fetchInstagramPosts } from "@/app/actions/instagram-actions"
 
 interface InstagramPost {
@@ -111,21 +111,48 @@ export default function InstagramFeed({
             key={post.id}
             className="instagram-post bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
-            <Link href={post.permalink} target="_blank" rel="noopener noreferrer" className="block relative">
+            {/* <Link href={post.permalink} target="_blank" rel="noopener noreferrer" className="block relative"> */}
               <div className="aspect-square relative overflow-hidden">
-                <Image
-                  src={post.media_type === "VIDEO" ? post.thumbnail_url || post.media_url : post.media_url}
-                  alt={post.caption?.substring(0, 100) || "Instagram post"}
-                  fill
-                  unoptimized={true}
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all flex items-center justify-center opacity-0 hover:opacity-100">
+                {post.media_type === "VIDEO" ? (
+                  // Renderizar el video
+                  <video
+                    src={post.media_url}
+                    poster={post.thumbnail_url} // Muestra la miniatura antes de que el video se reproduzca
+                    loop // El video se repite
+                    muted // Inicia silenciado
+                    playsInline // Importante para la reproducción en dispositivos iOS
+                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                    onMouseEnter={(e) => e.currentTarget.play()} // Reproducir al pasar el ratón
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause(); // Pausar al quitar el ratón
+                      e.currentTarget.currentTime = 0; // Reiniciar el video al principio
+                    }}
+                  />
+                ) : (
+                  // Renderizar la imagen (comportamiento actual para IMAGE y CAROUSEL_ALBUM)
+                  <Image
+                    src={post.media_url}
+                    alt={post.caption?.substring(0, 100) || "Instagram post"}
+                    fill
+                    unoptimized={true}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                )}
+
+                {/* Overlay para el enlace externo (siempre presente en la esquina superior derecha del post) */}
+                {/* <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all flex items-center justify-center opacity-0 hover:opacity-100">
                   <ExternalLink className="w-8 h-8 text-white" />
-                </div>
+                </div> */}
+
+                {/* Icono de reproducción para videos, visible para indicar que es un video */}
+                {post.media_type === "VIDEO" && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <PlayCircle className="w-12 h-12 text-white drop-shadow-lg" />
+                  </div>
+                )}
               </div>
-            </Link>
+            {/* </Link> */}
 
             <div className="p-3">
               <div className="flex items-center justify-between text-sm text-gray-500 mb-2">

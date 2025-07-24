@@ -3,7 +3,7 @@ import InstagramFeed from "./instagram-feed";
 export default function Instagram() {
     return (
         <section id="instagram" className="py-16">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-3xl font-bold text-center mb-4">Síguenos en Instagram</h2>
                 <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
                     Mantente al día con nuestras últimas novedades, eventos y promociones siguiéndonos en Instagram.
