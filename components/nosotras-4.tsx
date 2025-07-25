@@ -5,8 +5,11 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function NosotrasSection4() {
+    const [openSection, setOpenSection] = useState<string | null>(null)
 
-    const [hoveredSection, setHoveredSection] = useState<string | null>(null)
+    const handleClick = (id: string) => {
+        setOpenSection(prev => (prev === id ? null : id))
+    }
 
     const teamMembers = [
         {
@@ -41,11 +44,10 @@ export default function NosotrasSection4() {
                     {teamMembers.map((section) => (
                         <div
                             key={section.id}
-                            className="flex-1"
-                            onMouseEnter={() => setHoveredSection(section.id)}
-                            onMouseLeave={() => setHoveredSection(null)}
+                            className="flex-1 cursor-pointer"
+                            onClick={() => handleClick(section.id)}
                         >
-                            <div className="relative w-full h-96 overflow-hidden shadow-lg">
+                            <div className={`relative w-full h-96 overflow-hidden shadow-lg ${openSection === section.id ? 'rounded-t-lg' : 'rounded-lg'}`}>
                                 <Image
                                     src={section.image}
                                     alt={section.title}
@@ -64,7 +66,7 @@ export default function NosotrasSection4() {
                             </div>
                             <div
                                 className={`grid transition-[grid-template-rows] duration-500 ease-in-out bg-pewter-blue-20 rounded-b-lg shadow-lg`}
-                                style={{ gridTemplateRows: hoveredSection === section.id ? '1fr' : '0fr' }}
+                                style={{ gridTemplateRows: openSection === section.id ? '1fr' : '0fr' }}
                             >
                                 <div className="overflow-hidden">
                                     <div className="p-6">
