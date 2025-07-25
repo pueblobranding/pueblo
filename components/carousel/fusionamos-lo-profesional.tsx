@@ -6,7 +6,7 @@ export default function FusionamosLoProfesional() {
             <section
                 className="h-full flex items-center justify-center px-4"
                 style={{
-                    backgroundImage: "url('/PUEBLO_Website.webp')",
+                    backgroundImage: "url('/pueblo-bg-tigerlily.webp')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',

@@ -6,7 +6,7 @@ export default function EncontramosQueHace() {
             <section
                 className="h-full flex items-center justify-center px-4 py-"
                 style={{
-                    backgroundImage: "url('/PUEBLO_Website.webp')",
+                    backgroundImage: "url('/pueblo-bg-pewter-blue.webp')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
