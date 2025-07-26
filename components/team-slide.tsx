@@ -2,8 +2,6 @@
 
 import Image from "next/image"
 import { useRef } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-// import { Button } from "@/components/ui/button"
 
 interface TeamMember {
     id: number
