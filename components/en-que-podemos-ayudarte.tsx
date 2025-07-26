@@ -161,9 +161,9 @@ export default function QueHacemosSection() {
             {/* MOBILE */}
             {/* MOBILE */}
             {/* MOBILE */}
-            <section id="que-hacemos" className="lg:hidden flex  bg-white py-4 px-4">
+            <section id="que-hacemos" className="lg:hidden flex bg-white py-4 px-4">
 
-                <div className="container mx-auto max-w-6xl h-fit">
+                <div className="container mx-auto max-w-6xl ">
 
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-3xl text-center mb- tracking-wider my-8">
                         EN QUÉ PODEMOS AYUDARTE
@@ -180,7 +180,7 @@ export default function QueHacemosSection() {
                             />
                         </div>
 
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-6 mb-0">
                             <p className="text-xl text-verde-opalo-100 text-center mt-4">
                                 En PUEBLO hacemos comunicación con consciencia. Transformando marcas desde adentro, conectando con su esencia y dándole voz con propósito.
                             </p>
