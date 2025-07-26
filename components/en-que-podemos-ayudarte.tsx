@@ -52,7 +52,7 @@ export default function QueHacemosSection() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden lg:flex items-center min-h-screen bg-white px-4">
+            <section id="que-hacemos" className="hidden lg:flex items-center bg-white px-4">
                 <div className="container mx-auto max-w-6xl">
 
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20">
@@ -121,8 +121,6 @@ export default function QueHacemosSection() {
                                             src={section.image || "/placeholder.svg"}
                                             alt={section.title}
                                             fill
-                                            // width={400}
-                                            // height={400}
                                             className={`object-cover grayscale w-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
                                         />
                                         <div className="absolute inset-0 bg-black/0"></div>
@@ -163,28 +161,27 @@ export default function QueHacemosSection() {
             {/* MOBILE */}
             {/* MOBILE */}
             {/* MOBILE */}
-            <section id="que-hacemos" className="lg:hidden flex items-center min-h-screen h-[200%] bg-white py-4 px-4">
+            <section id="que-hacemos" className="lg:hidden flex  bg-white py-4 px-4">
 
-                <div className="container mx-auto max-w-6xl">
+                <div className="container mx-auto max-w-6xl h-fit">
 
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl text-center mb-6 tracking-wider mt-20">
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-3xl text-center mb- tracking-wider my-8">
                         EN QUÉ PODEMOS AYUDARTE
                     </h1>
 
-                    <div className="grid grid-rows-2 w-full pb-10 ">
-                        <div className="">
+                    <div className="grid grid-rows-2 w-full pb- ">
+                        <div className="flex flex-col items-center">
                             <Image
                                 src="/chicas-sonriendo-2.jpg"
                                 alt="foto ilustrativa"
-                                className="w-full"
+                                className="w-xl rounded-md"
                                 width={400}
                                 height={400}
-                            // fill
                             />
                         </div>
 
-                        <div className="flex flex-col gap-10">
-                            <p className="text-xl text-verde-opalo-100">
+                        <div className="flex flex-col gap-4">
+                            <p className="text-xl text-verde-opalo-100 text-center mt-4">
                                 En PUEBLO hacemos comunicación con consciencia. Transformando marcas desde adentro, conectando con su esencia y dándole voz con propósito.
                             </p>
 
@@ -198,19 +195,19 @@ export default function QueHacemosSection() {
                     </div>
 
                     {/* Contenedor de secciones expandibles */}
-                    <div className="flex flex-col h-[600px] gap-2 ">
+                    <div className="flex flex-col md:grid grid-cols-2 h-[600px] gap-2 max-w-sm md:max-w-full mx-auto">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
                                 className={`relative overflow-hidden rounded-lg transition-all duration-800 ease-in-out flex flex-col 
-                ${hoveredSection === section.id
+                                 ${hoveredSection === section.id
                                         ? "flex-[4]"
                                         : hoveredSection === null
                                             ? "flex-[1]"
                                             : "flex-[1]"
                                     }
-                ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
-              `}
+                                        ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
+                                    `}
                                 onMouseEnter={() => setHoveredSection(section.id)}
                                 onMouseLeave={() => setHoveredSection(null)}
                             >
@@ -219,7 +216,6 @@ export default function QueHacemosSection() {
                                     <Image
                                         src={section.image || "/placeholder.svg"}
                                         alt={section.title}
-                                        //   fill
                                         width={400}
                                         height={400}
                                         className={`object-cover grayscale h-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
@@ -228,7 +224,7 @@ export default function QueHacemosSection() {
                                 </div>
 
                                 {/* Contenido */}
-                                <div className="relative z-10 flex flex-col h-full p-4 text-gris">
+                                <div className="relative z-10 flex flex-col h-full p-5 text-gris">
                                     {/* Título siempre visible */}
                                     <div style={{ fontFamily: 'dream-avenue' }} className="bg-tigerlily text-md font-bold text-white py-2 px-6 rounded-r-full inline-block mb-1 tracking-wider relative -top-2 -left-10 pl-10">
                                         {section.title}
