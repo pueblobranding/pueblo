@@ -87,3 +87,8 @@ html {
   /* opacity: 0; /* Opcional: añade una transición suave si quieres mostrarlo después, pero para ocultarlo simplemente, visibility: hidden; es suficiente */
   /* display: none !important; */
 }
+
+textarea{
+  min-height: 4rem;
+  field-sizing: content;
+}
