@@ -13,15 +13,15 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
     {
         id: 1,
-        name: "Marinha",
+        name: "Marinha Villalobos",
         role: "Prensa",
-        image: "/foto-marinha.png?height=120&width=120",
+        image: "/foto-MARINHA-VILLALOBOS.png?height=120&width=120",
     },
     {
         id: 3,
-        name: "Adri",
+        name: "Adri Sandobal",
         role: "Diseño",
-        image: "/placeholder.svg?height=120&width=120",
+        image: "/foto-adri.png?height=120&width=120",
     },
     {
         id: 2,
@@ -29,12 +29,12 @@ const teamMembers: TeamMember[] = [
         role: "Web y programación",
         image: "/pol-ia.png?height=120&width=120",
     },
-    {
-        id: 4,
-        name: "Alan Montalvo Amador",
-        role: "Aguatero",
-        image: "/placeholder.svg?height=120&width=120",
-    }
+    // {
+    //     id: 4,
+    //     name: "Alan Montalvo Amador",
+    //     role: "Aguatero",
+    //     image: "/placeholder.svg?height=120&width=120",
+    // }
 ]
 
 export default function TeamSlide() {
