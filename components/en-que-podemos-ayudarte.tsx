@@ -79,7 +79,7 @@ export default function QueHacemosSection() {
                                 href="#contacto"
                                 className="w-fit bg-tigerlily text-white p-3 rounded-full hover:bg-[#d04e39] transition-colors tracking-wider cursor-pointer"
                             >
-                                ¿NOS TOMAMOS UN CAFÉ VIRTUAL?
+                                ¡CONTANOS TU PROYECTO!
                             </a>
                         </div>
                     </div>
