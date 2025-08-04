@@ -14,9 +14,10 @@ export default function EnPuebloHacemos() {
                 >
                     <article className="container mx-auto max-w-6xl">
     
-                        <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 md:mx-40">
-                        HACEMOS COMUNICACIÓN CON CONSCIENCIA.
-                        <br /> TRANSFORMANDO MARCAS DESDE ADENTRO
+                        <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 md:mx-40 uppercase">
+                        Creamos y transformamos marcas auténticas 
+                        <br /> 
+                        con estratégia, propósito y corazón
                         </h1>
     
                     </article>

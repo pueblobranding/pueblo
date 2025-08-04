@@ -15,10 +15,8 @@ export default function EncontramosQueHace() {
                 <article className="container mx-auto max-w-6xl">
 
                     {/* <div className="text-center text-md md:text-2xl font-bold"> */}
-                    <h1  className="text-white text-3xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 md:mx-40">
-                        ENCONTRAMOS
-                        <br />QUÉ HACE LATIR
-                        <br />A TU MARCA
+                    <h1  className="text-white text-3xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 md:mx-40 uppercase">
+                    Encontramos qué hace <b> latir </b> tu marca, proyecto o empresa
                     </h1>
                     {/* </div> */}
                 </article>
