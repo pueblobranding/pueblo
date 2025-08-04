@@ -1,4 +1,7 @@
 "use client"
+import QueHacemosCarousel from "./QueHacemosCarousel";
+import QueHacemosSlide from "./QueHacemosSlide";
+
 
 import { useState } from "react"
 import Image from "next/image"
@@ -92,71 +95,17 @@ export default function QueHacemosSection() {
 
 
                     {/* Contenedor de secciones expandibles */}
-                    {/* Contenedor de secciones expandibles */}
-                    {/* Contenedor de secciones expandibles */}
-                    <div className="grid grid-cols-4 gap-2">
-                        {sections.map((section) => (
-                            <div key={section.id}>
-
-                                {/* Título siempre visible */}
-                                <div
-                                    style={{ fontFamily: 'dream-avenue' }}
-                                    className="bg-verde-opalo-100 text-3xl font-bold text-white h-48 w-full rounded-t-full tracking-wider
-                                                flex flex-col justify-center items-center pt-12 text-center"
-                                >
-                                    {section.title}
-                                </div>
-                                <div
-
-                                    className={`relative overflow-hidden  transition-all duration-800 ease-in-out flex flex-col
-                                            ${hoveredSection === section.id
-                                            ? "flex-[4]"
-                                            : hoveredSection === null
-                                                ? "flex-[1]"
-                                                : "flex-[1]"
-                                        }
-                                            ${hoveredSection !== null && hoveredSection !== section.id ? "md:opacity-70" : "opacity-100"}
-                                            `}
-                                    onMouseEnter={() => setHoveredSection(section.id)}
-                                    onMouseLeave={() => setHoveredSection(null)}
-                                >
-                                    {/* Fondo de imagen */}
-                                    <div className="absolute inset-0 z-0 bg-pewter-blue-20">
-                                        <Image
-                                            src={section.image || "/placeholder.svg"}
-                                            alt={section.title}
-                                            fill
-                                            className={`object-cover grayscale w-full transition-opacity duration-900  ${hoveredSection === section.id ? "opacity-20" : "opacity-80"}`}
-                                        />
-                                        <div className="absolute inset-0 bg-black/0"></div>
-                                    </div>
-
-
-                                    {/* Contenido */}
-                                    <div className="relative z-10 flex flex-col h-64 p-4 text-verde-opalo-100 text-xs font-semibold">
-
-                                        {/* Contenido expandido - visible solo en hover */}
-                                        <div
-                                            className={`flex flex-col transition-opacity duration-900 
-                                                    ${hoveredSection === section.id ? "opacity-100" : "opacity-0 "}
-                                                `}
-                                        >
-                                            <p className="mb-2">{section.description}</p>
-
-                                            <ul className="space-y-2 mt-auto">
-                                                {section.services.map((service, index) => (
-                                                    <li key={index} className="flex items-start">
-                                                        <span className="mr-2 text-tigerlily">•</span>
-                                                        <span>{service}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <QueHacemosCarousel
+                        components={sections.map((section) => (
+                            <QueHacemosSlide
+                                key={section.id}
+                                title={section.title}
+                                description={section.description}
+                                imageUrl={section.image}
+                                services={section.services}
+                            />
                         ))}
-                    </div >
+                    />
                 </div>
             </section>
 
