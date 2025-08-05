@@ -92,3 +92,8 @@ textarea{
   min-height: 4rem;
   field-sizing: content;
 }
+
+strong{
+  /* color: red; */
+  /* font-weight: boldest; */
+}

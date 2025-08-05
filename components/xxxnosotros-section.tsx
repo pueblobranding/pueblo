@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
+import React from "react"
 
 interface TeamMemberProps {
   name: string
-  bio: string[]
+  bio: React.ReactNode[]
   linkedinUrl: string
   imageUrl: string
 }
@@ -47,8 +48,8 @@ export default function NosotrosSection() {
       name: "MACHI",
       bio: [
         "Nací en Mar del Plata, donde el mar me enseñó a respirar profundamente y a conectarme con la naturaleza. Pero mi alma inquieta me llevó a buscar nuevos horizontes en Buenos Aires.",
-        "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.",
-        "En Pueblo me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.",
+        "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.123123123",
+        <>En <strong>Puebloo</strong> me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.</>,
       ],
       linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
       imageUrl: "/mechi.png",

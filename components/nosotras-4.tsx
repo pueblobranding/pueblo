@@ -16,10 +16,10 @@ export default function NosotrasSection4() {
             id: "MACHI",
             title: "MACHI",
             bio: [
-                "Nací en Mar del Plata, donde el mar me enseñó a respirar profundo y conectar con la naturaleza. Mi alma inquieta me llevó a buscar nuevos horizontes en Buenos Aires, donde encontré mi lugar en el mundo de la comunicación.",
-                "Me formé en Comunicación Integral y, en el camino, también me enamoré del yoga, el reiki y el coaching. Disfruto acompañar a otros a encontrar su voz, su rumbo y su bienestar.",
-                "En Pueblo, me sumerjo en cada proyecto con compromiso y sensibilidad, para co-crear estrategias que comuniquen el alma y lo esencial de cada marca.",
-            ],
+                "Nací en Mar del Plata, donde el mar me enseñó a respirar profundamente y a conectarme con la naturaleza. Pero mi alma inquieta me llevó a buscar nuevos horizontes en Buenos Aires.",
+                "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.",
+                <>En <strong>Pueblo</strong> me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.</>,
+              ],
             linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
             image: "/machi-pueblo-2.jpg",
         },
@@ -29,7 +29,7 @@ export default function NosotrasSection4() {
             bio: [
                 "Trabajo en Comunicación Estratégica hace 20 años, deseando cada vez más generar conexiones auténticas que respondan a los deseos personales y no al revés. ",
                 "En el camino, descubrí que mi vocación también estaba en la sanación y mi faceta holística fue integrando herramientas como la Astrología,  el Reiki y la Biodecodificación para acompañar a otros en su proceso de crecimiento.",
-                "Hoy, en PUEBLO, fusiono estos dos mundos. Cada proyecto es una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que cuenten historias reales que transformen y contagien lo más genuino de su esencia.",
+                <>Hoy, en <strong>Pueblo</strong>, fusiono estos dos mundos. Cada proyecto es una oportunidad para conectar profundamente con la esencia de las marcas, ayudando a crear estrategias que no solo comuniquen, sino que cuenten historias reales que transformen y contagien lo más genuino de su esencia.</>,
 
             ],
             linkedinUrl: "https://www.linkedin.com/in/natpierro/",
