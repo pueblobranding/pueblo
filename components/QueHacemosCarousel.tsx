@@ -33,7 +33,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
     if (!trackRef.current) return;
     setIsDragging(true);
     // Stop text selection and other default drag behaviors
-    e.preventDefault();
+    // e.preventDefault();
 
     const moveHandler = (moveEvent: MouseEvent | TouchEvent) => {
       const trackRect = trackRef.current!.getBoundingClientRect();
@@ -88,12 +88,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
           </div>
         ))}
       </div>
-      {/* <button
-        onClick={goToPrevious}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 rounded-full p-2 focus:outline-none z-20"
-      >
-        &#10094;
-      </button> */}
+
       <button
         className="absolute left-6 top-1/4 -translate-y-1/2 z-20 bg-white/10 text-white p-2 rounded-full hover:bg-white/20 color-transition cursor-pointer"
         aria-label="Anterior"
@@ -134,32 +129,68 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
         </svg>
       </button>
       {/* Slider Control */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-64 h-12 flex items-center justify-center z-20">
+      <div className="absolute -bottom-0 left-1/2 -translate-x-1/2 w-80 h-24 flex items-center justify-center z-20">
         <div
           ref={trackRef}
-          className="relative w-full h-3 bg-black/30 rounded-full border-2 border-white/40 shadow-inner cursor-pointer"
+          className="
+                      relative 
+                      w-full h-16 sm:h-20 md:h-24
+                      bg-pewter-blue-80 bg-opacity-70
+                      rounded-full
+                      border-4 border-pewter-blue-100
+                      shadow-inner-xl
+                      cursor-grab
+                      flex items-center
+                      overflow-hidden
+                      group /* Para aplicar hover/active al thumb */
+                    "
           onClick={(e) => {
             // Allow clicking on the track to jump to a slide
             if (trackRef.current) {
               const trackRect = trackRef.current.getBoundingClientRect();
               const clickX = e.clientX - trackRect.left;
               const percentage = (clickX / trackRect.width) * 100;
-              const newIndex = Math.round(percentage / (100 / (components.length - 1)));
-              setCurrentIndex(Math.max(0, Math.min(components.length - 1, newIndex)));
+              // setCurrentIndex(Math.max(0, Math.min(components.length - 1, newIndex)));
+              // Desactivado para un botón de apagado, ya que el clic no es el propósito principal
+              // setThumbPosition(percentage); // Si aún quieres que un clic mueva el pulgar
             }
           }}
         >
-          {/* Draggable Thumb */}
+
           <div
-            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-tigerlily rounded-full border-2 border-white shadow-lg"
+            className="
+                    absolute
+                    top-1/2 -translate-y-1/2
+                    w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
+                    bg-tigerlily
+                    rounded-full
+                    border-4 border-white
+                    shadow-power-button /* Sombra personalizada para el brillo */
+                    cursor-grab active:cursor-grabbing
+                    flex items-center justify-center
+                    transition-colors duration-200 ease-in-out
+                    group-hover:bg-tigerlily/80 /* Ligeramente más oscuro al pasar el ratón por el track */
+                  "
             style={{
               left: `${thumbPosition}%`,
               transform: 'translateX(-50%)',
-              transition: isDragging ? 'none' : 'left 0.2s ease-out',
+              transition: isDragging ? 'none' : 'left 0.1s ease-out',
             }}
             onMouseDown={handleDragStart}
             onTouchStart={handleDragStart}
-          />
+          >
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white opacity-80 drop-shadow-lg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

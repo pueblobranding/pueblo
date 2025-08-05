@@ -48,7 +48,7 @@ export default function TeamSlide() {
     }
 
     return (
-        <div className="w-full max-w-4xl mx-8 md:mx-auto p-6">
+        <div className="w-full max-w-4xl md:mx-auto p-6">
             <div className="relative">
                 {/* Navigation Buttons */}
                 <button

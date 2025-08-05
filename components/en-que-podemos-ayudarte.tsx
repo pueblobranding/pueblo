@@ -61,27 +61,26 @@ export default function QueHacemosSection() {
 
     return (
         <>
-            <section id="que-hacemos" className="hidden lg:flex items-center bg-white px-4">
+            <section id="que-hacemos" className="flex items-center bg-white px-4 md:mb-20">
                 <div className="container mx-auto max-w-6xl">
 
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20 uppercase">
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center tracking-wider my-6 md:my-20 uppercase">
                         Cómo podemos acompañarte?
-
                     </h1>
 
-                    <div className="grid grid-cols-2 w-full px-34 pb-20 ">
-                        <div className="bg-red-500">
+                    <div className="grid grid-cols-1 md:grid-cols-2 w-full md:px-34 pb-20 ">
+                        <div className="">
                             <Image
                                 src="/chicas-sonriendo-2.jpg"
                                 alt="foto ilustrativa"
-                                className="w-full"
+                                className="w-full mb-6"
                                 width={900}
                                 height={400}
                             />
                         </div>
 
-                        <div className="flex flex-col ml-10 gap-10">
-                            <p className="text-xl text-verde-opalo-100">
+                        <div className="flex flex-col items-center md:ml-10 gap-10">
+                            <p className="text-xl text-verde-opalo-100 text-center md:text-left">
                                 En Pueblo hacemos comunicación con conciencia.
                                 Transformamos marcas desde su esencia, creando mensajes con propósito y presencia real.
                             </p>
@@ -118,7 +117,7 @@ export default function QueHacemosSection() {
             {/* MOBILE */}
             {/* MOBILE */}
             {/* MOBILE */}
-            <section id="que-hacemos" className="lg:hidden flex bg-white py-4 px-4">
+            <section id="que-hacemos" className="hidden bg-white py-4 px-4">
 
                 <div className="container mx-auto max-w-6xl ">
 
