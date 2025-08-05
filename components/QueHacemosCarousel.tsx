@@ -152,7 +152,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
               const percentage = (clickX / trackRect.width) * 100;
               // setCurrentIndex(Math.max(0, Math.min(components.length - 1, newIndex)));
               // Desactivado para un botón de apagado, ya que el clic no es el propósito principal
-              // setThumbPosition(percentage); // Si aún quieres que un clic mueva el pulgar
+              setThumbPosition(percentage); // Si aún quieres que un clic mueva el pulgar
             }
           }}
         >
