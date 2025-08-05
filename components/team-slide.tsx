@@ -29,12 +29,6 @@ const teamMembers: TeamMember[] = [
         role: "Web y programación",
         image: "/pol-ia.png?height=120&width=120",
     },
-    // {
-    //     id: 4,
-    //     name: "Alan Montalvo Amador",
-    //     role: "Aguatero",
-    //     image: "/placeholder.svg?height=120&width=120",
-    // }
 ]
 
 export default function TeamSlide() {

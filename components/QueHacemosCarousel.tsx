@@ -52,10 +52,10 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
 
       // Snap to the closest index
       const trackRect = trackRef.current!.getBoundingClientRect();
-      const finalLeft = 'changedTouches' in endEvent 
+      const finalLeft = 'changedTouches' in endEvent
         ? endEvent.changedTouches[0].clientX - trackRect.left
         : endEvent.clientX - trackRect.left;
-      
+
       const percentage = (finalLeft / trackRect.width) * 100;
       const newIndex = Math.round(percentage / (100 / (components.length - 1)));
       const finalIndex = Math.max(0, Math.min(components.length - 1, newIndex));
@@ -88,19 +88,51 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
           </div>
         ))}
       </div>
-      <button
+      {/* <button
         onClick={goToPrevious}
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 rounded-full p-2 focus:outline-none z-20"
       >
         &#10094;
-      </button>
+      </button> */}
       <button
-        onClick={goToNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 rounded-full p-2 focus:outline-none z-20"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        aria-label="Anterior"
+        onClick={goToPrevious}
       >
-        &#10095;
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
       </button>
 
+      <button
+        onClick={goToNext}
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        aria-label="Siguiente"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
       {/* Slider Control */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-64 h-12 flex items-center justify-center z-20">
         <div
@@ -109,11 +141,11 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
           onClick={(e) => {
             // Allow clicking on the track to jump to a slide
             if (trackRef.current) {
-                const trackRect = trackRef.current.getBoundingClientRect();
-                const clickX = e.clientX - trackRect.left;
-                const percentage = (clickX / trackRect.width) * 100;
-                const newIndex = Math.round(percentage / (100 / (components.length - 1)));
-                setCurrentIndex(Math.max(0, Math.min(components.length - 1, newIndex)));
+              const trackRect = trackRef.current.getBoundingClientRect();
+              const clickX = e.clientX - trackRect.left;
+              const percentage = (clickX / trackRect.width) * 100;
+              const newIndex = Math.round(percentage / (100 / (components.length - 1)));
+              setCurrentIndex(Math.max(0, Math.min(components.length - 1, newIndex)));
             }
           }}
         >

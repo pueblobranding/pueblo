@@ -9,7 +9,7 @@ interface QueHacemosSlideProps {
 
 const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, imageUrl, services }) => {
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 pb-20">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative h-64 w-full">
           <img src={imageUrl} alt={title} className="w-full h-full object-cover grayscale" />
