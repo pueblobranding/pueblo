@@ -14,11 +14,11 @@ const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, i
         <div className="relative h-64 w-full">
           <img src={imageUrl} alt={title} className="w-full h-full object-cover grayscale" />
           <div className="absolute inset-0 bg-black/30"></div>
-          <div style={{ fontFamily: 'dream-avenue' }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-white tracking-wider text-center">
+          <div style={{ fontFamily: 'dream-avenue' }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-white tracking-wider text-center uppercase">
             {title}
           </div>
         </div>
-        <div className="p-6">
+        <div className="p-6 text-lg">
           <p className="mb-4 text-center">{description}</p>
           <ul className="space-y-2">
             {services.map((service, index) => (

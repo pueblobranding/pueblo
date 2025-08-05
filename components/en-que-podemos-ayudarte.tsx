@@ -16,44 +16,45 @@ export default function QueHacemosSection() {
             title: "BRANDING CON ALMA",
             image: "/que-hacemos/1.webp",
             description:
-                "",
-            services: ["Le damos forma y fondo a tu marca (nombre, estilo, personalidad)",
-                "Diseñamos su mundo visual: logo, colores, packaging",
-                "Te entregamos un manual claro para que siempre comuniques con coherencia",],
+                "Branding con alma, forma y propósito.",
+            services: [
+                "Creamos marcas auténticas: nombre, tono y personalidad.",
+                "Diseñamos su universo visual: logo, colores, packaging.",
+                "Te entregamos un manual claro para comunicar siempre con coherencia.",
+            ],
         },
         {
             id: "prensa",
             title: "PRENSA",
             image: "/que-hacemos/3.webp",
-            description: "",
+            description: "Prensa que conecta y posiciona.",
             services: [
-                "Posicionamiento auténtico de tu marca",
-                "Relación con medios y prensa desde el propósito",
-                "Narrativas que construyen confianza y comunidad",
-                "Presencia estratégica donde tu audiencia realmente está",
+                "Relación real con medios, basada en propósito.",
+                "Narrativas que inspiran confianza y comunidad.",
+                "Posicionamiento genuino desde tu historia.",
+                "Presencia estratégica donde tu audiencia sí está.",
             ],
         },
         {
             id: "coaching",
-            title: "COACHING PARA LIDERAR CON PROPÓSITO",
+            title: "Coaching para líderes",
             image: "/que-hacemos/3.webp",
-            description: "Acompañamos a personas que están creando algo con sentido. Si sentís que tu marca, tu proyecto o tu voz necesitan claridad y dirección, este espacio es para vos.",
-            services: ["¿Qué podés lograr?",
-                "Comunicar desde tu verdad, sin máscaras",
-                "Liderar con confianza y presencia",
-                "Encontrar tu estilo propio para influir y crecer"],
+            description: "Un espacio para liderar con sentido. Acompañamos a personas que crean con propósito. Si tu marca, tu voz o tu proyecto buscan claridad, este espacio es para vos.",
+            services: [
+                "Comunicar desde tu verdad, sin máscaras.",
+                "Liderar con autenticidad y presencia.",
+                "Encontrar tu estilo propio para influir y crecer.",
+            ],
         },
         {
             id: "comunicacion",
-            title: "COMUNICACIÓN CON ESTRATEGIA",
+            title: "Comunicación estratégica",
             image: "/que-hacemos/2.webp",
-            description: "",
+            description: "Estrategia creativa para crecer con foco. Co-creamos estrategias alineadas con tus objetivos personales y comerciales.",
             services: [
-                "Co creamos la estrategia de tu marca/empresa de la mano de tus objetivos personales y comerciales.",
-                "Diseño, producción, marketing digital, redes sociales, campañas Google Ads y mucho más para llevar a tu marca/empresa al siguiente nivel!",
-                // "Redes sociales",
-                // "Estrategia y contenidos audiovisuales para redes",
-                // "Campañas de Google Ads",
+                "Diseño, contenido y producción.",
+                "Marketing digital, redes, campañas de Google Ads y más.",
+                "Todo lo que tu marca necesita para crecer con coherencia y visión.",
             ],
         },
     ]
@@ -64,8 +65,8 @@ export default function QueHacemosSection() {
                 <div className="container mx-auto max-w-6xl">
 
                     <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wider mt-20 uppercase">
-                    Cómo podemos acompañarte?
-                        
+                        Cómo podemos acompañarte?
+
                     </h1>
 
                     <div className="grid grid-cols-2 w-full px-34 pb-20 ">
