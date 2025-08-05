@@ -95,7 +95,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
         &#10094;
       </button> */}
       <button
-        className="absolute left-6 top-1/4 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        className="absolute left-6 top-1/4 -translate-y-1/2 z-20 bg-white/10 text-white p-2 rounded-full hover:bg-white/20 color-transition cursor-pointer"
         aria-label="Anterior"
         onClick={goToPrevious}
       >
@@ -116,7 +116,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
 
       <button
         onClick={goToNext}
-        className="absolute right-6 top-1/4 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        className="absolute right-6 top-1/4 -translate-y-1/2 z-20 bg-white/10 text-white p-2 rounded-full hover:bg-white/20 color-transition cursor-pointer"
         aria-label="Siguiente"
       >
         <svg
