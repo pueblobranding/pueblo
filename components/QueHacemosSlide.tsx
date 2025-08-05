@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface QueHacemosSlideProps {
@@ -12,7 +13,7 @@ const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, i
     <div className="w-full p-4 pb-20">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative h-64 w-full">
-          <img src={imageUrl} alt={title} className="w-full h-full object-cover grayscale" />
+          <Image src={imageUrl} alt={title} className="w-full h-full object-cover grayscale" />
           <div className="absolute inset-0 bg-black/30"></div>
           <div style={{ fontFamily: 'dream-avenue' }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-white tracking-wider text-center uppercase">
             {title}

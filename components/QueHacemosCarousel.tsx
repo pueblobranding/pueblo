@@ -29,7 +29,7 @@ const QueHacemosCarousel: React.FC<QueHacemosCarouselProps> = ({ components, aut
     }
   }, [autoRotateInterval, goToNext, isDragging]);
 
-  const handleDragStart = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+  const handleDragStart = useCallback(() => {
     if (!trackRef.current) return;
     setIsDragging(true);
     // Stop text selection and other default drag behaviors
