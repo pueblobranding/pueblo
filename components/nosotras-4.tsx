@@ -19,7 +19,7 @@ export default function NosotrasSection4() {
                 "Nací en Mar del Plata, donde el mar me enseñó a respirar profundamente y a conectarme con la naturaleza. Pero mi alma inquieta me llevó a buscar nuevos horizontes en Buenos Aires.",
                 "Me sumergí en el mundo de la Comunicación Integral, y también me enamoré del Yoga, el Reiki y el Coaching. Me encanta ayudar a otros a encontrar su propio camino de crecimiento y bienestar.",
                 <>En <strong>Pueblo</strong> me empapo con cada nuevo proyecto para juntos encontrar las mejores estrategias para comunicar el alma y lo esencial de cada uno.</>,
-              ],
+            ],
             linkedinUrl: "https://www.linkedin.com/in/magdalenabenzo/",
             image: "/machi-pueblo-2.jpg",
         },
@@ -59,8 +59,8 @@ export default function NosotrasSection4() {
                                     style={{ fontFamily: 'dream-avenue' }}
                                     className="absolute top-4 left-0 text-white bg-tigerlily text-2xl font-bold py-2 pl-4 pr-14 rounded-r-full inline-block tracking-wider"
                                 >
-                                    ¡HOLA! <br/>
-                                    SOY <br/>
+                                    ¡HOLA! <br />
+                                    SOY <br />
                                     {section.title}
                                 </div>
                             </div>
@@ -80,14 +80,38 @@ export default function NosotrasSection4() {
                                     </div>
                                 </div>
                             </div>
-                            <Link
-                                href={section.linkedinUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-tigerlily text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10"
-                            >
-                                in
-                            </Link>
+                            {
+                                openSection === section.id ?
+                                    <Link
+                                        href={section.linkedinUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-tigerlily text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10"
+                                    >
+                                        in
+                                    </Link>
+
+
+                                    :
+                                    <button
+
+                                        className="relative top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-tigerlily text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md z-10"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+                            }
                         </div>
                     ))}
                 </div>
