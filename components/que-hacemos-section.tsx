@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export default function QueHacemosSection() {
 
-    const [hoveredSection, setHoveredSection] = useState<string | null>(null)
+    // const [hoveredSection, setHoveredSection] = useState<string | null>(null)
 
     const sections = [
         {
