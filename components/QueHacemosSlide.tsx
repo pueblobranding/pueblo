@@ -9,7 +9,7 @@ interface QueHacemosSlideProps {
 
 const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, imageUrl, services }) => {
   return (
-    <div className="max-w-5xl mx-auto p-4">
+    <div className="max-w-4xl mx-auto p-4">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative h-64 w-full">
           <img src={imageUrl} alt={title} className="w-full h-full object-cover grayscale" />
@@ -18,8 +18,8 @@ const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, i
             {title}
           </div>
         </div>
-        <div className="p-6 text-lg min-h-[300px]">
-          <p className="mb-4 text-center">{description}</p>
+        <div className="flex flex-col justify-around p-8 text-sm md:text-xl min-h-[300px]">
+          <p className="text-center">{description}</p>
           <ul className="space-y-2">
             {services.map((service, index) => (
               <li key={index} className="flex items-start">

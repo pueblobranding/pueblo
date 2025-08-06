@@ -87,7 +87,7 @@ export default function QueHacemosSection() {
 
                             <a
                                 href="#contacto"
-                                className="w-fit bg-tigerlily text-white p-3 rounded-full hover:bg-[#d04e39] transition-colors tracking-wider cursor-pointer"
+                                className="w-fit bg-tigerlily text-white p-3 rounded-full hover:bg-[#d04e39] transition-colors tracking-wider cursor-pointer text-center"
                             >
                                 ¡CONTANOS TU PROYECTO!
                             </a>
