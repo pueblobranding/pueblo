@@ -29,6 +29,7 @@ const teamMembers: TeamMember[] = [
         role: "Web y programación",
         image: "/pol-ia.png?height=120&width=120",
     },
+  
 ]
 
 export default function TeamSlide() {
@@ -36,7 +37,7 @@ export default function TeamSlide() {
 
     const scroll = (direction: "left" | "right") => {
         if (scrollRef.current) {
-            const scrollAmount = 300
+            const scrollAmount = 310
             const currentScroll = scrollRef.current.scrollLeft
             const targetScroll = direction === "left" ? currentScroll - scrollAmount : currentScroll + scrollAmount
 
@@ -48,11 +49,11 @@ export default function TeamSlide() {
     }
 
     return (
-        <div className="w-full max-w-4xl md:mx-auto p-6">
-            <div className="relative">
+        <section className="w-full py-12">
+            <div className="w-full max-w-sm md:max-w-4xl md:mx-auto px-12 md:px-12 relative">
                 {/* Navigation Buttons */}
                 <button
-                    className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
                     aria-label="Anterior"
                     onClick={() => scroll("left")}
                 >
@@ -69,12 +70,11 @@ export default function TeamSlide() {
                     >
                         <path d="m15 18-6-6 6-6" />
                     </svg>
-                    {/* <ChevronLeft className="h-4 w-4" /> */}
                 </button>
 
                 <button
                     onClick={() => scroll("right")}
-                    className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
                     aria-label="Siguiente"
                 >
                     <svg
@@ -95,13 +95,13 @@ export default function TeamSlide() {
                 {/* Scrollable Container */}
                 <div
                     ref={scrollRef}
-                    className="flex gap-8 overflow-x-auto scrollbar-hide px-2 py-4"
+                    className="flex justify-start md:justify-center gap-10 overflow-x-auto scrollbar-hide px-2 py-4"
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
                     {teamMembers.map((member) => (
                         <div
                             key={member.id}
-                            className="flex-shrink-0 flex flex-col items-center text-center bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 min-w-[250px]"
+                            className="flex-shrink-0 flex flex-col items-center text-center bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 w-full md:w-[230px] "
                         >
                             <div className="relative w-24 h-24 mb-4">
                                 <Image
@@ -118,6 +118,6 @@ export default function TeamSlide() {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
