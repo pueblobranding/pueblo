@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function NosotrasSection4() {
+export default function NosotrasSection() {
     const [openSection, setOpenSection] = useState<string | null>(null)
 
     const handleClick = (id: string) => {

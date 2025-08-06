@@ -1,4 +1,4 @@
-import NosotrasSection4 from "./nosotras-4";
+import NosotrasSection from "./nosotras";
 import TeamSlide from "./team-slide";
 
 export default function SomosComunidad() {
@@ -11,13 +11,13 @@ export default function SomosComunidad() {
       <h2 className="font-dream-avenue text-5xl md:text-6xl lg:text-7xl font-medium tracking-widest text-center mx-2">
         SOMOS COMUNIDAD</h2>
 
-      <p className="text-md md:text-2xl text-balance text-center md:mx-20 mb-6">
-        Una red de talentos para tu marca.
-        Creemos en lo colaborativo. <br/>
+      <p className="text-md md:text-2xl text-balance text-center md:mx-20 mb-4 max-w-4xl mx-4">
+        Una red de talentos para tu marca. Creemos en lo colaborativo. 
+        <br/>
         Formamos una comunidad con los mejores especialistas del mercado para cubrir cada área que tu empresa necesita.
       </p>
 
-      <NosotrasSection4 />
+      <NosotrasSection />
 
       <TeamSlide />
 
