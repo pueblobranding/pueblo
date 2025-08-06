@@ -1,14 +1,9 @@
-"use client"
 import SimpleCarousel from "./carousel/simple-carousel";
 import QueHacemosSlide from "./QueHacemosSlide";
 
-
-import { useState } from "react"
 import Image from "next/image"
 
 export default function QueHacemosSection() {
-
-    // const [hoveredSection, setHoveredSection] = useState<string | null>(null)
 
     const sections = [
         {
