@@ -18,7 +18,7 @@ const QueHacemosSlide: React.FC<QueHacemosSlideProps> = ({ title, description, i
             {title}
           </div>
         </div>
-        <div className="flex flex-col justify-around p-8 text-sm md:text-xl min-h-[300px]">
+        <div className="flex flex-col justify-around p-8 text-sm md:text-xl min-h-[300px] bg-pewter-blue-20/50">
           <p className="text-center">{description}</p>
           <ul className="space-y-2">
             {services.map((service, index) => (

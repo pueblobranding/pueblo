@@ -64,7 +64,7 @@ export default function QueHacemosSection() {
             <section id="que-hacemos" className="flex items-center bg-white px-4 md:mb-20">
                 <div className="container mx-auto max-w-6xl">
 
-                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-5xl lg:text-6xl text-center tracking-wider my-6 md:my-20 uppercase">
+                    <h1 style={{ fontFamily: 'dream-avenue' }} className="text-verde-opalo-100 text-4xl md:text-4xl lg:text-5xl text-center tracking-wider my-6 md:my-20 uppercase">
                         Cómo podemos acompañarte?
                     </h1>
 

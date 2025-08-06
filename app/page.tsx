@@ -5,7 +5,7 @@ import Carousel from "@/components/carousel"
 import ContactoSection from "@/components/contacto"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
-import QueHacemosSection from "@/components/en-que-podemos-ayudarte"
+import QueHacemosSection from "@/components/que-hacemos-section"
 import SomosComunidad from "@/components/somos-comunidad"
 import Instagram from "@/components/instagram"
 
