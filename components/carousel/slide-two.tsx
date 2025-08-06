@@ -1,4 +1,4 @@
-export default function FusionamosLoProfesional() {
+export default function SlideTwo() {
 
     return (
         <>
@@ -14,9 +14,12 @@ export default function FusionamosLoProfesional() {
             >
                 <article className="container mx-auto max-w-6xl">
 
-                    <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 mx-4 md:mx-40 uppercase">
+                <h1 className="text-white text-lg md:text-3xl lg:text-4xl xl:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 mx-0 md:mx-0 uppercase">
                         Consultoría + comunicación
-                        para quienes quieren destacarse sin perder su esencia.
+                        <br/>
+                        para quienes quieren destacarse 
+                        <br/>
+                        sin perder su esencia.
 
                     </h1>
 

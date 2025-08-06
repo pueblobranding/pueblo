@@ -1,4 +1,4 @@
-export default function EncontramosQueHace() {
+export default function SlideThree() {
 
     return (
         <>
@@ -15,8 +15,12 @@ export default function EncontramosQueHace() {
                 <article className="container mx-auto max-w-6xl">
 
                     {/* <div className="text-center text-md md:text-2xl font-bold"> */}
-                    <h1  className="text-white text-3xl md:text-4xl lg:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 md:mx-40 uppercase">
-                    Encontramos qué hace latir a tu marca, proyecto ó empresa
+                    <h1 className="text-white text-lg md:text-3xl lg:text-4xl xl:text-5xl text-center mb-16 tracking-wider rounded-4xl py-20 mx-0 md:mx-0 uppercase">
+                        Encontramos 
+                        <br/>
+                        qué hace latir a tu marca, 
+                        <br/>
+                        proyecto ó empresa
                     </h1>
                     {/* </div> */}
                 </article>
