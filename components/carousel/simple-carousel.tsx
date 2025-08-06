@@ -5,9 +5,16 @@ import { useState, useEffect, type ReactNode } from "react"
 interface SimpleCarouselProps {
   components: ReactNode[]
   autoRotateInterval?: number
+  indicatorContainerClassName?: string
+  heightClassName?: string
 }
 
-export default function SimpleCarousel({ components, autoRotateInterval = 5000 }: SimpleCarouselProps) {
+export default function SimpleCarousel({
+  components,
+  autoRotateInterval = 5000,
+  indicatorContainerClassName = "absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20",
+  heightClassName = "h-108",
+}: SimpleCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
@@ -34,7 +41,7 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
 
   return (
     <div
-      className="h-108 w-full relative overflow-hidden"
+      className={`${heightClassName} w-full relative overflow-hidden`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -94,13 +101,13 @@ export default function SimpleCarousel({ components, autoRotateInterval = 5000 }
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+      <div className={indicatorContainerClassName}>
         {components.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-all ${
-              currentIndex === index ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70 cursor-pointer"
+              currentIndex === index ? "bg-white scale-110" : "bg-white/30 hover:bg-white/70 cursor-pointer"
             }`}
             aria-label={`Ir a diapositiva ${index + 1}`}
           />
