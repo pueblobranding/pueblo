@@ -63,12 +63,13 @@ export default function QueHacemosSection() {
                         Cómo podemos acompañarte?
                     </h1>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 w-full md:px-34 pb-20 ">
-                        <div className="">
+                    <div className="flex flex-col md:flex-row w-full px-4 md:px-20 lg:px-34 pb-20 ">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 w-full md:px-34 pb-20 "> */}
+                        <div className="min-w-[50%]">
                             <Image
                                 src="/chicas-sonriendo-2.jpg"
                                 alt="foto ilustrativa"
-                                className="w-full mb-6"
+                                className="w-full mb-6 rounded-lg"
                                 width={900}
                                 height={400}
                             />
@@ -88,8 +89,6 @@ export default function QueHacemosSection() {
                             </a>
                         </div>
                     </div>
-
-
 
                     {/* Contenedor de secciones expandibles */}
                     <SimpleCarousel
