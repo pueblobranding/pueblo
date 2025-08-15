@@ -1,5 +1,5 @@
 "use client"
-import { Menu, X } from "lucide-react"
+import { Instagram, Menu, X } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link" // Asegúrate de que Link está importado
 import { useRouter, usePathname } from "next/navigation";
@@ -124,17 +124,21 @@ export default function Navbar({ isMenuOpen, toggleMenu }: NavbarProps) {
             SOMOS COMUNIDAD
           </Link>
 
-          <Link href="/#nosotras" onClick={() => handleMenuLinkClick("/#nosotras")} className="hover:text-verde-opalo-60 transition-colors">
+          {/* <Link href="/#nosotras" onClick={() => handleMenuLinkClick("/#nosotras")} className="hover:text-verde-opalo-60 transition-colors">
             NOSOTRAS
-          </Link>
+          </Link> */}
 
           <Link href="/#contacto" onClick={() => handleMenuLinkClick("/#contacto")} className="hover:text-verde-opalo-60 transition-colors">
             CONTACTO
           </Link>
 
-          <Link href="/#instagram" onClick={() => handleMenuLinkClick("/#instagram")} className="hover:text-verde-opalo-60 transition-colors">
+          <Link href="/#instagram" onClick={() => handleMenuLinkClick("/#instagram")} className="hidden md:block hover:text-verde-opalo-60 transition-colors">
             INSTAGRAM
           </Link>
+
+          <a href="https://www.instagram.com/pueblobranding" target="_blank" className="md:hidden block hover:text-verde-opalo-60 transition-colors">
+            <Instagram className="w-6 h-6" />
+          </a>
         </nav>
       </div>
     </>
