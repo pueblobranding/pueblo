@@ -62,7 +62,7 @@ export default function SimpleCarousel({
       {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
         aria-label="Anterior"
       >
         <svg
@@ -82,7 +82,7 @@ export default function SimpleCarousel({
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/10 text-white p-2 rounded-full hover:bg-black/30 color-transition cursor-pointer"
         aria-label="Siguiente"
       >
         <svg
